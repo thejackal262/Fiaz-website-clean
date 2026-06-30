@@ -1,7 +1,7 @@
 {
   "secondaryButtonLink": "#services",
   "aboutKicker": "About Fiaz",
-  "heroImage": "/images/uploads/hero.svg",
+  "heroImage": "/images/uploads/16b891ee-7b46-462f-8d6c-194e223519d7.png",
   "primaryButtonText": "Wagwan",
   "resultsTitle": "Receipts, not promises.",
   "faqTitle": "Before you ask...",
@@ -19,9 +19,9 @@
   "faqKicker": "Questions",
   "resultsKicker": "Results",
   "finalKicker": "Ready?",
-  "heroBadge": "Personal Trainer • Online Coach • Fat Loss • Strength",
+  "heroBadge": "Weight Loss Specialist• Female Fitness Specialist • Fitness Nutrition Specialist • Senior Fitness Specialist • Optimum Performance Training • Strength And Conditioning • Body Transformation Specialist",
   "testimonialName": "Client Name",
-  "logo": "/images/uploads/logo.svg",
+  "logo": "/images/uploads/img_1760.jpeg",
   "servicesText": "Start where you are. We build from there. No ego. No pretending. No nonsense.",
   "aboutTitle": "No gimmicks. No fairy dust. Just work.",
   "testimonialText": "Add your strongest client testimonial here. Specific beats fluffy. Fat lost, strength gained, confidence built.",
@@ -63,7 +63,7 @@
       ]
     }
   ],
-  "aboutImage": "/images/uploads/about.svg",
+  "aboutImage": "/images/uploads/8ed2519f-fa95-4270-8acd-a59954294970.png",
   "primaryButtonLink": "#contact",
   "aboutPoints": [
     "Training built around your body, your goal and your current ability.",
@@ -72,7 +72,7 @@
   ],
   "servicesKicker": "Coaching Options",
   "pricingTitle": "Pick the support you need.",
-  "brandName": "Fiaz Ali Coaching",
+  "brandName": "Fiaz Ali",
   "testimonialKicker": "Client Words",
   "instagram": "https://instagram.com/YOUR_INSTAGRAM",
   "secondaryButtonText": "View Coaching Options",
@@ -175,5 +175,5 @@
       "label": "In-Person + Online"
     }
   ],
-  "seoDescription": "Premium personal training and online coaching with Fiaz Ali."
+  "seoDescription": "Transform your body this year with Fiaz Ali. No gimmicks. No crash diets. Just expert personal training and online coaching to help you lose fat, build muscle, get stronger, and achieve results that last."
 }
