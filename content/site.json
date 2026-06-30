@@ -1,0 +1,179 @@
+{
+  "seoTitle": "Fiaz Ali Coaching | Personal Trainer & Online Coach",
+  "seoDescription": "Premium personal training and online coaching with Fiaz Ali.",
+  "brandName": "Fiaz Ali Coaching",
+  "logo": "/images/uploads/logo.svg",
+  "heroImage": "/images/uploads/hero.svg",
+  "aboutImage": "/images/uploads/about.svg",
+  "backgroundColor": "#030303",
+  "cardColor": "#111111",
+  "mainTextColor": "#ffffff",
+  "bodyTextColor": "#d0d0d0",
+  "goldColor": "#f4d77e",
+  "buttonTextColor": "#ffffff",
+  "navLinks": [
+    {
+      "label": "About",
+      "url": "#about"
+    },
+    {
+      "label": "Services",
+      "url": "#services"
+    },
+    {
+      "label": "Results",
+      "url": "#results"
+    },
+    {
+      "label": "Pricing",
+      "url": "#pricing"
+    },
+    {
+      "label": "Contact",
+      "url": "#contact"
+    }
+  ],
+  "heroBadge": "Personal Trainer \u2022 Online Coach \u2022 Fat Loss \u2022 Strength",
+  "heroLine1": "Build a body",
+  "heroLine2": "that refuses",
+  "heroLine3": "to quit.",
+  "heroText": "Lose fat. Build muscle. Get brutally strong. Coaching for real people who are done with starting over every Monday.",
+  "primaryButtonText": "Book Free Consultation",
+  "primaryButtonLink": "#contact",
+  "secondaryButtonText": "View Coaching Options",
+  "secondaryButtonLink": "#services",
+  "stats": [
+    {
+      "number": "17+",
+      "label": "Years Coaching"
+    },
+    {
+      "number": "NASM",
+      "label": "Certified Specialist"
+    },
+    {
+      "number": "UK",
+      "label": "In-Person + Online"
+    }
+  ],
+  "aboutKicker": "About Fiaz",
+  "aboutTitle": "No gimmicks. No fairy dust. Just work.",
+  "aboutText": "I help people lose fat, build muscle and become stronger than they thought possible. My coaching is built around real life, not perfect conditions.",
+  "aboutPoints": [
+    "Training built around your body, your goal and your current ability.",
+    "Nutrition that creates results without turning your life into boiled chicken prison.",
+    "Accountability, standards and honest coaching when motivation disappears."
+  ],
+  "servicesKicker": "Coaching Options",
+  "servicesTitle": "Choose your level.",
+  "servicesText": "Start where you are. We build from there. No ego. No pretending. No nonsense.",
+  "services": [
+    {
+      "small": "01 / In Person",
+      "title": "1-to-1 Personal Training",
+      "text": "Face-to-face coaching for fat loss, strength, technique, confidence and accountability."
+    },
+    {
+      "small": "02 / Online",
+      "title": "Online Coaching",
+      "text": "Custom training, nutrition targets, weekly check-ins and support wherever you train."
+    },
+    {
+      "small": "03 / Full Support",
+      "title": "Transformation Coaching",
+      "text": "For people who need proper structure, standards and direct coaching instead of another random plan."
+    }
+  ],
+  "bannerText": "Strength over skinny. Consistency over perfection. Results over excuses.",
+  "resultsKicker": "Results",
+  "resultsTitle": "Receipts, not promises.",
+  "resultsText": "Add your client transformations, strength milestones, screenshots or training photos here.",
+  "results": [
+    {
+      "image": "/images/uploads/client1.svg",
+      "label": "Transformation Photo"
+    },
+    {
+      "image": "/images/uploads/client2.svg",
+      "label": "Strength Milestone"
+    },
+    {
+      "image": "/images/uploads/client3.svg",
+      "label": "Client Win"
+    }
+  ],
+  "pricingKicker": "Packages",
+  "pricingTitle": "Pick the support you need.",
+  "pricingText": "Simple coaching packages. Clear support. No confusion.",
+  "packages": [
+    {
+      "name": "Training Only",
+      "price": "From \u00a379/mo",
+      "featured": false,
+      "button": "Enquire",
+      "items": [
+        "Custom training plan",
+        "Weekly check-in",
+        "Exercise guidance",
+        "Basic messaging support"
+      ]
+    },
+    {
+      "name": "Training + Nutrition",
+      "price": "From \u00a3129/mo",
+      "featured": true,
+      "button": "Start Here",
+      "items": [
+        "Custom training plan",
+        "Calories and macros",
+        "Weekly check-in",
+        "Accountability support"
+      ]
+    },
+    {
+      "name": "Full Support",
+      "price": "Apply",
+      "featured": false,
+      "button": "Apply Now",
+      "items": [
+        "Training plan",
+        "Nutrition coaching",
+        "Habit building",
+        "Higher accountability"
+      ]
+    }
+  ],
+  "testimonialKicker": "Client Words",
+  "testimonialTitle": "Real people. Real graft.",
+  "testimonialText": "Add your strongest client testimonial here. Specific beats fluffy. Fat lost, strength gained, confidence built.",
+  "testimonialName": "Client Name",
+  "faqKicker": "Questions",
+  "faqTitle": "Before you ask...",
+  "faqs": [
+    {
+      "question": "Do I need to be fit before starting?",
+      "answer": "No. Start where you are."
+    },
+    {
+      "question": "Do you offer online coaching?",
+      "answer": "Yes. Online coaching is available and can include training, nutrition, check-ins and accountability."
+    },
+    {
+      "question": "Do I need a gym?",
+      "answer": "No, but it helps. The plan can be built around your equipment, gym access and current ability."
+    },
+    {
+      "question": "Will I have to eat boring food?",
+      "answer": "No. Boring diets die quickly. We build structure that works in the real world."
+    }
+  ],
+  "finalKicker": "Ready?",
+  "finalTitle": "Stop starting over.",
+  "finalText": "Book a free consultation and let\u2019s build a plan that actually fits your life.",
+  "email": "your-email@example.com",
+  "emailButtonText": "Email Me",
+  "instagram": "https://instagram.com/YOUR_INSTAGRAM",
+  "tiktok": "https://tiktok.com/@YOUR_TIKTOK",
+  "youtube": "https://youtube.com/@FiazAli",
+  "footerText": "\u00a9 2026 Fiaz Ali Coaching. All rights reserved."
+}
