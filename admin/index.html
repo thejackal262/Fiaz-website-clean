@@ -5,21 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex" />
   <title>Fiaz Website Admin</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function(user) {
-        if (!user && window.location.hash) {
-          window.netlifyIdentity.open();
-        }
-      });
-      window.netlifyIdentity.on("login", function() {
-        document.location.href = "/admin/#/collections/website/entries/site";
-      });
-    }
-  </script>
   <script src="https://unpkg.com/decap-cms@3.6.2/dist/decap-cms.js"></script>
 </body>
 </html>
