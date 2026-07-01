@@ -1,0 +1,16 @@
+async function loadSite(){
+const res=await fetch('/content/site.json?cache='+Date.now());const s=await res.json();
+document.title=s.seoTitle||s.brandName;document.querySelector('meta[name="description"]').setAttribute('content',s.seoDescription||'');
+document.documentElement.style.setProperty('--bg',s.backgroundColor||'#030303');document.documentElement.style.setProperty('--card',s.cardColor||'#111');document.documentElement.style.setProperty('--main',s.mainTextColor||'#fff');document.documentElement.style.setProperty('--body',s.bodyTextColor||'#d0d0d0');document.documentElement.style.setProperty('--gold',s.goldColor||'#f4d77e');document.documentElement.style.setProperty('--btntext',s.buttonTextColor||'#fff');document.documentElement.style.setProperty('--hero',`url("${s.heroImage}")`);document.documentElement.style.setProperty('--about',`url("${s.aboutImage}")`);
+document.getElementById('brandName').textContent=s.brandName;document.getElementById('logo').src=s.logo;document.getElementById('navLinks').innerHTML=s.navLinks.map(x=>`<a href="${x.url}">${x.label}</a>`).join('');
+['heroBadge','heroLine1','heroLine2','heroLine3','heroText','aboutKicker','aboutTitle','aboutText','servicesKicker','servicesTitle','servicesText','bannerText','resultsKicker','resultsTitle','resultsText','pricingKicker','pricingTitle','pricingText','testimonialKicker','testimonialTitle','testimonialText','testimonialName','faqKicker','faqTitle','finalKicker','finalTitle','finalText'].forEach(id=>document.getElementById(id).textContent=s[id]||'');
+document.getElementById('primaryBtn').textContent=s.primaryButtonText;document.getElementById('primaryBtn').href=s.primaryButtonLink;document.getElementById('secondaryBtn').textContent=s.secondaryButtonText;document.getElementById('secondaryBtn').href=s.secondaryButtonLink;
+document.getElementById('stats').innerHTML=s.stats.map(x=>`<div class="stat"><strong class="metal">${x.number}</strong><span>${x.label}</span></div>`).join('');
+document.getElementById('aboutPoints').innerHTML=s.aboutPoints.map(p=>`<div class="list-item"><span class="dot"></span><p>${p}</p></div>`).join('');
+document.getElementById('services').innerHTML=s.services.map(x=>`<div class="card"><small>${x.small}</small><h3>${x.title}</h3><p>${x.text}</p></div>`).join('');
+document.getElementById('results').innerHTML=s.results.map(x=>`<div class="result" style="background:url('${x.image}') center/cover no-repeat"><span>${x.label}</span></div>`).join('');
+document.getElementById('packages').innerHTML=s.packages.map(x=>`<div class="price-card ${x.featured?'featured':''}"><h3>${x.name}</h3><div class="price metal">${x.price}</div><ul>${x.items.map(i=>`<li>${i}</li>`).join('')}</ul><a class="btn ${x.featured?'btn-primary':'btn-secondary'}" href="${s.primaryButtonLink}">${x.button}</a></div>`).join('');
+document.getElementById('faqs').innerHTML=s.faqs.map((x,i)=>`<details ${i===0?'open':''}><summary>${x.question}</summary><p>${x.answer}</p></details>`).join('');
+document.getElementById('email').href=`mailto:${s.email}`;document.getElementById('email').textContent=s.emailButtonText;document.getElementById('instagram').href=s.instagram;document.getElementById('tiktok').href=s.tiktok;document.getElementById('youtube').href=s.youtube;document.getElementById('footerText').textContent=s.footerText;
+}
+loadSite();
