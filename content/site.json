@@ -1,20 +1,20 @@
 {
   "secondaryButtonLink": "#services",
-  "aboutKicker": "About Fiaz",
+  "aboutKicker": "About Fiaz Ali",
   "heroImage": "/images/uploads/img_1760.jpeg",
-  "primaryButtonText": "Wagwan",
+  "primaryButtonText": "Book Free Consultation",
   "resultsTitle": "Receipts, not promises.",
   "faqTitle": "Before you ask...",
   "finalTitle": "Stop starting over.",
   "resultsText": "Add your client transformations, strength milestones, screenshots or training photos here.",
-  "heroLine1": "Build a body",
+  "heroLine1": "Become the ",
   "goldColor": "#f4d77e",
   "youtube": "https://youtube.com/@FiazAli",
   "finalText": "Book a free consultation and letâs build a plan that actually fits your life.",
-  "heroLine2": "that refuses",
+  "heroLine2": "Version of You ",
   "buttonTextColor": "#ffffff",
-  "heroLine3": "to quit.",
-  "heroText": "Lose fat. Build muscle. Get brutally strong. Coaching for real people who are done with starting over every Monday.",
+  "heroLine3": "Nobody Can Ignore",
+  "heroText": "This is personal training for people who are done starting over. Build strength, strip body fat, move better, and develop the discipline to become someone you actually respect. No gimmicks. No soft promises. Just expert coaching, hard work, and a body built to carry you through life with confidence, power, and presence.\n",
   "footerText": "Â© 2026 Fiaz Ali Coaching. All rights reserved.",
   "faqKicker": "Questions",
   "resultsKicker": "Results",
@@ -66,13 +66,13 @@
   "aboutImage": "/images/uploads/16b891ee-7b46-462f-8d6c-194e223519d7.png",
   "primaryButtonLink": "#contact",
   "aboutPoints": [
-    "Training built around your body, your goal and your current ability.",
-    "Nutrition that creates results without turning your life into boiled chicken prison.",
-    "Accountability, standards and honest coaching when motivation disappears."
+    "Training Built Around You - A structured plan designed for your body, your ability, your goals, and your lifestyle.",
+    "Nutrition That Gets Results - Simple, realistic guidance that helps you lose fat, build muscle, and still live like a normal human being.",
+    "Accountability That Keeps You Moving - Honest coaching, clear standards, and support when motivation disappears and real life gets messy."
   ],
   "servicesKicker": "Coaching Options",
   "pricingTitle": "Pick the support you need.",
-  "brandName": "Fiaz Ali junt",
+  "brandName": "Fiaz Ali",
   "testimonialKicker": "Client Words",
   "instagram": "https://instagram.com/YOUR_INSTAGRAM",
   "secondaryButtonText": "View Coaching Options",
@@ -109,11 +109,11 @@
     },
     {
       "image": "/images/uploads/client2.svg",
-      "label": "Strength Milestone"
+      "label": "Transformation Photo"
     },
     {
       "image": "/images/uploads/client3.svg",
-      "label": "Client Win"
+      "label": "Transformation Photo"
     }
   ],
   "pricingKicker": "Packages",
@@ -121,7 +121,7 @@
   "bannerText": "Strength over skinny. Consistency over perfection. Results over excuses.",
   "servicesTitle": "Choose your level.",
   "tiktok": "https://tiktok.com/@YOUR_TIKTOK",
-  "aboutText": "I help people lose fat, build muscle and become stronger than they thought possible. My coaching is built around real life, not perfect conditions.",
+  "aboutText": "I help busy men and women lose body fat, build strength, improve confidence, and take back control of their health without extreme diets or unrealistic routines. My coaching is built around your body, your lifestyle, and your goals, so the plan actually works in the real world, not just on paper.",
   "emailButtonText": "Email Me",
   "seoTitle": "Fiaz Ali Coaching | Personal Trainer & Online Coach",
   "email": "your-email@example.com",
@@ -146,33 +146,38 @@
   "mainTextColor": "#ffffff",
   "services": [
     {
-      "small": "01 / In Person",
+      "small": "01 / In-Person Coaching",
       "title": "1-to-1 Personal Training",
-      "text": "Face-to-face coaching for fat loss, strength, technique, confidence and accountability."
+      "text": "Private one-to-one coaching designed to help you lose fat, build strength, and move with confidence. Every session is tailored to your body, your goals, and your current level, all delivered in a private gym setting with no gym membership required."
     },
     {
-      "small": "02 / Online",
-      "title": "Online Coaching",
-      "text": "Custom training, nutrition targets, weekly check-ins and support wherever you train."
+      "small": "02 / Online Workout Plan",
+      "title": "Personalised Workout Plan",
+      "text": "A custom workout plan delivered through my app, designed to help you train with structure, purpose, and progression. You’ll track your sessions, follow the plan independently, and receive a weekly check-in so your programme can be updated as you improve. Ideal if you only need expert training structure without nutrition or daily support"
     },
     {
-      "small": "03 / Full Support",
-      "title": "Transformation Coaching",
-      "text": "For people who need proper structure, standards and direct coaching instead of another random plan."
+      "small": "03 / Nutrition Only",
+      "title": "Meal-by-Meal Nutrition Coaching",
+      "text": "Designed for people who already train but need help getting their nutrition under control. You’ll send your meals for review, and I’ll guide you meal by meal to improve your food choices, portions, protein intake, calories, supplements, and overall consistency. This option includes nutrition support only, with no training plan or WhatsApp support."
+    },
+    {
+      "small": "04 / Full Support Online Coaching",
+      "title": "Complete Transformation Coaching",
+      "text": "For clients who need more than just a plan. This package includes a personalised workout programme that evolves as you get stronger, full meal-by-meal nutrition coaching, supplement guidance, habit building, and ongoing WhatsApp support. We’ll work together to build the discipline, confidence, mindset, and structure needed to lose fat, build strength, overcome setbacks, and create lasting change."
     }
   ],
   "stats": [
     {
-      "number": "17+",
-      "label": "Years Coaching"
+      "number": "17+ Years Experience",
+      "label": "Thousands of client's transformed"
     },
     {
-      "number": "NASM",
-      "label": "Certified Specialist"
+      "number": "Built on Results",
+      "label": "Not Empty Motivation"
     },
     {
-      "number": "UK",
-      "label": "In-Person + Online"
+      "number": "A Stronger Body. A Sharper Mind. A Higher Standard.\n\n",
+      "label": "For People Who Are Done Starting Over."
     }
   ],
   "seoDescription": "Transform your body this year with Fiaz Ali. No gimmicks. No crash diets. Just expert personal training and online coaching to help you lose fat, build muscle, get stronger, and achieve results that last."
