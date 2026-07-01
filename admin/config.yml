@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: thejackal262/Fiaz-website-clean
   branch: main
 
 media_folder: "images/uploads"
