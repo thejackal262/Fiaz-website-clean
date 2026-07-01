@@ -2,7 +2,9 @@ backend:
   name: github
   repo: thejackal262/Fiaz-website-clean
   branch: main
-
+  base_url: https://fiaz-admin-oauth.thejackal262.workers.dev
+  auth_endpoint: /auth
+  
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
