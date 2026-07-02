@@ -10,12 +10,12 @@
   "heroLine1": "Build a body",
   "goldColor": "#f4d77e",
   "youtube": "https://youtube.com/@FiazAli",
-  "finalText": "Book a free consultation and let\u2019s build a plan that actually fits your life.",
+  "finalText": "Book a free consultation and let’s build a plan that actually fits your life.",
   "heroLine2": "that refuses",
   "buttonTextColor": "#ffffff",
   "heroLine3": "to quit.",
   "heroText": "Lose fat. Build muscle. Get brutally strong. Coaching for real people who are done with starting over every Monday.",
-  "footerText": "\u00a9 2026 Fiaz Ali Coaching. All rights reserved.",
+  "footerText": "© 2026 Fiaz Ali Coaching. All rights reserved.",
   "faqKicker": "Questions",
   "resultsKicker": "Results",
   "finalKicker": "Ready?",
@@ -28,7 +28,7 @@
   "packages": [
     {
       "name": "Training Only",
-      "price": "From \u00a379/mo",
+      "price": "From £79/mo",
       "featured": false,
       "button": "Enquire",
       "items": [
@@ -40,7 +40,7 @@
     },
     {
       "name": "Training + Nutrition",
-      "price": "From \u00a3129/mo",
+      "price": "From £129/mo",
       "featured": true,
       "button": "Start Here",
       "items": [
@@ -175,117 +175,5 @@
       "label": "In-Person + Online"
     }
   ],
-  "seoDescription": "Transform your body this year with Fiaz Ali. No gimmicks. No crash diets. Just expert personal training and online coaching to help you lose fat, build muscle, get stronger, and achieve results that last.",
-  "_builder": {
-    "sectionOrder": [
-      "about",
-      "services",
-      "results",
-      "pricing",
-      "testimonial",
-      "faq",
-      "contact"
-    ],
-    "hiddenSections": []
-  },
-  "layout": {
-    "maxWidth": 1180,
-    "sectionPadding": 110,
-    "mobileSectionPadding": 74,
-    "heroHeight": 100,
-    "heroOverlayStrength": 82,
-    "heroImageFocusX": 72,
-    "heroImageFocusY": 50,
-    "heroTextAlign": "left",
-    "aboutImagePosition": "left",
-    "aboutImageWidth": 45,
-    "aboutTextWidth": 55,
-    "aboutGap": 54,
-    "aboutImageHeight": 580,
-    "servicesColumns": 3,
-    "servicesCardPadding": 34,
-    "servicesCardRadius": 28,
-    "resultsColumns": 3,
-    "resultsCardHeight": 420,
-    "pricingColumns": 3,
-    "pricingCardPadding": 34,
-    "pricingCardRadius": 28,
-    "buttonRadius": 16,
-    "buttonHeight": 60
-  },
-  "imageControls": {
-    "heroImage": {
-      "x": 72,
-      "y": 50,
-      "zoom": 100
-    },
-    "aboutImage": {
-      "x": 50,
-      "y": 50,
-      "zoom": 100
-    },
-    "results": {
-      "0": {
-        "x": 50,
-        "y": 50,
-        "zoom": 100
-      },
-      "1": {
-        "x": 50,
-        "y": 50,
-        "zoom": 100
-      },
-      "2": {
-        "x": 50,
-        "y": 50,
-        "zoom": 100
-      }
-    }
-  },
-  "textStyles": {
-    "heroLine1": {
-      "scale": 100
-    },
-    "heroLine2": {
-      "scale": 100
-    },
-    "heroLine3": {
-      "scale": 100
-    },
-    "heroText": {
-      "scale": 100
-    },
-    "aboutTitle": {
-      "scale": 100
-    },
-    "aboutText": {
-      "scale": 100
-    },
-    "servicesTitle": {
-      "scale": 100
-    },
-    "servicesText": {
-      "scale": 100
-    },
-    "resultsTitle": {
-      "scale": 100
-    },
-    "resultsText": {
-      "scale": 100
-    },
-    "pricingTitle": {
-      "scale": 100
-    },
-    "pricingText": {
-      "scale": 100
-    },
-    "finalTitle": {
-      "scale": 100
-    },
-    "finalText": {
-      "scale": 100
-    }
-  },
-  "elementStyles": {},
-  "deletedElements": []
+  "seoDescription": "Transform your body this year with Fiaz Ali. No gimmicks. No crash diets. Just expert personal training and online coaching to help you lose fat, build muscle, get stronger, and achieve results that last."
 }

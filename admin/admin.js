@@ -1,254 +1,40 @@
-let data = null;
-let selected = null;
-let password = localStorage.getItem('fiaz_admin_password') || '';
-let history = [];
-let redoStack = [];
-let draftTimer = null;
-const $ = id => document.getElementById(id);
-
-function clone(x){return JSON.parse(JSON.stringify(x))}
-function pushHistory(){history.push(clone(data)); if(history.length>80) history.shift(); redoStack=[]}
-function status(msg){$('status').textContent=msg}
-function toast(msg){const t=$('toast');t.textContent=msg;t.classList.remove('hidden');setTimeout(()=>t.classList.add('hidden'),2400)}
-function api(path,opts={}){return fetch(path,{...opts,headers:{'Content-Type':'application/json','X-Admin-Password':password,...(opts.headers||{})}}).then(async r=>{if(!r.ok)throw new Error(await r.text());return r.json()})}
-function autosave(){clearTimeout(draftTimer);draftTimer=setTimeout(()=>{localStorage.setItem('jackal_layers_draft',JSON.stringify(data));status('Draft saved locally. Publish when ready.')},250)}
-function cssText(styles={}){return Object.entries(styles).map(([k,v])=>`${k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}:${v}`).join(';')}
-
-async function login(){
-  try{
-    password = $('password').value.trim();
-    const res = await fetch('/content/layers.json?cache='+Date.now());
-    data = await res.json();
-    const draft=localStorage.getItem('jackal_layers_draft');
-    if(draft && confirm('Load local draft?')) data=JSON.parse(draft);
-    localStorage.setItem('fiaz_admin_password',password);
-    $('login').classList.add('hidden'); $('app').classList.remove('hidden');
-    render(); status('Loaded. Every item is now a layer.');
-  }catch(e){$('loginMsg').textContent='Login failed or layers.json missing.'}
-}
-async function autoLogin(){
-  if(!password) return;
-  try{
-    const res=await fetch('/content/layers.json?cache='+Date.now());
-    data=await res.json();
-    const draft=localStorage.getItem('jackal_layers_draft');
-    if(draft && confirm('Load local draft?')) data=JSON.parse(draft);
-    $('login').classList.add('hidden'); $('app').classList.remove('hidden');
-    render();
-  }catch(e){}
-}
-
-function render(){
-  const canvas=$('canvas');
-  canvas.style.minHeight=(data.canvas?.desktop?.height||5200)+'px';
-  canvas.innerHTML='';
-  (data.sections||[]).forEach(sec=>{
-    if(sec.hidden) return;
-    const el=document.createElement('section');
-    el.className='section-layer';
-    el.dataset.sectionId=sec.id;
-    el.style.cssText=`top:${sec.y}px;height:${sec.h}px;z-index:${sec.z||1};background:${sec.background||'transparent'};`;
-    canvas.appendChild(el);
-  });
-  (data.layers||[]).forEach(l=>{
-    if(l.hidden) return;
-    const sec=(data.sections||[]).find(s=>s.id===l.section);
-    const parent=canvas.querySelector(`[data-section-id="${l.section}"]`)||canvas;
-    const el=document.createElement(l.type==='button'?'a':'div');
-    el.className='layer '+l.type;
-    el.dataset.id=l.id;
-    if(l.type==='button') el.href=l.href||'#';
-    let st=`left:${l.x}px;top:${l.y-(sec?.y||0)}px;width:${l.w}px;height:${l.h}px;z-index:${l.z||1};${cssText(l.styles||{})}`;
-    if(l.type==='image'){
-      const c=l.crop||{x:50,y:50,zoom:100};
-      const size=l.mode==='contain'?'contain':`${c.zoom||100}% auto`;
-      st+=`background-image:url('${l.src||''}');background-position:${c.x??50}% ${c.y??50}%;background-size:${size};`;
-    }
-    el.style.cssText=st;
-    if(l.type!=='image' && l.type!=='card') el.textContent=l.content||'';
-    el.onclick=e=>{e.preventDefault();e.stopPropagation();selectLayer(l.id)};
-    bindMove(el,l.id);
-    bindImageCrop(el,l.id);
-    parent.appendChild(el);
-  });
-  renderLayersPanel();
-}
-
-function getLayer(id){return data.layers.find(l=>l.id===id)}
-function getEl(id){return document.querySelector(`.layer[data-id="${CSS.escape(id)}"]`)}
-
-function selectLayer(id){
-  clearSelection();
-  const l=getLayer(id), el=getEl(id);
-  if(!l||!el) return;
-  selected=id;
-  el.classList.add('selected');
-  addHandles(el,id);
-  showToolbox(l);
-}
-function clearSelection(){
-  document.querySelectorAll('.layer.selected').forEach(el=>el.classList.remove('selected'));
-  document.querySelectorAll('.handle').forEach(h=>h.remove());
-  selected=null;
-}
-function showToolbox(l){
-  $('toolbox').classList.remove('hidden');
-  $('editTextBtn').style.display=['text','button'].includes(l.type)?'inline-flex':'none';
-  $('biggerBtn').style.display=['text','button','image'].includes(l.type)?'inline-flex':'none';
-  $('smallerBtn').style.display=['text','button','image'].includes(l.type)?'inline-flex':'none';
-  $('replaceBtn').style.display=l.type==='image'?'inline-flex':'none';
-}
-function addHandles(el,id){
-  ['br','r','b'].forEach(cls=>{
-    const h=document.createElement('div');
-    h.className='handle '+cls;
-    h.onmousedown=e=>startResize(e,id,cls);
-    el.appendChild(h);
-  });
-}
-
-function bindMove(el,id){
-  el.onmousedown=e=>{
-    if(e.target.classList.contains('handle')) return;
-    e.preventDefault(); selectLayer(id); pushHistory();
-    const l=getLayer(id), sec=(data.sections||[]).find(s=>s.id===l.section);
-    if(l.locked){toast('Layer is locked');return;}
-    const start={x:e.clientX,y:e.clientY,lx:l.x,ly:l.y};
-    const move=ev=>{
-      l.x=Math.round(start.lx+ev.clientX-start.x);
-      l.y=Math.round(start.ly+ev.clientY-start.y);
-      el.style.left=l.x+'px';
-      el.style.top=(l.y-(sec?.y||0))+'px';
-      autosave(); status('Moved. Publish when ready.');
-    };
-    const up=()=>{document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',up)};
-    document.addEventListener('mousemove',move);
-    document.addEventListener('mouseup',up);
-  };
-}
-function startResize(e,id,handle){
-  e.preventDefault();e.stopPropagation();pushHistory();
-  const l=getLayer(id), el=getEl(id);
-  const start={x:e.clientX,y:e.clientY,w:l.w,h:l.h};
-  const move=ev=>{
-    let w=start.w+ev.clientX-start.x, h=start.h+ev.clientY-start.y;
-    if(handle==='r') h=start.h;
-    if(handle==='b') w=start.w;
-    l.w=Math.max(30,Math.round(w)); l.h=Math.max(20,Math.round(h));
-    el.style.width=l.w+'px'; el.style.height=l.h+'px';
-    autosave(); status('Resized. Publish when ready.');
-  };
-  const up=()=>{document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',up)};
-  document.addEventListener('mousemove',move);
-  document.addEventListener('mouseup',up);
-}
-function bindImageCrop(el,id){
-  el.ondblclick=e=>{
-    const l=getLayer(id); if(!l || l.type!=='image') return;
-    e.preventDefault(); pushHistory();
-    l.crop={x:50,y:50,zoom:100}; render(); selectLayer(id); autosave(); toast('Image crop reset');
-  };
-}
-
-function editText(){
-  const l=getLayer(selected); if(!l)return;
-  $('textEditor').value=l.content||'';
-  $('textModal').classList.remove('hidden');
-}
-function applyText(){
-  const l=getLayer(selected); if(!l)return;
-  pushHistory(); l.content=$('textEditor').value; $('textModal').classList.add('hidden'); render(); selectLayer(l.id); autosave();
-}
-function scaleText(amount){
-  const l=getLayer(selected); if(!l)return;
-  pushHistory();
-  const current=parseInt(l.styles.fontSize||'20',10);
-  l.styles.fontSize=Math.max(8,current+amount)+'px';
-  render(); selectLayer(l.id); autosave();
-}
-function imageZoom(amount){
-  const l=getLayer(selected); if(!l || l.type!=='image') return;
-  pushHistory();
-  l.crop=l.crop||{x:50,y:50,zoom:100};
-  l.crop.zoom=Math.max(20,Math.min(300,(l.crop.zoom||100)+amount));
-  render(); selectLayer(l.id); autosave();
-}
-async function replaceImage(file){
-  const l=getLayer(selected); if(!file||!l||l.type!=='image')return;
-  status('Uploading...');
-  const b64=await fileToBase64(file);
-  const res=await api('/api/upload',{method:'POST',body:JSON.stringify({name:file.name,data:b64.split(',')[1]})});
-  pushHistory(); l.src=res.path; render(); selectLayer(l.id); autosave(); status('Image replaced. Publish when ready.');
-}
-function fileToBase64(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)})}
-function z(amount){const l=getLayer(selected); if(!l)return; pushHistory(); l.z=(l.z||1)+amount; render(); selectLayer(l.id); autosave();}
-function lock(){const l=getLayer(selected); if(!l)return; pushHistory(); l.locked=!l.locked; autosave(); toast(l.locked?'Locked':'Unlocked')}
-function hide(){const l=getLayer(selected); if(!l)return; pushHistory(); l.hidden=true; $('toolbox').classList.add('hidden'); render(); autosave();}
-function duplicate(){
-  const l=getLayer(selected); if(!l)return; pushHistory();
-  const n=clone(l); n.id=l.id+'-copy-'+Date.now(); n.x+=30; n.y+=30; n.z=(l.z||1)+1;
-  data.layers.push(n); render(); selectLayer(n.id); autosave();
-}
-function del(){const l=getLayer(selected); if(!l)return; pushHistory(); data.layers=data.layers.filter(x=>x.id!==l.id); $('toolbox').classList.add('hidden'); render(); autosave();}
-function addLayer(type){
-  pushHistory();
-  const id=type+'-'+Date.now();
-  const base={id,type,section:'hero',x:120,y:120,w:260,h:80,z:100,locked:false,hidden:false,styles:{}};
-  if(type==='text'){base.content='New text';base.styles={fontSize:'42px',fontWeight:'900',color:'#ffffff'}}
-  if(type==='button'){base.content='Button';base.href='#';base.styles={background:'#f4d77e',color:'#050505',fontWeight:'900',borderRadius:'14px'}}
-  if(type==='card'){base.styles={background:'#111',border:'1px solid rgba(255,255,255,.15)',borderRadius:'24px'}}
-  data.layers.push(base); render(); selectLayer(id); autosave();
-}
-function renderLayersPanel(){
-  $('layersList').innerHTML=[...data.layers].sort((a,b)=>(b.z||0)-(a.z||0)).map(l=>`
-    <div class="layer-row" data-row="${l.id}">
-      <span>${l.hidden?'👁️‍🗨️':'☰'} ${l.id}</span><small>${l.type}</small>
-    </div>`).join('');
-  document.querySelectorAll('[data-row]').forEach(r=>r.onclick=()=>selectLayer(r.dataset.row));
-}
-
-function undo(){if(!history.length)return;redoStack.push(clone(data));data=history.pop();render();status('Undo')}
-function redo(){if(!redoStack.length)return;history.push(clone(data));data=redoStack.pop();render();status('Redo')}
-async function publish(){
-  try{
-    status('Publishing...');
-    await api('/api/layers',{method:'POST',body:JSON.stringify(data,null,2)});
-    localStorage.removeItem('jackal_layers_draft');
-    toast('Published. Give Cloudflare 30-60 seconds.');
-    status('Published.');
-  }catch(e){status('Publish failed: '+e.message)}
-}
-
-$('loginBtn').onclick=login;
-$('publishBtn').onclick=publish;
-$('editTextBtn').onclick=editText;
-$('applyTextBtn').onclick=applyText;
-$('cancelTextBtn').onclick=()=>$('textModal').classList.add('hidden');
-$('biggerBtn').onclick=()=>{
-  const l=getLayer(selected);
-  if(!l) return;
-  if(l.type === 'image') imageZoom(10);
-  else scaleText(6);
-};
-$('smallerBtn').onclick=()=>{
-  const l=getLayer(selected);
-  if(!l) return;
-  if(l.type === 'image') imageZoom(-10);
-  else scaleText(-6);
-};
-$('replaceBtn').onclick=()=>$('imageUpload').click();
-$('imageUpload').onchange=e=>replaceImage(e.target.files[0]);
-$('frontBtn').onclick=()=>z(1);
-$('backBtn').onclick=()=>z(-1);
-$('lockBtn').onclick=lock;
-$('hideBtn').onclick=hide;
-$('duplicateBtn').onclick=duplicate;
-$('deleteBtn').onclick=del;
-$('doneBtn').onclick=()=>{$('toolbox').classList.add('hidden');clearSelection()};
-$('addTextBtn').onclick=()=>addLayer('text');
-$('addButtonBtn').onclick=()=>addLayer('button');
-$('addBoxBtn').onclick=()=>addLayer('card');
-$('layersBtn').onclick=()=>$('layersPanel').classList.toggle('hidden');
-$('undoBtn').onclick=undo;
-$('redoBtn').onclick=redo;
-autoLogin();
+const SECTIONS = [
+  {id:'basics', label:'Basics'}, {id:'hero', label:'Hero'}, {id:'about', label:'About'},
+  {id:'services', label:'Services'}, {id:'results', label:'Results'}, {id:'pricing', label:'Pricing'},
+  {id:'testimonial', label:'Testimonial'}, {id:'faq', label:'FAQ'}, {id:'contact', label:'Contact'}, {id:'style', label:'Colours'}
+];
+let data = {}; let current = 'basics'; let password = localStorage.getItem('fiaz_admin_password') || '';
+const $ = (id)=>document.getElementById(id);
+const field = (key,label,type='text',help='') => `<div class="field"><label>${label}</label>${type==='textarea'?`<textarea data-key="${key}">${esc(data[key]||'')}</textarea>`:type==='color'?`<input data-key="${key}" type="color" value="${esc(data[key]||'#000000')}">`:`<input data-key="${key}" value="${esc(data[key]||'')}">`}${help?`<div class="help">${help}</div>`:''}</div>`;
+const imageField = (key,label)=>`<div class="field"><label>${label}</label><input data-key="${key}" value="${esc(data[key]||'')}"><input type="file" accept="image/*" data-upload="${key}"><img class="preview" src="${esc(data[key]||'')}" onerror="this.style.display='none'" /></div>`;
+function esc(v){return String(v).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+function getPassword(){return password || $('password').value.trim()}
+async function api(path, opts={}){const res=await fetch(path,{...opts,headers:{'Content-Type':'application/json','X-Admin-Password':getPassword(),...(opts.headers||{})}}); if(!res.ok) throw new Error(await res.text()); return res.json();}
+async function login(){try{password=$('password').value.trim(); const r=await api('/api/content'); data=r.data; localStorage.setItem('fiaz_admin_password',password); $('login').classList.add('hidden'); $('editor').classList.remove('hidden'); renderTabs(); render(); setStatus('Logged in. Let’s cook.',true)}catch(e){$('loginMsg').textContent='Login failed. Check the password.'}}
+async function load(){if(!password) return; try{const r=await api('/api/content'); data=r.data; $('login').classList.add('hidden'); $('editor').classList.remove('hidden'); renderTabs(); render();}catch(e){localStorage.removeItem('fiaz_admin_password');}}
+function renderTabs(){ $('tabs').innerHTML=SECTIONS.map(s=>`<button type="button" class="tab ${s.id===current?'active':''}" data-tab="${s.id}">${s.label}</button>`).join(''); document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{collect(); current=b.dataset.tab; renderTabs(); render();});}
+function panel(title,inner,full=false){return `<section class="panel ${full?'full':''}"><h2>${title}</h2>${inner}</section>`}
+function render(){let html='';
+ if(current==='basics') html=panel('SEO & Branding', field('seoTitle','Browser title')+field('seoDescription','Google description','textarea')+field('brandName','Business name')+imageField('logo','Logo'))+panel('Navigation', listEditor('navLinks',['label','url']));
+ if(current==='hero') html=panel('Hero section', imageField('heroImage','Hero photo')+field('heroBadge','Small badge text')+field('heroLine1','Heading line 1')+field('heroLine2','Heading line 2 - gold text')+field('heroLine3','Heading line 3')+field('heroText','Hero paragraph','textarea')+field('primaryButtonText','Main button text')+field('primaryButtonLink','Main button link')+field('secondaryButtonText','Second button text')+field('secondaryButtonLink','Second button link'),true)+panel('Stats', listEditor('stats',['number','label']),true);
+ if(current==='about') html=panel('About section', imageField('aboutImage','About photo')+field('aboutKicker','Small heading')+field('aboutTitle','Main heading')+field('aboutText','Paragraph','textarea'),true)+panel('Bullet points', simpleList('aboutPoints'),true);
+ if(current==='services') html=panel('Services intro', field('servicesKicker','Small heading')+field('servicesTitle','Main heading')+field('servicesText','Paragraph','textarea')+field('bannerText','Banner text'),true)+panel('Services', listEditor('services',['small','title','text']),true);
+ if(current==='results') html=panel('Results intro', field('resultsKicker','Small heading')+field('resultsTitle','Main heading')+field('resultsText','Paragraph','textarea'),true)+panel('Result cards', resultEditor(),true);
+ if(current==='pricing') html=panel('Pricing intro', field('pricingKicker','Small heading')+field('pricingTitle','Main heading')+field('pricingText','Paragraph','textarea'),true)+panel('Packages', packageEditor(),true);
+ if(current==='testimonial') html=panel('Testimonial', field('testimonialKicker','Small heading')+field('testimonialTitle','Main heading')+field('testimonialText','Testimonial text','textarea')+field('testimonialName','Client name'),true);
+ if(current==='faq') html=panel('FAQ heading', field('faqKicker','Small heading')+field('faqTitle','Main heading'),true)+panel('Questions', listEditor('faqs',['question','answer']),true);
+ if(current==='contact') html=panel('Final CTA & Links', field('finalKicker','Small heading')+field('finalTitle','Main heading')+field('finalText','Paragraph','textarea')+field('email','Email address')+field('emailButtonText','Email button text')+field('instagram','Instagram link')+field('tiktok','TikTok link')+field('youtube','YouTube link')+field('footerText','Footer text'),true);
+ if(current==='style') html=panel('Brand colours', ['backgroundColor','cardColor','mainTextColor','bodyTextColor','goldColor','buttonTextColor'].map(k=>field(k,k.replace(/Color/,' colour'),'color')).join(''),true);
+ $('form').innerHTML=html; wireUploads();}
+function simpleList(key){data[key]=data[key]||[];return `<div data-list="${key}">${data[key].map((v,i)=>`<div class="list-item"><textarea data-arr="${key}" data-i="${i}">${esc(v)}</textarea><div class="mini-actions"><button type="button" class="danger" onclick="removeItem('${key}',${i})">Remove</button></div></div>`).join('')}</div><button type="button" class="add" onclick="addItem('${key}','')">Add item</button>`}
+function listEditor(key,fields){data[key]=data[key]||[];return data[key].map((obj,i)=>`<div class="list-item">${fields.map(f=>`<div class="field"><label>${f}</label><textarea data-obj="${key}" data-i="${i}" data-f="${f}">${esc(obj[f]||'')}</textarea></div>`).join('')}<div class="mini-actions"><button type="button" class="danger" onclick="removeItem('${key}',${i})">Remove</button></div></div>`).join('')+`<button type="button" class="add" onclick="addItem('${key}',{})">Add item</button>`}
+function resultEditor(){data.results=data.results||[];return data.results.map((obj,i)=>`<div class="list-item"><div class="row"><div class="field"><label>Label</label><input data-obj="results" data-i="${i}" data-f="label" value="${esc(obj.label||'')}"></div><div class="field"><label>Image</label><input data-obj="results" data-i="${i}" data-f="image" value="${esc(obj.image||'')}"><input type="file" accept="image/*" data-upload-list="results" data-i="${i}" data-f="image"><img class="preview" src="${esc(obj.image||'')}" onerror="this.style.display='none'"></div></div><button type="button" class="danger" onclick="removeItem('results',${i})">Remove</button></div>`).join('')+`<button type="button" class="add" onclick="addItem('results',{image:'/images/uploads/client1.svg',label:'New result'})">Add result</button>`}
+function packageEditor(){data.packages=data.packages||[];return data.packages.map((p,i)=>`<div class="list-item"><div class="row three"><div class="field"><label>Name</label><input data-obj="packages" data-i="${i}" data-f="name" value="${esc(p.name||'')}"></div><div class="field"><label>Price</label><input data-obj="packages" data-i="${i}" data-f="price" value="${esc(p.price||'')}"></div><div class="field"><label>Button</label><input data-obj="packages" data-i="${i}" data-f="button" value="${esc(p.button||'')}"></div></div><div class="field"><label>Bullet points, one per line</label><textarea data-package-items="${i}">${esc((p.items||[]).join('\n'))}</textarea></div><label><input type="checkbox" data-package-featured="${i}" ${p.featured?'checked':''}> Featured package</label><div class="mini-actions"><button type="button" class="danger" onclick="removeItem('packages',${i})">Remove</button></div></div>`).join('')+`<button type="button" class="add" onclick="addItem('packages',{name:'New package',price:'£',button:'Enquire',items:['Point one'],featured:false})">Add package</button>`}
+function collect(){document.querySelectorAll('[data-key]').forEach(el=>data[el.dataset.key]=el.value);document.querySelectorAll('[data-arr]').forEach(el=>data[el.dataset.arr][+el.dataset.i]=el.value);document.querySelectorAll('[data-obj]').forEach(el=>data[el.dataset.obj][+el.dataset.i][el.dataset.f]=el.value);document.querySelectorAll('[data-package-items]').forEach(el=>data.packages[+el.dataset.packageItems].items=el.value.split('\n').filter(Boolean));document.querySelectorAll('[data-package-featured]').forEach(el=>data.packages[+el.dataset.packageFeatured].featured=el.checked);}
+window.addItem=(key,val)=>{collect();data[key].push(typeof val==='object'?JSON.parse(JSON.stringify(val)):val);render()}; window.removeItem=(key,i)=>{collect();data[key].splice(i,1);render()};
+function setStatus(msg,ok){$('status').textContent=msg;$('status').className=ok?'status-ok':'status-bad'}
+async function save(){collect(); setStatus('Saving...',true); try{await api('/api/content',{method:'POST',body:JSON.stringify(data)}); setStatus('Saved. Cloudflare will update in about a minute.',true)}catch(e){setStatus('Save failed: '+e.message,false)}}
+function wireUploads(){document.querySelectorAll('[data-upload]').forEach(inp=>inp.onchange=async()=>upload(inp.files[0],p=>{data[inp.dataset.upload]=p;render()}));document.querySelectorAll('[data-upload-list]').forEach(inp=>inp.onchange=async()=>upload(inp.files[0],p=>{data[inp.dataset.uploadList][+inp.dataset.i][inp.dataset.f]=p;render()}));}
+async function upload(file,done){if(!file)return; setStatus('Uploading image...',true); const b64=await toBase64(file); const r=await api('/api/upload',{method:'POST',body:JSON.stringify({name:file.name,type:file.type,data:b64})}); done(r.path); setStatus('Image uploaded. Remember to save website.',true)}
+function toBase64(file){return new Promise((resolve,reject)=>{const fr=new FileReader();fr.onload=()=>resolve(fr.result.split(',')[1]);fr.onerror=reject;fr.readAsDataURL(file);});}
+$('loginBtn').onclick=login; $('saveBtn').onclick=save; load();

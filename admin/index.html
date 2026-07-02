@@ -1,77 +1,38 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="robots" content="noindex"/>
-<title>Jackal Layer Builder</title>
-<link rel="stylesheet" href="/admin/admin.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Fiaz Website Admin</title>
+  <link rel="stylesheet" href="/admin/admin.css" />
 </head>
 <body>
-<div id="login" class="login">
-  <div class="login-card">
-    <h1>Jackal Layer Builder</h1>
-    <p>Every item is a layer. Move it. Resize it. Delete it. Publish.</p>
-    <input id="password" type="password" placeholder="Admin password"/>
-    <button id="loginBtn">Login</button>
-    <small id="loginMsg"></small>
-  </div>
-</div>
+  <main class="app">
+    <section id="login" class="login card">
+      <h1>Fiaz Website Admin</h1>
+      <p>Edit your website without touching GitHub. Finally. The nerd cupboard is closed.</p>
+      <input id="password" type="password" placeholder="Admin password" autocomplete="current-password" />
+      <button id="loginBtn">Login</button>
+      <small id="loginMsg"></small>
+    </section>
 
-<div id="app" class="app hidden">
-  <div class="topbar">
-    <div><strong>Jackal Layer Builder</strong><span id="status">Ready.</span></div>
-    <div class="toolbar">
-      <button id="addTextBtn">Add text</button>
-      <button id="addButtonBtn">Add button</button>
-      <button id="addBoxBtn">Add box</button>
-      <button id="layersBtn">Layers</button>
-      <button id="undoBtn">Undo</button>
-      <button id="redoBtn">Redo</button>
-      <button id="publishBtn" class="publish">Publish</button>
-    </div>
-  </div>
+    <section id="editor" class="editor hidden">
+      <header class="topbar">
+        <div>
+          <h1>Website Editor</h1>
+          <p id="status">Loaded. Edit, save, done.</p>
+        </div>
+        <div class="actions">
+          <a class="ghost" href="/" target="_blank">View site</a>
+          <button id="saveBtn">Save website</button>
+        </div>
+      </header>
 
-  <div id="layersPanel" class="layers-panel hidden">
-    <h2>Layers</h2>
-    <div id="layersList"></div>
-  </div>
-
-  <main class="workspace">
-    <div id="canvasWrap">
-      <div id="canvas"></div>
-    </div>
+      <nav class="tabs" id="tabs"></nav>
+      <form id="form" class="grid"></form>
+    </section>
   </main>
-
-  <div id="toolbox" class="toolbox hidden">
-    <button id="editTextBtn">Edit</button>
-    <button id="biggerBtn">Bigger</button>
-    <button id="smallerBtn">Smaller</button>
-    <button id="replaceBtn">Replace image</button>
-    <button id="frontBtn">Front</button>
-    <button id="backBtn">Back</button>
-    <button id="lockBtn">Lock</button>
-    <button id="hideBtn">Hide</button>
-    <button id="duplicateBtn">Duplicate</button>
-    <button id="deleteBtn">Delete</button>
-    <button id="doneBtn">Done</button>
-  </div>
-
-  <input id="imageUpload" type="file" accept="image/*" hidden>
-</div>
-
-<div id="textModal" class="modal hidden">
-  <div class="modal-card">
-    <h2>Edit text</h2>
-    <textarea id="textEditor"></textarea>
-    <div class="modal-actions">
-      <button id="applyTextBtn">Apply</button>
-      <button id="cancelTextBtn" class="ghost">Cancel</button>
-    </div>
-  </div>
-</div>
-
-<div id="toast" class="toast hidden"></div>
-<script src="/admin/admin.js"></script>
+  <script src="/admin/admin.js"></script>
 </body>
 </html>
