@@ -84,6 +84,38 @@
   </div>
 </div>
 
+
+<div id="imageModal" class="modal hidden">
+  <div class="modal-card image-editor-card">
+    <h2 id="imageModalTitle">Edit image</h2>
+    <p class="image-help">Drag the image inside the box to reposition it. Use zoom to crop.</p>
+    <div class="image-stage" id="imageStage">
+      <div class="image-crop-box">
+        <img id="imageEditorImg" draggable="false" alt="">
+      </div>
+    </div>
+    <div class="field">
+      <label>Zoom / crop</label>
+      <div class="range-row">
+        <input type="range" id="imageZoom" min="60" max="220" step="1">
+        <input type="number" id="imageZoomNum" min="60" max="220" step="1">
+      </div>
+    </div>
+    <div class="row">
+      <div class="field"><label>Left / right</label><input type="number" id="imageX" min="0" max="100"></div>
+      <div class="field"><label>Up / down</label><input type="number" id="imageY" min="0" max="100"></div>
+    </div>
+    <div class="field">
+      <label>Replace image</label>
+      <input type="file" id="replaceImageFile" accept="image/*">
+    </div>
+    <div class="modal-actions">
+      <button id="applyImageEdit">Apply image</button>
+      <button id="cancelImageEdit" class="ghost">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <script src="/admin/admin.js"></script>
 </body>
 </html>

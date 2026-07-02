@@ -53,3 +53,20 @@
   .two,.two.about-reverse,.cards,.results,.pricing{grid-template-columns:1fr!important}
   .two.about-reverse .photo{order:0}
 }
+
+/* ===== Jackal Image Control Upgrade ===== */
+.hero{
+  background:
+    linear-gradient(90deg,rgba(3,3,3,1) 0%,rgba(3,3,3,var(--hero-overlay-strength)) 38%,rgba(3,3,3,.48) 68%,rgba(3,3,3,.22) 100%),
+    radial-gradient(circle at 72% 28%,rgba(244,215,126,.22),transparent 22%),
+    var(--hero) var(--hero-img-x,var(--hero-focus-x)) var(--hero-img-y,var(--hero-focus-y))/var(--hero-img-zoom,100%) auto no-repeat!important;
+}
+.photo{
+  background-image:var(--about)!important;
+  background-position:var(--about-img-x,50%) var(--about-img-y,50%)!important;
+  background-size:var(--about-img-zoom,100%) auto!important;
+  background-repeat:no-repeat!important;
+}
+.result{
+  background-size:100% auto;
+}

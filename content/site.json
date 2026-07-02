@@ -211,5 +211,34 @@
     "pricingCardRadius": 28,
     "buttonRadius": 16,
     "buttonHeight": 60
+  },
+  "imageControls": {
+    "heroImage": {
+      "x": 72,
+      "y": 50,
+      "zoom": 100
+    },
+    "aboutImage": {
+      "x": 50,
+      "y": 50,
+      "zoom": 100
+    },
+    "results": {
+      "0": {
+        "x": 50,
+        "y": 50,
+        "zoom": 100
+      },
+      "1": {
+        "x": 50,
+        "y": 50,
+        "zoom": 100
+      },
+      "2": {
+        "x": 50,
+        "y": 50,
+        "zoom": 100
+      }
+    }
   }
 }

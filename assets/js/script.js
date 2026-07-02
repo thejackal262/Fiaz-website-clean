@@ -71,6 +71,15 @@ async function loadSite(){
   document.documentElement.style.setProperty('--btntext', s.buttonTextColor || '#fff');
   document.documentElement.style.setProperty('--hero', `url("${s.heroImage || ''}")`);
   document.documentElement.style.setProperty('--about', `url("${s.aboutImage || ''}")`);
+  const ic = s.imageControls || {};
+  const heroIc = ic.heroImage || {};
+  const aboutIc = ic.aboutImage || {};
+  document.documentElement.style.setProperty('--hero-img-x', (heroIc.x ?? s.layout?.heroImageFocusX ?? 72) + '%');
+  document.documentElement.style.setProperty('--hero-img-y', (heroIc.y ?? s.layout?.heroImageFocusY ?? 50) + '%');
+  document.documentElement.style.setProperty('--hero-img-zoom', (heroIc.zoom ?? 100) + '%');
+  document.documentElement.style.setProperty('--about-img-x', (aboutIc.x ?? 50) + '%');
+  document.documentElement.style.setProperty('--about-img-y', (aboutIc.y ?? 50) + '%');
+  document.documentElement.style.setProperty('--about-img-zoom', (aboutIc.zoom ?? 100) + '%');
 
   applyLayout(s);
   applySectionOrder(s);
@@ -106,7 +115,12 @@ async function loadSite(){
   if(services) services.innerHTML = safeArray(s.services).map(x => `<div class="card"><small>${x.small || ''}</small><h3>${x.title || ''}</h3><p>${x.text || ''}</p></div>`).join('');
 
   const results = document.getElementById('resultsGrid');
-  if(results) results.innerHTML = safeArray(s.results).map(x => `<div class="result" style="background:url('${x.image || ''}') center/cover no-repeat"><span>${x.label || ''}</span></div>`).join('');
+  if(results) results.innerHTML = safeArray(s.results).map((x,i) => {
+    const ric = (s.imageControls && s.imageControls.results && s.imageControls.results[String(i)]) || {};
+    const pos = `${ric.x ?? 50}% ${ric.y ?? 50}%`;
+    const size = `${ric.zoom ?? 100}%`;
+    return `<div class="result" data-image-field="results.${i}.image" style="background-image:url('${x.image || ''}');background-position:${pos};background-size:${size} auto;background-repeat:no-repeat"><span>${x.label || ''}</span></div>`;
+  }).join('');
 
   const packages = document.getElementById('packages');
   if(packages) packages.innerHTML = safeArray(s.packages).map(x => `<div class="price-card ${x.featured ? 'featured' : ''}"><h3>${x.name || ''}</h3><div class="price metal">${x.price || ''}</div><ul>${safeArray(x.items).map(i => `<li>${i}</li>`).join('')}</ul><a class="btn ${x.featured ? 'btn-primary' : 'btn-secondary'}" href="${s.primaryButtonLink || '#contact'}">${x.button || 'Enquire'}</a></div>`).join('');

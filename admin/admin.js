@@ -1,6 +1,9 @@
 let data = {};
 let password = localStorage.getItem('fiaz_admin_password') || '';
 let currentField = null;
+let currentImageField = null;
+let currentImagePath = null;
+let dragState = null;
 const $ = id => document.getElementById(id);
 
 const editableFields = [
@@ -93,6 +96,13 @@ function initialiseData(){
   data._builder = data._builder || {};
   data._builder.sectionOrder = data._builder.sectionOrder || ['about','services','results','pricing','testimonial','faq','contact'];
   data.layout = data.layout || {};
+  data.imageControls = data.imageControls || {};
+  data.imageControls.heroImage = data.imageControls.heroImage || {x:72,y:50,zoom:100};
+  data.imageControls.aboutImage = data.imageControls.aboutImage || {x:50,y:50,zoom:100};
+  data.imageControls.results = data.imageControls.results || {};
+  if(Array.isArray(data.results)){
+    data.results.forEach((_,i)=>data.imageControls.results[String(i)] = data.imageControls.results[String(i)] || {x:50,y:50,zoom:100});
+  }
 }
 
 function renderAll(){
@@ -289,6 +299,26 @@ function injectPreviewEditor(){
   doc.querySelectorAll('[data-builder-field]').forEach(el=>{
     el.onclick=(e)=>{e.preventDefault();e.stopPropagation();openEditor(el.dataset.builderField)};
   });
+
+  const hero = doc.querySelector('.hero');
+  if(hero){
+    hero.setAttribute('data-image-clickable','heroImage');
+    hero.onclick = (e)=>{
+      if(e.target.closest('[data-builder-field]')) return;
+      e.preventDefault(); e.stopPropagation(); openImageEditor('heroImage');
+    };
+  }
+
+  const about = doc.querySelector('.photo');
+  if(about){
+    about.setAttribute('data-image-clickable','aboutImage');
+    about.onclick = (e)=>{e.preventDefault(); e.stopPropagation(); openImageEditor('aboutImage');};
+  }
+
+  doc.querySelectorAll('.result').forEach((el,i)=>{
+    el.setAttribute('data-image-clickable',`results.${i}.image`);
+    el.onclick = (e)=>{e.preventDefault(); e.stopPropagation(); openImageEditor(`results.${i}.image`);};
+  });
 }
 
 async function saveSite(){
@@ -299,6 +329,132 @@ async function saveSite(){
   }catch(e){
     status('Save failed. '+e.message,false);
   }
+}
+
+
+function controlForImageField(field){
+  data.imageControls = data.imageControls || {};
+  if(field === 'heroImage'){
+    data.imageControls.heroImage = data.imageControls.heroImage || {x:72,y:50,zoom:100};
+    return data.imageControls.heroImage;
+  }
+  if(field === 'aboutImage'){
+    data.imageControls.aboutImage = data.imageControls.aboutImage || {x:50,y:50,zoom:100};
+    return data.imageControls.aboutImage;
+  }
+  const match = field.match(/^results\.(\d+)\.image$/);
+  if(match){
+    data.imageControls.results = data.imageControls.results || {};
+    data.imageControls.results[match[1]] = data.imageControls.results[match[1]] || {x:50,y:50,zoom:100};
+    return data.imageControls.results[match[1]];
+  }
+  return {x:50,y:50,zoom:100};
+}
+
+function openImageEditor(field){
+  currentImageField = field;
+  currentImagePath = get(field);
+  const c = controlForImageField(field);
+  $('imageModalTitle').textContent = 'Edit ' + nice(field.replace('.image',''));
+  $('imageEditorImg').src = currentImagePath || '';
+  $('imageX').value = c.x ?? 50;
+  $('imageY').value = c.y ?? 50;
+  $('imageZoom').value = c.zoom ?? 100;
+  $('imageZoomNum').value = c.zoom ?? 100;
+  $('imageModal').classList.remove('hidden');
+  setTimeout(updateImageEditorPreview, 50);
+}
+
+function closeImageEditor(){
+  $('imageModal').classList.add('hidden');
+  currentImageField = null;
+  currentImagePath = null;
+  dragState = null;
+  $('replaceImageFile').value = '';
+}
+
+function updateImageEditorPreview(){
+  const img = $('imageEditorImg');
+  const crop = document.querySelector('.image-crop-box');
+  const x = Number($('imageX').value || 50);
+  const y = Number($('imageY').value || 50);
+  const zoom = Number($('imageZoom').value || 100) / 100;
+  img.style.left = x + '%';
+  img.style.top = y + '%';
+  img.style.width = (100 * zoom) + '%';
+  img.style.height = 'auto';
+  img.style.transform = 'translate(-50%,-50%)';
+}
+
+function syncImageInputs(){
+  $('imageZoomNum').value = $('imageZoom').value;
+  updateImageEditorPreview();
+}
+
+function applyImageEdit(){
+  if(!currentImageField) return;
+  const c = controlForImageField(currentImageField);
+  c.x = Number($('imageX').value || 50);
+  c.y = Number($('imageY').value || 50);
+  c.zoom = Number($('imageZoom').value || 100);
+  if(currentImagePath) set(currentImageField, currentImagePath);
+  closeImageEditor();
+  reloadPreview();
+  renderContent();
+  status('Image position/crop changed. Save when ready.');
+}
+
+async function replaceCurrentImage(file){
+  if(!file || !currentImageField) return;
+  status('Uploading replacement image...');
+  const b64 = await fileToBase64(file);
+  const res = await api('/api/upload',{method:'POST',body:JSON.stringify({name:file.name,data:b64.split(',')[1]})});
+  currentImagePath = res.path;
+  $('imageEditorImg').src = currentImagePath;
+  updateImageEditorPreview();
+  status('Image uploaded. Apply image, then save.');
+}
+
+function bindImageDrag(){
+  const crop = document.querySelector('.image-crop-box');
+  if(!crop) return;
+  crop.addEventListener('mousedown', e=>{
+    dragState = {
+      startX:e.clientX,startY:e.clientY,
+      x:Number($('imageX').value || 50),
+      y:Number($('imageY').value || 50),
+      rect:crop.getBoundingClientRect()
+    };
+  });
+  window.addEventListener('mousemove', e=>{
+    if(!dragState) return;
+    const dx = ((e.clientX - dragState.startX) / dragState.rect.width) * 100;
+    const dy = ((e.clientY - dragState.startY) / dragState.rect.height) * 100;
+    $('imageX').value = Math.max(0,Math.min(100,dragState.x + dx));
+    $('imageY').value = Math.max(0,Math.min(100,dragState.y + dy));
+    updateImageEditorPreview();
+  });
+  window.addEventListener('mouseup', ()=>dragState=null);
+
+  crop.addEventListener('touchstart', e=>{
+    const t=e.touches[0];
+    dragState = {
+      startX:t.clientX,startY:t.clientY,
+      x:Number($('imageX').value || 50),
+      y:Number($('imageY').value || 50),
+      rect:crop.getBoundingClientRect()
+    };
+  }, {passive:true});
+  window.addEventListener('touchmove', e=>{
+    if(!dragState) return;
+    const t=e.touches[0];
+    const dx = ((t.clientX - dragState.startX) / dragState.rect.width) * 100;
+    const dy = ((t.clientY - dragState.startY) / dragState.rect.height) * 100;
+    $('imageX').value = Math.max(0,Math.min(100,dragState.x + dx));
+    $('imageY').value = Math.max(0,Math.min(100,dragState.y + dy));
+    updateImageEditorPreview();
+  }, {passive:true});
+  window.addEventListener('touchend', ()=>dragState=null);
 }
 
 document.getElementById('loginBtn').onclick = login;
@@ -313,3 +469,13 @@ document.querySelectorAll('[data-mode]').forEach(btn=>btn.onclick=()=>{
   document.getElementById('panel-'+btn.dataset.mode).classList.add('active');
 });
 autoLogin();
+
+
+document.getElementById('applyImageEdit').onclick = applyImageEdit;
+document.getElementById('cancelImageEdit').onclick = closeImageEditor;
+document.getElementById('imageZoom').oninput = syncImageInputs;
+document.getElementById('imageZoomNum').oninput = () => {$('imageZoom').value = $('imageZoomNum').value; updateImageEditorPreview();};
+document.getElementById('imageX').oninput = updateImageEditorPreview;
+document.getElementById('imageY').oninput = updateImageEditorPreview;
+document.getElementById('replaceImageFile').onchange = e => replaceCurrentImage(e.target.files[0]);
+bindImageDrag();
