@@ -286,5 +286,6 @@
       "scale": 100
     }
   },
-  "elementStyles": {}
+  "elementStyles": {},
+  "deletedElements": []
 }

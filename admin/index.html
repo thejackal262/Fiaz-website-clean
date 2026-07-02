@@ -4,14 +4,14 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta name="robots" content="noindex"/>
-<title>Jackal Canvas Builder</title>
+<title>Jackal Freeform Builder</title>
 <link rel="stylesheet" href="/admin/admin.css"/>
 </head>
 <body>
 <div id="login" class="login">
   <div class="login-card">
-    <h1>Jackal Canvas Builder</h1>
-    <p>Click anything. Drag it. Resize it. Publish when ready.</p>
+    <h1>Jackal Freeform Builder</h1>
+    <p>Tap anything. Move it. Resize it. Edit it. Delete it. Publish.</p>
     <input id="password" type="password" placeholder="Admin password" autocomplete="current-password"/>
     <button id="loginBtn">Login</button>
     <small id="loginMsg"></small>
@@ -21,7 +21,7 @@
 <div id="app" class="app hidden">
   <div class="topbar">
     <div class="brandline">
-      <strong>Jackal Canvas Builder</strong>
+      <strong>Jackal Freeform Builder</strong>
       <span id="status">Ready.</span>
     </div>
     <div class="toolbar">
@@ -36,12 +36,12 @@
 
   <div id="sectionsPanel" class="sections-panel hidden">
     <h2>Sections</h2>
-    <p>Drag to reorder. Hide/show as needed.</p>
+    <p>Drag to reorder sections.</p>
     <div id="sectionList"></div>
   </div>
 
   <div id="stage" class="stage desktop">
-    <iframe id="siteFrame" src="/?canvasbuilder=1"></iframe>
+    <iframe id="siteFrame" src="/?freeform=1"></iframe>
   </div>
 
   <div id="canvasToolbar" class="canvas-toolbar hidden">
@@ -51,13 +51,15 @@
     <button id="imageUpBtn">Image +</button>
     <button id="imageDownBtn">Image -</button>
     <button id="replaceImageBtn">Replace image</button>
-    <button id="duplicateBtn">Duplicate</button>
+    <button id="bringFrontBtn">Front</button>
+    <button id="sendBackBtn">Back</button>
+    <button id="deleteBtn">Delete</button>
     <button id="resetSelectedBtn">Reset</button>
     <button id="doneBtn">Done</button>
   </div>
 
   <div id="hint" class="hint">
-    Click any text, image, card or section. Drag images to crop. Drag handles to resize boxes.
+    Tap anything. Drag to move. Drag yellow handles to resize. No mouse-wheel zoom.
   </div>
 
   <input id="imageUpload" type="file" accept="image/*" hidden>

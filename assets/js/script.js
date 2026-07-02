@@ -10,10 +10,19 @@ function applyTextStyles(s){
 function applyElementStyles(s){
   const styles = s.elementStyles || {};
   Object.entries(styles).forEach(([id, cfg]) => {
-    document.querySelectorAll(`[data-builder-id="${id}"]`).forEach(el => {
+    const targets = [
+      ...document.querySelectorAll(`[data-builder-id="${id}"]`),
+      ...document.querySelectorAll(`[data-builder-field="${id}"]`)
+    ];
+    targets.forEach(el => {
       Object.entries(cfg || {}).forEach(([prop, value]) => {
         if(value !== undefined && value !== null && value !== '') el.style[prop] = value;
       });
+    });
+  });
+  (s.deletedElements || []).forEach(id => {
+    document.querySelectorAll(`[data-builder-id="${id}"],[data-builder-field="${id}"]`).forEach(el => {
+      el.style.display = 'none';
     });
   });
 }
@@ -42,6 +51,7 @@ function assignBuilderIds(){
   document.querySelectorAll('.price-card').forEach((el,i)=>el.setAttribute('data-builder-id',`price-card-${i}`));
   document.querySelectorAll('.stat').forEach((el,i)=>el.setAttribute('data-builder-id',`stat-${i}`));
   document.querySelectorAll('.list-item').forEach((el,i)=>el.setAttribute('data-builder-id',`list-item-${i}`));
+  document.querySelectorAll('.btn').forEach((el,i)=>el.setAttribute('data-builder-id', el.id || `button-${i}`));
 }
 
 
