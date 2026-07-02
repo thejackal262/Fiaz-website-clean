@@ -4,15 +4,15 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta name="robots" content="noindex"/>
-<title>Jackal Freeform Builder</title>
+<title>Jackal Layer Builder</title>
 <link rel="stylesheet" href="/admin/admin.css"/>
 </head>
 <body>
 <div id="login" class="login">
   <div class="login-card">
-    <h1>Jackal Freeform Builder</h1>
-    <p>Tap anything. Move it. Resize it. Edit it. Delete it. Publish.</p>
-    <input id="password" type="password" placeholder="Admin password" autocomplete="current-password"/>
+    <h1>Jackal Layer Builder</h1>
+    <p>Every item is a layer. Move it. Resize it. Delete it. Publish.</p>
+    <input id="password" type="password" placeholder="Admin password"/>
     <button id="loginBtn">Login</button>
     <small id="loginMsg"></small>
   </div>
@@ -20,46 +20,41 @@
 
 <div id="app" class="app hidden">
   <div class="topbar">
-    <div class="brandline">
-      <strong>Jackal Freeform Builder</strong>
-      <span id="status">Ready.</span>
-    </div>
+    <div><strong>Jackal Layer Builder</strong><span id="status">Ready.</span></div>
     <div class="toolbar">
-      <button id="sectionsBtn" class="tool">Sections</button>
-      <button id="undoBtn" class="tool">Undo</button>
-      <button id="redoBtn" class="tool">Redo</button>
-      <button id="desktopBtn" class="tool active">Desktop</button>
-      <button id="phoneBtn" class="tool">Phone</button>
+      <button id="addTextBtn">Add text</button>
+      <button id="addButtonBtn">Add button</button>
+      <button id="addBoxBtn">Add box</button>
+      <button id="layersBtn">Layers</button>
+      <button id="undoBtn">Undo</button>
+      <button id="redoBtn">Redo</button>
       <button id="publishBtn" class="publish">Publish</button>
     </div>
   </div>
 
-  <div id="sectionsPanel" class="sections-panel hidden">
-    <h2>Sections</h2>
-    <p>Drag to reorder sections.</p>
-    <div id="sectionList"></div>
+  <div id="layersPanel" class="layers-panel hidden">
+    <h2>Layers</h2>
+    <div id="layersList"></div>
   </div>
 
-  <div id="stage" class="stage desktop">
-    <iframe id="siteFrame" src="/?freeform=1"></iframe>
-  </div>
+  <main class="workspace">
+    <div id="canvasWrap">
+      <div id="canvas"></div>
+    </div>
+  </main>
 
-  <div id="canvasToolbar" class="canvas-toolbar hidden">
-    <button id="editTextBtn">Edit text</button>
-    <button id="biggerTextBtn">Text +</button>
-    <button id="smallerTextBtn">Text -</button>
-    <button id="imageUpBtn">Image +</button>
-    <button id="imageDownBtn">Image -</button>
-    <button id="replaceImageBtn">Replace image</button>
-    <button id="bringFrontBtn">Front</button>
-    <button id="sendBackBtn">Back</button>
+  <div id="toolbox" class="toolbox hidden">
+    <button id="editTextBtn">Edit</button>
+    <button id="biggerBtn">Bigger</button>
+    <button id="smallerBtn">Smaller</button>
+    <button id="replaceBtn">Replace image</button>
+    <button id="frontBtn">Front</button>
+    <button id="backBtn">Back</button>
+    <button id="lockBtn">Lock</button>
+    <button id="hideBtn">Hide</button>
+    <button id="duplicateBtn">Duplicate</button>
     <button id="deleteBtn">Delete</button>
-    <button id="resetSelectedBtn">Reset</button>
     <button id="doneBtn">Done</button>
-  </div>
-
-  <div id="hint" class="hint">
-    Tap anything. Drag to move. Drag yellow handles to resize. No mouse-wheel zoom.
   </div>
 
   <input id="imageUpload" type="file" accept="image/*" hidden>
@@ -67,7 +62,7 @@
 
 <div id="textModal" class="modal hidden">
   <div class="modal-card">
-    <h2 id="textModalTitle">Edit text</h2>
+    <h2>Edit text</h2>
     <textarea id="textEditor"></textarea>
     <div class="modal-actions">
       <button id="applyTextBtn">Apply</button>
@@ -77,7 +72,6 @@
 </div>
 
 <div id="toast" class="toast hidden"></div>
-
 <script src="/admin/admin.js"></script>
 </body>
 </html>
