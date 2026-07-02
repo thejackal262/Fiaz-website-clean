@@ -1,7 +1,7 @@
 {
   "secondaryButtonLink": "#services",
   "aboutKicker": "About Fiaz",
-  "heroImage": "/images/uploads/img_1760.jpeg",
+  "heroImage": "/images/uploads/1783015059127-88e9ef9640924.jpg",
   "primaryButtonText": "Wagwan",
   "resultsTitle": "Receipts, not promises.",
   "faqTitle": "Before you ask...",
@@ -10,12 +10,12 @@
   "heroLine1": "Build a body",
   "goldColor": "#f4d77e",
   "youtube": "https://youtube.com/@FiazAli",
-  "finalText": "Book a free consultation and let\u2019s build a plan that actually fits your life.",
+  "finalText": "Book a free consultation and let’s build a plan that actually fits your life.",
   "heroLine2": "that refuses",
   "buttonTextColor": "#ffffff",
   "heroLine3": "to quit.",
   "heroText": "Lose fat. Build muscle. Get brutally strong. Coaching for real people who are done with starting over every Monday.",
-  "footerText": "\u00a9 2026 Fiaz Ali Coaching. All rights reserved.",
+  "footerText": "© 2026 Fiaz Ali Coaching. All rights reserved.",
   "faqKicker": "Questions",
   "resultsKicker": "Results",
   "finalKicker": "Ready?",
@@ -28,7 +28,7 @@
   "packages": [
     {
       "name": "Training Only",
-      "price": "From \u00a379/mo",
+      "price": "From £79/mo",
       "featured": false,
       "button": "Enquire",
       "items": [
@@ -40,7 +40,7 @@
     },
     {
       "name": "Training + Nutrition",
-      "price": "From \u00a3129/mo",
+      "price": "From £129/mo",
       "featured": true,
       "button": "Start Here",
       "items": [
@@ -215,9 +215,9 @@
   },
   "imageControls": {
     "heroImage": {
-      "x": 72,
-      "y": 50,
-      "zoom": 100
+      "x": 48.033431750267795,
+      "y": 99.9558607340986,
+      "zoom": 106
     },
     "aboutImage": {
       "x": 50,
