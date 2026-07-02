@@ -1,40 +1,315 @@
-const SECTIONS = [
-  {id:'basics', label:'Basics'}, {id:'hero', label:'Hero'}, {id:'about', label:'About'},
-  {id:'services', label:'Services'}, {id:'results', label:'Results'}, {id:'pricing', label:'Pricing'},
-  {id:'testimonial', label:'Testimonial'}, {id:'faq', label:'FAQ'}, {id:'contact', label:'Contact'}, {id:'style', label:'Colours'}
+let data = {};
+let password = localStorage.getItem('fiaz_admin_password') || '';
+let currentField = null;
+const $ = id => document.getElementById(id);
+
+const editableFields = [
+  'brandName','heroBadge','heroLine1','heroLine2','heroLine3','heroText',
+  'primaryButtonText','secondaryButtonText','aboutKicker','aboutTitle','aboutText',
+  'servicesKicker','servicesTitle','servicesText','bannerText',
+  'resultsKicker','resultsTitle','resultsText','pricingKicker','pricingTitle','pricingText',
+  'testimonialKicker','testimonialTitle','testimonialText','testimonialName',
+  'faqKicker','faqTitle','finalKicker','finalTitle','finalText','emailButtonText','footerText'
 ];
-let data = {}; let current = 'basics'; let password = localStorage.getItem('fiaz_admin_password') || '';
-const $ = (id)=>document.getElementById(id);
-const field = (key,label,type='text',help='') => `<div class="field"><label>${label}</label>${type==='textarea'?`<textarea data-key="${key}">${esc(data[key]||'')}</textarea>`:type==='color'?`<input data-key="${key}" type="color" value="${esc(data[key]||'#000000')}">`:`<input data-key="${key}" value="${esc(data[key]||'')}">`}${help?`<div class="help">${help}</div>`:''}</div>`;
-const imageField = (key,label)=>`<div class="field"><label>${label}</label><input data-key="${key}" value="${esc(data[key]||'')}"><input type="file" accept="image/*" data-upload="${key}"><img class="preview" src="${esc(data[key]||'')}" onerror="this.style.display='none'" /></div>`;
-function esc(v){return String(v).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+
+const sectionLabels = {
+  about:'About',
+  services:'Services',
+  results:'Transformations / Results',
+  pricing:'Packages / Pricing',
+  testimonial:'Testimonial',
+  faq:'FAQ',
+  contact:'Contact'
+};
+
+const layoutControls = [
+  ['layout.maxWidth','Website max width',900,1500,10],
+  ['layout.sectionPadding','Section spacing desktop',50,180,5],
+  ['layout.mobileSectionPadding','Section spacing mobile',40,120,5],
+  ['layout.heroHeight','Hero height',60,120,1],
+  ['layout.heroOverlayStrength','Hero dark overlay',30,95,1],
+  ['layout.heroImageFocusX','Hero image left/right',0,100,1],
+  ['layout.heroImageFocusY','Hero image up/down',0,100,1],
+  ['layout.aboutImageWidth','About image width %',30,70,1],
+  ['layout.aboutTextWidth','About text width %',30,70,1],
+  ['layout.aboutGap','About gap',10,100,1],
+  ['layout.aboutImageHeight','About image height',300,800,10],
+  ['layout.servicesColumns','Services cards per row',1,4,1],
+  ['layout.servicesCardPadding','Services card padding',16,60,1],
+  ['layout.servicesCardRadius','Services card roundness',0,50,1],
+  ['layout.resultsColumns','Results cards per row',1,4,1],
+  ['layout.resultsCardHeight','Results card height',250,700,10],
+  ['layout.pricingColumns','Pricing cards per row',1,4,1],
+  ['layout.pricingCardPadding','Pricing card padding',16,60,1],
+  ['layout.pricingCardRadius','Pricing card roundness',0,50,1],
+  ['layout.buttonRadius','Button roundness',0,40,1],
+  ['layout.buttonHeight','Button height',44,80,1]
+];
+
+function nice(s){return s.replace(/([A-Z])/g,' $1').replace(/^./,x=>x.toUpperCase())}
+function get(path){return path.split('.').reduce((o,k)=>o?o[k]:undefined,data)}
+function set(path,val){const parts=path.split('.');let obj=data;while(parts.length>1){let k=parts.shift();obj[k]=obj[k]||{};obj=obj[k]}obj[parts[0]]=val}
+function esc(v){return String(v ?? '').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+function status(msg, ok=true){const el=$('status');el.textContent=msg;el.className=ok?'status-ok':'status-bad'}
 function getPassword(){return password || $('password').value.trim()}
-async function api(path, opts={}){const res=await fetch(path,{...opts,headers:{'Content-Type':'application/json','X-Admin-Password':getPassword(),...(opts.headers||{})}}); if(!res.ok) throw new Error(await res.text()); return res.json();}
-async function login(){try{password=$('password').value.trim(); const r=await api('/api/content'); data=r.data; localStorage.setItem('fiaz_admin_password',password); $('login').classList.add('hidden'); $('editor').classList.remove('hidden'); renderTabs(); render(); setStatus('Logged in. Let’s cook.',true)}catch(e){$('loginMsg').textContent='Login failed. Check the password.'}}
-async function load(){if(!password) return; try{const r=await api('/api/content'); data=r.data; $('login').classList.add('hidden'); $('editor').classList.remove('hidden'); renderTabs(); render();}catch(e){localStorage.removeItem('fiaz_admin_password');}}
-function renderTabs(){ $('tabs').innerHTML=SECTIONS.map(s=>`<button type="button" class="tab ${s.id===current?'active':''}" data-tab="${s.id}">${s.label}</button>`).join(''); document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{collect(); current=b.dataset.tab; renderTabs(); render();});}
-function panel(title,inner,full=false){return `<section class="panel ${full?'full':''}"><h2>${title}</h2>${inner}</section>`}
-function render(){let html='';
- if(current==='basics') html=panel('SEO & Branding', field('seoTitle','Browser title')+field('seoDescription','Google description','textarea')+field('brandName','Business name')+imageField('logo','Logo'))+panel('Navigation', listEditor('navLinks',['label','url']));
- if(current==='hero') html=panel('Hero section', imageField('heroImage','Hero photo')+field('heroBadge','Small badge text')+field('heroLine1','Heading line 1')+field('heroLine2','Heading line 2 - gold text')+field('heroLine3','Heading line 3')+field('heroText','Hero paragraph','textarea')+field('primaryButtonText','Main button text')+field('primaryButtonLink','Main button link')+field('secondaryButtonText','Second button text')+field('secondaryButtonLink','Second button link'),true)+panel('Stats', listEditor('stats',['number','label']),true);
- if(current==='about') html=panel('About section', imageField('aboutImage','About photo')+field('aboutKicker','Small heading')+field('aboutTitle','Main heading')+field('aboutText','Paragraph','textarea'),true)+panel('Bullet points', simpleList('aboutPoints'),true);
- if(current==='services') html=panel('Services intro', field('servicesKicker','Small heading')+field('servicesTitle','Main heading')+field('servicesText','Paragraph','textarea')+field('bannerText','Banner text'),true)+panel('Services', listEditor('services',['small','title','text']),true);
- if(current==='results') html=panel('Results intro', field('resultsKicker','Small heading')+field('resultsTitle','Main heading')+field('resultsText','Paragraph','textarea'),true)+panel('Result cards', resultEditor(),true);
- if(current==='pricing') html=panel('Pricing intro', field('pricingKicker','Small heading')+field('pricingTitle','Main heading')+field('pricingText','Paragraph','textarea'),true)+panel('Packages', packageEditor(),true);
- if(current==='testimonial') html=panel('Testimonial', field('testimonialKicker','Small heading')+field('testimonialTitle','Main heading')+field('testimonialText','Testimonial text','textarea')+field('testimonialName','Client name'),true);
- if(current==='faq') html=panel('FAQ heading', field('faqKicker','Small heading')+field('faqTitle','Main heading'),true)+panel('Questions', listEditor('faqs',['question','answer']),true);
- if(current==='contact') html=panel('Final CTA & Links', field('finalKicker','Small heading')+field('finalTitle','Main heading')+field('finalText','Paragraph','textarea')+field('email','Email address')+field('emailButtonText','Email button text')+field('instagram','Instagram link')+field('tiktok','TikTok link')+field('youtube','YouTube link')+field('footerText','Footer text'),true);
- if(current==='style') html=panel('Brand colours', ['backgroundColor','cardColor','mainTextColor','bodyTextColor','goldColor','buttonTextColor'].map(k=>field(k,k.replace(/Color/,' colour'),'color')).join(''),true);
- $('form').innerHTML=html; wireUploads();}
-function simpleList(key){data[key]=data[key]||[];return `<div data-list="${key}">${data[key].map((v,i)=>`<div class="list-item"><textarea data-arr="${key}" data-i="${i}">${esc(v)}</textarea><div class="mini-actions"><button type="button" class="danger" onclick="removeItem('${key}',${i})">Remove</button></div></div>`).join('')}</div><button type="button" class="add" onclick="addItem('${key}','')">Add item</button>`}
-function listEditor(key,fields){data[key]=data[key]||[];return data[key].map((obj,i)=>`<div class="list-item">${fields.map(f=>`<div class="field"><label>${f}</label><textarea data-obj="${key}" data-i="${i}" data-f="${f}">${esc(obj[f]||'')}</textarea></div>`).join('')}<div class="mini-actions"><button type="button" class="danger" onclick="removeItem('${key}',${i})">Remove</button></div></div>`).join('')+`<button type="button" class="add" onclick="addItem('${key}',{})">Add item</button>`}
-function resultEditor(){data.results=data.results||[];return data.results.map((obj,i)=>`<div class="list-item"><div class="row"><div class="field"><label>Label</label><input data-obj="results" data-i="${i}" data-f="label" value="${esc(obj.label||'')}"></div><div class="field"><label>Image</label><input data-obj="results" data-i="${i}" data-f="image" value="${esc(obj.image||'')}"><input type="file" accept="image/*" data-upload-list="results" data-i="${i}" data-f="image"><img class="preview" src="${esc(obj.image||'')}" onerror="this.style.display='none'"></div></div><button type="button" class="danger" onclick="removeItem('results',${i})">Remove</button></div>`).join('')+`<button type="button" class="add" onclick="addItem('results',{image:'/images/uploads/client1.svg',label:'New result'})">Add result</button>`}
-function packageEditor(){data.packages=data.packages||[];return data.packages.map((p,i)=>`<div class="list-item"><div class="row three"><div class="field"><label>Name</label><input data-obj="packages" data-i="${i}" data-f="name" value="${esc(p.name||'')}"></div><div class="field"><label>Price</label><input data-obj="packages" data-i="${i}" data-f="price" value="${esc(p.price||'')}"></div><div class="field"><label>Button</label><input data-obj="packages" data-i="${i}" data-f="button" value="${esc(p.button||'')}"></div></div><div class="field"><label>Bullet points, one per line</label><textarea data-package-items="${i}">${esc((p.items||[]).join('\n'))}</textarea></div><label><input type="checkbox" data-package-featured="${i}" ${p.featured?'checked':''}> Featured package</label><div class="mini-actions"><button type="button" class="danger" onclick="removeItem('packages',${i})">Remove</button></div></div>`).join('')+`<button type="button" class="add" onclick="addItem('packages',{name:'New package',price:'£',button:'Enquire',items:['Point one'],featured:false})">Add package</button>`}
-function collect(){document.querySelectorAll('[data-key]').forEach(el=>data[el.dataset.key]=el.value);document.querySelectorAll('[data-arr]').forEach(el=>data[el.dataset.arr][+el.dataset.i]=el.value);document.querySelectorAll('[data-obj]').forEach(el=>data[el.dataset.obj][+el.dataset.i][el.dataset.f]=el.value);document.querySelectorAll('[data-package-items]').forEach(el=>data.packages[+el.dataset.packageItems].items=el.value.split('\n').filter(Boolean));document.querySelectorAll('[data-package-featured]').forEach(el=>data.packages[+el.dataset.packageFeatured].featured=el.checked);}
-window.addItem=(key,val)=>{collect();data[key].push(typeof val==='object'?JSON.parse(JSON.stringify(val)):val);render()}; window.removeItem=(key,i)=>{collect();data[key].splice(i,1);render()};
-function setStatus(msg,ok){$('status').textContent=msg;$('status').className=ok?'status-ok':'status-bad'}
-async function save(){collect(); setStatus('Saving...',true); try{await api('/api/content',{method:'POST',body:JSON.stringify(data)}); setStatus('Saved. Cloudflare will update in about a minute.',true)}catch(e){setStatus('Save failed: '+e.message,false)}}
-function wireUploads(){document.querySelectorAll('[data-upload]').forEach(inp=>inp.onchange=async()=>upload(inp.files[0],p=>{data[inp.dataset.upload]=p;render()}));document.querySelectorAll('[data-upload-list]').forEach(inp=>inp.onchange=async()=>upload(inp.files[0],p=>{data[inp.dataset.uploadList][+inp.dataset.i][inp.dataset.f]=p;render()}));}
-async function upload(file,done){if(!file)return; setStatus('Uploading image...',true); const b64=await toBase64(file); const r=await api('/api/upload',{method:'POST',body:JSON.stringify({name:file.name,type:file.type,data:b64})}); done(r.path); setStatus('Image uploaded. Remember to save website.',true)}
-function toBase64(file){return new Promise((resolve,reject)=>{const fr=new FileReader();fr.onload=()=>resolve(fr.result.split(',')[1]);fr.onerror=reject;fr.readAsDataURL(file);});}
-$('loginBtn').onclick=login; $('saveBtn').onclick=save; load();
+
+async function api(path, opts={}){
+  const res = await fetch(path,{...opts,headers:{'Content-Type':'application/json','X-Admin-Password':getPassword(),...(opts.headers||{})}});
+  if(!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+async function login(){
+  try{
+    password = $('password').value.trim();
+    const r = await api('/api/content');
+    data = r.data || r;
+    localStorage.setItem('fiaz_admin_password', password);
+    $('login').classList.add('hidden');
+    $('builder').classList.remove('hidden');
+    initialiseData();
+    renderAll();
+    setTimeout(injectPreviewEditor, 900);
+    status('Loaded. Edit the site.');
+  }catch(e){
+    $('loginMsg').textContent = 'Login failed. Check password.';
+  }
+}
+
+async function autoLogin(){
+  if(!password) return;
+  try{
+    const r = await api('/api/content');
+    data = r.data || r;
+    $('login').classList.add('hidden');
+    $('builder').classList.remove('hidden');
+    initialiseData();
+    renderAll();
+    setTimeout(injectPreviewEditor, 900);
+  }catch(e){ localStorage.removeItem('fiaz_admin_password'); }
+}
+
+function initialiseData(){
+  data._builder = data._builder || {};
+  data._builder.sectionOrder = data._builder.sectionOrder || ['about','services','results','pricing','testimonial','faq','contact'];
+  data.layout = data.layout || {};
+}
+
+function renderAll(){
+  renderQuickFields();
+  renderSections();
+  renderLayout();
+  renderContent();
+}
+
+function renderQuickFields(){
+  $('quickFields').innerHTML = editableFields.map(f=>`<button class="quick-btn" type="button" data-edit-field="${f}"><span>${nice(f)}</span><span>✏️</span></button>`).join('');
+  document.querySelectorAll('[data-edit-field]').forEach(btn=>btn.onclick=()=>openEditor(btn.dataset.editField));
+}
+
+function renderSections(){
+  $('sectionList').innerHTML = data._builder.sectionOrder.map(key=>`
+    <div class="section-item" draggable="true" data-section-key="${key}">
+      <strong>☰ ${sectionLabels[key] || nice(key)}</strong>
+      <div class="section-actions">
+        <button class="small-btn" data-up="${key}">↑</button>
+        <button class="small-btn" data-down="${key}">↓</button>
+      </div>
+    </div>`).join('');
+
+  document.querySelectorAll('[data-up]').forEach(b=>b.onclick=e=>{e.stopPropagation(); moveSection(b.dataset.up,-1)});
+  document.querySelectorAll('[data-down]').forEach(b=>b.onclick=e=>{e.stopPropagation(); moveSection(b.dataset.down,1)});
+
+  let dragged = null;
+  document.querySelectorAll('.section-item').forEach(item=>{
+    item.addEventListener('dragstart',()=>{dragged=item.dataset.sectionKey;item.classList.add('dragging')});
+    item.addEventListener('dragend',()=>item.classList.remove('dragging'));
+    item.addEventListener('dragover',e=>e.preventDefault());
+    item.addEventListener('drop',e=>{
+      e.preventDefault();
+      const target = item.dataset.sectionKey;
+      if(!dragged || dragged===target) return;
+      const arr = data._builder.sectionOrder;
+      arr.splice(arr.indexOf(dragged),1);
+      arr.splice(arr.indexOf(target),0,dragged);
+      renderSections();
+      reloadPreview();
+      status('Section order changed. Save when ready.');
+    });
+  });
+}
+
+function moveSection(key, dir){
+  const arr = data._builder.sectionOrder;
+  const i = arr.indexOf(key), j = i + dir;
+  if(i < 0 || j < 0 || j >= arr.length) return;
+  [arr[i], arr[j]] = [arr[j], arr[i]];
+  renderSections();
+  reloadPreview();
+  status('Section order changed. Save when ready.');
+}
+
+function renderLayout(){
+  const html = [
+    `<div class="field"><label>Hero text alignment</label><select data-path="layout.heroTextAlign"><option value="left">Left</option><option value="center">Centre</option><option value="right">Right</option></select></div>`,
+    `<div class="field"><label>About image position</label><select data-path="layout.aboutImagePosition"><option value="left">Left</option><option value="right">Right</option></select></div>`,
+    ...layoutControls.map(([path,label,min,max,step])=>{
+      const val = get(path) ?? min;
+      return `<div class="field"><label>${label}</label><div class="range-row"><input type="range" min="${min}" max="${max}" step="${step}" value="${val}" data-range="${path}"><input type="number" value="${val}" data-number="${path}"></div></div>`;
+    })
+  ].join('');
+  $('layoutFields').innerHTML = html;
+  document.querySelectorAll('[data-path]').forEach(el=>{el.value=get(el.dataset.path)||el.value; el.onchange=()=>{set(el.dataset.path,el.value);reloadPreview();status('Layout changed. Save when ready.')}});
+  document.querySelectorAll('[data-range]').forEach(el=>el.oninput=()=>{set(el.dataset.range,Number(el.value));document.querySelector(`[data-number="${el.dataset.range}"]`).value=el.value;reloadPreviewSoft();});
+  document.querySelectorAll('[data-number]').forEach(el=>el.oninput=()=>{set(el.dataset.number,Number(el.value));document.querySelector(`[data-range="${el.dataset.number}"]`).value=el.value;reloadPreviewSoft();});
+}
+
+let softTimer = null;
+function reloadPreviewSoft(){ clearTimeout(softTimer); softTimer=setTimeout(()=>{reloadPreview();status('Layout changed. Save when ready.')},350); }
+function reloadPreview(){ $('preview').src='/?preview=builder&cache='+Date.now(); setTimeout(injectPreviewEditor,1000); }
+
+function input(path,label,type='text'){
+  return `<div class="field"><label>${label}</label><input data-input="${path}" type="${type}" value="${esc(get(path))}"></div>`;
+}
+function area(path,label){
+  return `<div class="field"><label>${label}</label><textarea data-input="${path}">${esc(Array.isArray(get(path))?get(path).join('\\n'):get(path))}</textarea></div>`;
+}
+function image(path,label){
+  return `<div class="field"><label>${label}</label><input data-input="${path}" value="${esc(get(path))}"><input type="file" accept="image/*" data-upload="${path}">${get(path)?`<img class="preview-img" src="${esc(get(path))}">`:''}</div>`;
+}
+
+function listEditor(name, fields){
+  const arr = Array.isArray(data[name]) ? data[name] : [];
+  return `<div>${arr.map((item,i)=>`
+    <div class="list-card">
+      <h3>${nice(name)} ${i+1}</h3>
+      <div class="row">${fields.map(f=>{
+        const path = `${name}.${i}.${f}`;
+        if(f==='text' || f==='answer' || f==='items') return area(path,nice(f));
+        if(f==='image') return image(path,nice(f));
+        return input(path,nice(f));
+      }).join('')}</div>
+      <button class="danger" data-remove="${name}.${i}" type="button">Remove</button>
+    </div>`).join('')}<button class="add" data-add="${name}" type="button">Add ${nice(name)}</button></div>`;
+}
+
+function renderContent(){
+  $('contentFields').innerHTML = `
+    <div class="field"><label>SEO</label>${input('seoTitle','Browser title')}${area('seoDescription','Google description')}</div>
+    ${image('logo','Logo')}
+    ${image('heroImage','Hero image')}
+    ${image('aboutImage','About image')}
+    ${area('aboutPoints','About bullet points')}
+    <h3>Services</h3>${listEditor('services',['small','title','text'])}
+    <h3>Results / Transformations</h3>${listEditor('results',['image','label'])}
+    <h3>Packages</h3>${listEditor('packages',['name','price','button','items','featured'])}
+    <h3>FAQs</h3>${listEditor('faqs',['question','answer'])}
+    ${input('email','Email')}
+    ${input('instagram','Instagram')}
+    ${input('tiktok','TikTok')}
+    ${input('youtube','YouTube')}
+  `;
+  bindContentInputs();
+}
+
+function bindContentInputs(){
+  document.querySelectorAll('[data-input]').forEach(el=>{
+    el.oninput=()=>{
+      let val = el.value;
+      if(el.dataset.input.endsWith('items') || el.dataset.input==='aboutPoints') val = el.value.split('\\n').filter(Boolean);
+      if(el.dataset.input.endsWith('featured')) val = ['true','yes','1'].includes(el.value.toLowerCase());
+      set(el.dataset.input,val);
+      status('Content changed. Save when ready.');
+    };
+  });
+  document.querySelectorAll('[data-add]').forEach(btn=>btn.onclick=()=>{
+    const n=btn.dataset.add;
+    data[n]=Array.isArray(data[n])?data[n]:[];
+    const templates={services:{small:'',title:'',text:''},results:{image:'',label:''},packages:{name:'',price:'',button:'Enquire',items:[],featured:false},faqs:{question:'',answer:''}};
+    data[n].push(templates[n]||{});
+    renderContent();
+  });
+  document.querySelectorAll('[data-remove]').forEach(btn=>btn.onclick=()=>{
+    const [name,i]=btn.dataset.remove.split('.');
+    data[name].splice(Number(i),1);
+    renderContent();
+  });
+  document.querySelectorAll('[data-upload]').forEach(inputEl=>{
+    inputEl.onchange=async()=>{
+      const file=inputEl.files[0]; if(!file) return;
+      status('Uploading image...');
+      const b64 = await fileToBase64(file);
+      const res = await api('/api/upload',{method:'POST',body:JSON.stringify({name:file.name,data:b64.split(',')[1]})});
+      set(inputEl.dataset.upload,res.path);
+      renderContent();
+      reloadPreview();
+      status('Image uploaded. Save website to publish content change.');
+    };
+  });
+}
+
+function fileToBase64(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file);});}
+
+function openEditor(field){
+  currentField = field;
+  $('modalTitle').textContent = 'Edit ' + nice(field);
+  $('modalText').value = get(field) || '';
+  $('modal').classList.remove('hidden');
+}
+
+function closeEditor(){ $('modal').classList.add('hidden'); currentField=null; }
+
+function applyEdit(){
+  if(!currentField) return;
+  set(currentField,$('modalText').value);
+  closeEditor();
+  updatePreviewText(currentField,get(currentField));
+  status('Text changed. Save when ready.');
+}
+
+function updatePreviewText(field,value){
+  const doc = $('preview').contentDocument;
+  if(!doc) return;
+  doc.querySelectorAll(`[data-builder-field="${field}"]`).forEach(el=>el.textContent=value);
+}
+
+function injectPreviewEditor(){
+  const doc = $('preview').contentDocument;
+  if(!doc) return;
+  if(!doc.getElementById('jackal-editor-style')){
+    const st = doc.createElement('style');
+    st.id='jackal-editor-style';
+    st.textContent = `
+      [data-builder-field]{outline:2px dashed rgba(73,163,255,0);outline-offset:5px;cursor:text;transition:.15s}
+      [data-builder-field]:hover{outline-color:rgba(73,163,255,.95);background:rgba(73,163,255,.08)}
+      [data-builder-field]:hover:after{content:"  ✏";color:#49a3ff;font-weight:900}
+    `;
+    doc.head.appendChild(st);
+  }
+  doc.querySelectorAll('[data-builder-field]').forEach(el=>{
+    el.onclick=(e)=>{e.preventDefault();e.stopPropagation();openEditor(el.dataset.builderField)};
+  });
+}
+
+async function saveSite(){
+  try{
+    status('Saving...');
+    await api('/api/content',{method:'POST',body:JSON.stringify(data,null,2)});
+    status('Saved. Cloudflare will redeploy shortly.');
+  }catch(e){
+    status('Save failed. '+e.message,false);
+  }
+}
+
+document.getElementById('loginBtn').onclick = login;
+document.getElementById('saveBtn').onclick = saveSite;
+document.getElementById('refreshBtn').onclick = reloadPreview;
+document.getElementById('applyEdit').onclick = applyEdit;
+document.getElementById('cancelEdit').onclick = closeEditor;
+document.querySelectorAll('[data-mode]').forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll('[data-mode]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+btn.dataset.mode).classList.add('active');
+});
+autoLogin();

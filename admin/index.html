@@ -1,38 +1,89 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex" />
-  <title>Fiaz Website Admin</title>
-  <link rel="stylesheet" href="/admin/admin.css" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex"/>
+<title>Jackal Builder</title>
+<link rel="stylesheet" href="/admin/admin.css"/>
 </head>
 <body>
-  <main class="app">
-    <section id="login" class="login card">
-      <h1>Fiaz Website Admin</h1>
-      <p>Edit your website without touching GitHub. Finally. The nerd cupboard is closed.</p>
-      <input id="password" type="password" placeholder="Admin password" autocomplete="current-password" />
-      <button id="loginBtn">Login</button>
-      <small id="loginMsg"></small>
-    </section>
+<div id="login" class="login">
+  <div class="login-card">
+    <h1>Jackal Builder</h1>
+    <p>Wix-style editing for your coaching website. Click, move, change, save.</p>
+    <input id="password" type="password" placeholder="Admin password" autocomplete="current-password"/>
+    <button id="loginBtn">Login</button>
+    <small id="loginMsg"></small>
+  </div>
+</div>
 
-    <section id="editor" class="editor hidden">
-      <header class="topbar">
-        <div>
-          <h1>Website Editor</h1>
-          <p id="status">Loaded. Edit, save, done.</p>
-        </div>
-        <div class="actions">
-          <a class="ghost" href="/" target="_blank">View site</a>
-          <button id="saveBtn">Save website</button>
-        </div>
-      </header>
+<div id="builder" class="builder hidden">
+  <header class="topbar">
+    <div>
+      <h1>Jackal Builder</h1>
+      <p id="status">Ready.</p>
+    </div>
+    <div class="actions">
+      <button id="refreshBtn" class="ghost">Refresh preview</button>
+      <a class="ghost" href="/" target="_blank">View live site</a>
+      <button id="saveBtn">Save website</button>
+    </div>
+  </header>
 
-      <nav class="tabs" id="tabs"></nav>
-      <form id="form" class="grid"></form>
+  <main class="workspace">
+    <aside class="sidebar">
+      <nav class="mode-tabs">
+        <button data-mode="visual" class="active">Visual</button>
+        <button data-mode="sections">Sections</button>
+        <button data-mode="layout">Layout</button>
+        <button data-mode="content">Content</button>
+      </nav>
+
+      <section id="panel-visual" class="panel active">
+        <h2>Visual editing</h2>
+        <p>Click blue-highlighted text in the preview, edit it, then press save.</p>
+        <div id="quickFields"></div>
+      </section>
+
+      <section id="panel-sections" class="panel">
+        <h2>Move sections</h2>
+        <p>Drag these sections to reorder the website.</p>
+        <div id="sectionList" class="sortable"></div>
+      </section>
+
+      <section id="panel-layout" class="panel">
+        <h2>Layout</h2>
+        <div id="layoutFields"></div>
+      </section>
+
+      <section id="panel-content" class="panel">
+        <h2>Content manager</h2>
+        <div id="contentFields"></div>
+      </section>
+    </aside>
+
+    <section class="preview-area">
+      <div class="preview-top">
+        <span>Live preview</span>
+        <span class="hint">Click text directly on the site</span>
+      </div>
+      <iframe id="preview" src="/?preview=builder"></iframe>
     </section>
   </main>
-  <script src="/admin/admin.js"></script>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <h2 id="modalTitle">Edit</h2>
+    <textarea id="modalText"></textarea>
+    <div class="modal-actions">
+      <button id="applyEdit">Apply</button>
+      <button id="cancelEdit" class="ghost">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="/admin/admin.js"></script>
 </body>
 </html>
