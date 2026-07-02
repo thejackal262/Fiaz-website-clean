@@ -94,8 +94,8 @@ function clearSelection(){
 function showToolbox(l){
   $('toolbox').classList.remove('hidden');
   $('editTextBtn').style.display=['text','button'].includes(l.type)?'inline-flex':'none';
-  $('biggerBtn').style.display=['text','button'].includes(l.type)?'inline-flex':'none';
-  $('smallerBtn').style.display=['text','button'].includes(l.type)?'inline-flex':'none';
+  $('biggerBtn').style.display=['text','button','image'].includes(l.type)?'inline-flex':'none';
+  $('smallerBtn').style.display=['text','button','image'].includes(l.type)?'inline-flex':'none';
   $('replaceBtn').style.display=l.type==='image'?'inline-flex':'none';
 }
 function addHandles(el,id){
@@ -112,6 +112,7 @@ function bindMove(el,id){
     if(e.target.classList.contains('handle')) return;
     e.preventDefault(); selectLayer(id); pushHistory();
     const l=getLayer(id), sec=(data.sections||[]).find(s=>s.id===l.section);
+    if(l.locked){toast('Layer is locked');return;}
     const start={x:e.clientX,y:e.clientY,lx:l.x,ly:l.y};
     const move=ev=>{
       l.x=Math.round(start.lx+ev.clientX-start.x);
@@ -223,8 +224,18 @@ $('publishBtn').onclick=publish;
 $('editTextBtn').onclick=editText;
 $('applyTextBtn').onclick=applyText;
 $('cancelTextBtn').onclick=()=>$('textModal').classList.add('hidden');
-$('biggerBtn').onclick=()=>scaleText(6);
-$('smallerBtn').onclick=()=>scaleText(-6);
+$('biggerBtn').onclick=()=>{
+  const l=getLayer(selected);
+  if(!l) return;
+  if(l.type === 'image') imageZoom(10);
+  else scaleText(6);
+};
+$('smallerBtn').onclick=()=>{
+  const l=getLayer(selected);
+  if(!l) return;
+  if(l.type === 'image') imageZoom(-10);
+  else scaleText(-6);
+};
 $('replaceBtn').onclick=()=>$('imageUpload').click();
 $('imageUpload').onchange=e=>replaceImage(e.target.files[0]);
 $('frontBtn').onclick=()=>z(1);

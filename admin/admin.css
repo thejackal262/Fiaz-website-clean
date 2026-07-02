@@ -14,8 +14,8 @@ button{border:0;border-radius:12px;padding:10px 13px;font-weight:900;cursor:poin
 #status{color:var(--gold);font-weight:800;font-size:13px}
 .toolbar{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .publish{background:var(--gold);color:#050505;border-color:var(--gold)}
-.workspace{height:calc(100vh - 64px);overflow:auto;background:#1a1a1a;padding:24px}
-#canvasWrap{width:1440px;margin:0 auto;background:#050505;box-shadow:0 0 0 1px rgba(244,215,126,.25),0 30px 100px rgba(0,0,0,.6)}
+.workspace{height:calc(100vh - 64px);overflow:auto;background:radial-gradient(circle at 50% 0%,rgba(244,215,126,.10),transparent 28%),#151515;padding:24px}
+#canvasWrap{width:1440px;margin:0 auto;background:#050505;box-shadow:0 0 0 1px rgba(244,215,126,.35),0 40px 140px rgba(0,0,0,.75)}
 #canvas{position:relative;width:1440px;min-height:5200px;background:#050505;overflow:hidden}
 .section-layer{position:absolute;left:0;width:1440px;overflow:hidden;border:1px solid rgba(244,215,126,.08)}
 .layer{position:absolute;box-sizing:border-box;outline:2px solid transparent;outline-offset:2px;touch-action:none;white-space:normal}

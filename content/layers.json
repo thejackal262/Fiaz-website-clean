@@ -1,15 +1,15 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0-luxury",
   "canvas": {
     "desktop": {
       "width": 1440,
-      "height": 5200
+      "height": 5600
     },
     "mobile": {
       "width": 390,
-      "height": 6500
+      "height": 7200
     },
-    "background": "#050505"
+    "background": "#030303"
   },
   "sections": [
     {
@@ -18,96 +18,141 @@
       "x": 0,
       "y": 0,
       "w": 1440,
-      "h": 920,
+      "h": 980,
       "z": 1,
-      "background": "#050505"
+      "background": "radial-gradient(circle at 78% 20%,rgba(244,215,126,.22),transparent 26%),linear-gradient(180deg,#030303,#050505)"
+    },
+    {
+      "id": "truth",
+      "name": "Truth",
+      "x": 0,
+      "y": 980,
+      "w": 1440,
+      "h": 650,
+      "z": 1,
+      "background": "linear-gradient(135deg,#050505,#0b0b0b)"
     },
     {
       "id": "about",
       "name": "About",
       "x": 0,
-      "y": 920,
+      "y": 1630,
       "w": 1440,
-      "h": 820,
+      "h": 850,
       "z": 1,
-      "background": "#050505"
+      "background": "#030303"
     },
     {
       "id": "services",
-      "name": "Services",
+      "name": "Coaching",
       "x": 0,
-      "y": 1740,
+      "y": 2480,
       "w": 1440,
       "h": 900,
       "z": 1,
-      "background": "#050505"
+      "background": "linear-gradient(180deg,#050505,#090909)"
     },
     {
       "id": "results",
       "name": "Results",
       "x": 0,
-      "y": 2640,
+      "y": 3380,
       "w": 1440,
-      "h": 860,
+      "h": 800,
       "z": 1,
-      "background": "#050505"
+      "background": "#030303"
     },
     {
       "id": "pricing",
-      "name": "Pricing",
+      "name": "Packages",
       "x": 0,
-      "y": 3500,
+      "y": 4180,
       "w": 1440,
-      "h": 850,
+      "h": 900,
       "z": 1,
-      "background": "#050505"
+      "background": "linear-gradient(180deg,#070707,#030303)"
     },
     {
       "id": "contact",
       "name": "Contact",
       "x": 0,
-      "y": 4350,
+      "y": 5080,
       "w": 1440,
-      "h": 620,
+      "h": 520,
       "z": 1,
-      "background": "#050505"
+      "background": "radial-gradient(circle at 50% 0%,rgba(244,215,126,.2),transparent 34%),#030303"
     }
   ],
   "layers": [
     {
-      "id": "hero-bg",
+      "id": "hero-bg-image",
       "type": "image",
       "section": "hero",
-      "x": 0,
+      "x": -30,
       "y": 0,
-      "w": 1440,
-      "h": 920,
+      "w": 1500,
+      "h": 980,
       "z": 1,
       "locked": false,
       "hidden": false,
       "styles": {
-        "opacity": "0.55"
+        "opacity": ".42",
+        "filter": "contrast(1.15) saturate(1.05)"
       },
       "src": "/images/uploads/img_1760.jpeg",
       "crop": {
-        "x": 50,
-        "y": 50,
-        "zoom": 120
+        "x": 54,
+        "y": 43,
+        "zoom": 115
       },
       "mode": "cover"
+    },
+    {
+      "id": "hero-vignette",
+      "type": "card",
+      "section": "hero",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 980,
+      "z": 2,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(90deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.76) 35%,rgba(0,0,0,.35) 62%,rgba(0,0,0,.82) 100%)"
+      }
+    },
+    {
+      "id": "hero-gold-glow",
+      "type": "card",
+      "section": "hero",
+      "x": 890,
+      "y": 90,
+      "w": 460,
+      "h": 460,
+      "z": 3,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "radial-gradient(circle,rgba(244,215,126,.23),transparent 66%)",
+        "borderRadius": "999px",
+        "filter": "blur(10px)"
+      }
     },
     {
       "id": "logo",
       "type": "image",
       "section": "hero",
-      "x": 70,
-      "y": 42,
-      "w": 160,
-      "h": 110,
-      "z": 20,
+      "x": 58,
+      "y": 38,
+      "w": 138,
+      "h": 138,
+      "z": 50,
       "locked": false,
       "hidden": false,
-      "styles": {},
+      "styles": {
+        "filter": "drop-shadow(0 12px 30px rgba(0,0,0,.8))"
+      },
       "src": "/images/uploads/img_1760.jpeg",
       "crop": {
         "x": 50,
@@ -117,144 +162,271 @@
       "mode": "contain"
     },
     {
-      "id": "hero-badge",
+      "id": "nav-brand",
       "type": "text",
       "section": "hero",
-      "x": 285,
-      "y": 355,
-      "w": 650,
-      "h": 38,
-      "z": 30,
+      "x": 210,
+      "y": 58,
+      "w": 290,
+      "h": 34,
+      "z": 51,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "16px",
-        "fontWeight": "900",
-        "letterSpacing": "3px",
+        "fontSize": "22px",
+        "fontWeight": "1000",
+        "letterSpacing": "1px",
+        "color": "#fff",
+        "textTransform": "uppercase"
+      },
+      "content": "FIAZ ALI COACHING"
+    },
+    {
+      "id": "nav-line",
+      "type": "card",
+      "section": "hero",
+      "x": 210,
+      "y": 98,
+      "w": 230,
+      "h": 2,
+      "z": 52,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(90deg,#f4d77e,transparent)"
+      }
+    },
+    {
+      "id": "nav-about",
+      "type": "text",
+      "section": "hero",
+      "x": 850,
+      "y": 62,
+      "w": 120,
+      "h": 30,
+      "z": 53,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "14px",
+        "fontWeight": "950",
+        "letterSpacing": "2px",
+        "color": "#d8d8d8",
+        "textTransform": "uppercase",
+        "textAlign": "center"
+      },
+      "content": "ABOUT"
+    },
+    {
+      "id": "nav-coaching",
+      "type": "text",
+      "section": "hero",
+      "x": 955,
+      "y": 62,
+      "w": 120,
+      "h": 30,
+      "z": 53,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "14px",
+        "fontWeight": "950",
+        "letterSpacing": "2px",
+        "color": "#d8d8d8",
+        "textTransform": "uppercase",
+        "textAlign": "center"
+      },
+      "content": "COACHING"
+    },
+    {
+      "id": "nav-results",
+      "type": "text",
+      "section": "hero",
+      "x": 1090,
+      "y": 62,
+      "w": 120,
+      "h": 30,
+      "z": 53,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "14px",
+        "fontWeight": "950",
+        "letterSpacing": "2px",
+        "color": "#d8d8d8",
+        "textTransform": "uppercase",
+        "textAlign": "center"
+      },
+      "content": "RESULTS"
+    },
+    {
+      "id": "nav-packages",
+      "type": "text",
+      "section": "hero",
+      "x": 1210,
+      "y": 62,
+      "w": 120,
+      "h": 30,
+      "z": 53,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "14px",
+        "fontWeight": "950",
+        "letterSpacing": "2px",
+        "color": "#d8d8d8",
+        "textTransform": "uppercase",
+        "textAlign": "center"
+      },
+      "content": "PACKAGES"
+    },
+    {
+      "id": "hero-badge",
+      "type": "text",
+      "section": "hero",
+      "x": 118,
+      "y": 230,
+      "w": 720,
+      "h": 42,
+      "z": 60,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "15px",
+        "fontWeight": "1000",
+        "letterSpacing": "4px",
         "color": "#f4d77e",
         "textTransform": "uppercase",
         "textAlign": "center",
-        "border": "1px solid rgba(244,215,126,.5)",
-        "borderRadius": "20px",
-        "padding": "8px 18px",
-        "background": "rgba(0,0,0,.45)"
+        "border": "1px solid rgba(244,215,126,.52)",
+        "borderRadius": "999px",
+        "padding": "11px 20px",
+        "background": "rgba(0,0,0,.52)",
+        "boxShadow": "0 0 40px rgba(244,215,126,.12)"
       },
-      "content": "Affordable Person Training And Worldwide Online Coaching"
+      "content": "NO-NONSENSE BODY TRANSFORMATION COACHING"
     },
     {
       "id": "hero-title-1",
       "type": "text",
       "section": "hero",
-      "x": 280,
-      "y": 405,
-      "w": 880,
-      "h": 105,
-      "z": 31,
+      "x": 112,
+      "y": 305,
+      "w": 820,
+      "h": 106,
+      "z": 61,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "94px",
+        "fontSize": "104px",
         "fontWeight": "1000",
-        "lineHeight": "0.9",
+        "lineHeight": ".88",
+        "letterSpacing": "-5px",
         "color": "#ffffff",
         "textTransform": "uppercase",
-        "letterSpacing": "-4px"
+        "textShadow": "0 12px 40px rgba(0,0,0,.7)"
       },
-      "content": "Build a body"
+      "content": "BUILD A BODY"
     },
     {
       "id": "hero-title-2",
       "type": "text",
       "section": "hero",
-      "x": 280,
-      "y": 505,
-      "w": 980,
-      "h": 105,
-      "z": 32,
+      "x": 112,
+      "y": 405,
+      "w": 965,
+      "h": 112,
+      "z": 62,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "94px",
+        "fontSize": "104px",
         "fontWeight": "1000",
-        "lineHeight": "0.9",
-        "color": "#c79b35",
+        "lineHeight": ".88",
+        "letterSpacing": "-5px",
+        "color": "transparent",
         "textTransform": "uppercase",
-        "letterSpacing": "-4px"
+        "textShadow": "0 2px 0 rgba(255,255,255,.12),0 8px 28px rgba(244,215,126,.2)",
+        "background": "linear-gradient(180deg,#fff6c9 0%,#f4d77e 28%,#a97919 55%,#fff1b5 78%,#7b530b 100%)",
+        "WebkitBackgroundClip": "text",
+        "backgroundClip": "text"
       },
-      "content": "that refuses"
+      "content": "THAT REFUSES"
     },
     {
       "id": "hero-title-3",
       "type": "text",
       "section": "hero",
-      "x": 280,
-      "y": 605,
-      "w": 760,
-      "h": 105,
-      "z": 33,
+      "x": 112,
+      "y": 510,
+      "w": 660,
+      "h": 106,
+      "z": 63,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "94px",
+        "fontSize": "104px",
         "fontWeight": "1000",
-        "lineHeight": "0.9",
+        "lineHeight": ".88",
+        "letterSpacing": "-5px",
         "color": "#ffffff",
         "textTransform": "uppercase",
-        "letterSpacing": "-4px"
+        "textShadow": "0 12px 40px rgba(0,0,0,.7)"
       },
-      "content": "to quit."
+      "content": "TO QUIT."
     },
     {
       "id": "hero-copy",
       "type": "text",
       "section": "hero",
-      "x": 285,
-      "y": 725,
-      "w": 720,
-      "h": 70,
-      "z": 34,
+      "x": 118,
+      "y": 645,
+      "w": 710,
+      "h": 80,
+      "z": 64,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "20px",
-        "fontWeight": "700",
+        "fontSize": "22px",
+        "fontWeight": "650",
         "lineHeight": "1.45",
-        "color": "#ffffff"
+        "color": "#e4e4e4"
       },
       "content": "Lose fat. Build muscle. Get brutally strong. Coaching for real people who are done with starting over every Monday."
     },
     {
-      "id": "hero-btn-1",
+      "id": "hero-btn-primary",
       "type": "button",
       "section": "hero",
-      "x": 285,
-      "y": 815,
-      "w": 190,
-      "h": 64,
-      "z": 35,
+      "x": 118,
+      "y": 760,
+      "w": 225,
+      "h": 68,
+      "z": 70,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "15px",
         "fontWeight": "1000",
         "letterSpacing": "2px",
-        "color": "#ffffff",
-        "background": "linear-gradient(135deg,#6b430b,#d7a331,#6b430b)",
-        "borderRadius": "16px",
+        "color": "#090909",
+        "background": "linear-gradient(135deg,#fff2b5,#d6a331 42%,#805709 100%)",
+        "borderRadius": "18px",
+        "boxShadow": "0 22px 70px rgba(214,163,49,.24)",
         "textTransform": "uppercase"
       },
-      "content": "Wagwan",
+      "content": "START THE WORK",
       "href": "#contact"
     },
     {
-      "id": "hero-btn-2",
+      "id": "hero-btn-secondary",
       "type": "button",
       "section": "hero",
-      "x": 500,
-      "y": 815,
-      "w": 300,
-      "h": 64,
-      "z": 36,
+      "x": 368,
+      "y": 760,
+      "w": 315,
+      "h": 68,
+      "z": 71,
       "locked": false,
       "hidden": false,
       "styles": {
@@ -262,34 +434,156 @@
         "fontWeight": "1000",
         "letterSpacing": "2px",
         "color": "#ffffff",
-        "background": "rgba(0,0,0,.45)",
-        "border": "1px solid rgba(244,215,126,.5)",
-        "borderRadius": "16px",
+        "background": "rgba(10,10,10,.72)",
+        "border": "1px solid rgba(244,215,126,.45)",
+        "borderRadius": "18px",
         "textTransform": "uppercase"
       },
-      "content": "View Coaching Options",
+      "content": "VIEW COACHING OPTIONS",
       "href": "#services"
+    },
+    {
+      "id": "hero-proof",
+      "type": "text",
+      "section": "hero",
+      "x": 118,
+      "y": 870,
+      "w": 780,
+      "h": 40,
+      "z": 72,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "15px",
+        "fontWeight": "900",
+        "letterSpacing": "2px",
+        "color": "#f4d77e",
+        "textTransform": "uppercase"
+      },
+      "content": "17+ YEARS COACHING \u2022 PERSONAL TRAINING \u2022 ONLINE TRANSFORMATIONS"
+    },
+    {
+      "id": "truth-line-top",
+      "type": "card",
+      "section": "truth",
+      "x": 90,
+      "y": 1050,
+      "w": 1260,
+      "h": 1,
+      "z": 3,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(90deg,transparent,#f4d77e,transparent)",
+        "opacity": ".45"
+      }
+    },
+    {
+      "id": "truth-title",
+      "type": "text",
+      "section": "truth",
+      "x": 120,
+      "y": 1110,
+      "w": 1180,
+      "h": 170,
+      "z": 10,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "72px",
+        "fontWeight": "1000",
+        "lineHeight": ".95",
+        "letterSpacing": "-3px",
+        "textTransform": "uppercase",
+        "textAlign": "center",
+        "color": "#ffffff"
+      },
+      "content": "NO FAIRY DUST. NO MAGIC PLAN. NO BULLSHIT."
+    },
+    {
+      "id": "truth-gold",
+      "type": "text",
+      "section": "truth",
+      "x": 242,
+      "y": 1298,
+      "w": 960,
+      "h": 78,
+      "z": 11,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(180deg,#fff6c9 0%,#f4d77e 28%,#a97919 55%,#fff1b5 78%,#7b530b 100%)",
+        "WebkitBackgroundClip": "text",
+        "backgroundClip": "text",
+        "color": "transparent",
+        "textShadow": "0 2px 0 rgba(255,255,255,.12),0 8px 28px rgba(244,215,126,.2)",
+        "fontSize": "66px",
+        "fontWeight": "1000",
+        "letterSpacing": "-2px",
+        "lineHeight": "1",
+        "textTransform": "uppercase",
+        "textAlign": "center"
+      },
+      "content": "JUST STANDARDS. JUST WORK."
+    },
+    {
+      "id": "truth-copy",
+      "type": "text",
+      "section": "truth",
+      "x": 260,
+      "y": 1410,
+      "w": 920,
+      "h": 115,
+      "z": 12,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "24px",
+        "lineHeight": "1.55",
+        "color": "#dedede",
+        "textAlign": "center",
+        "fontWeight": "650"
+      },
+      "content": "If you want soft words and cuddles, wrong coach. If you want honesty, structure, accountability and someone who will call you out when you start lying to yourself \u2014 welcome home."
+    },
+    {
+      "id": "about-frame",
+      "type": "card",
+      "section": "about",
+      "x": 80,
+      "y": 1730,
+      "w": 545,
+      "h": 610,
+      "z": 4,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(135deg,rgba(244,215,126,.15),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.28)",
+        "borderRadius": "36px",
+        "boxShadow": "0 30px 120px rgba(0,0,0,.72)"
+      }
     },
     {
       "id": "about-image",
       "type": "image",
       "section": "about",
-      "x": 90,
-      "y": 1040,
-      "w": 520,
-      "h": 600,
+      "x": 105,
+      "y": 1755,
+      "w": 495,
+      "h": 560,
       "z": 5,
       "locked": false,
       "hidden": false,
       "styles": {
-        "borderRadius": "34px",
-        "border": "1px solid rgba(244,215,126,.35)"
+        "borderRadius": "28px",
+        "filter": "contrast(1.08) saturate(1.02)"
       },
       "src": "/images/uploads/16b891ee-7b46-462f-8d6c-194e223519d7.png",
       "crop": {
         "x": 50,
-        "y": 50,
-        "zoom": 100
+        "y": 42,
+        "zoom": 112
       },
       "mode": "cover"
     },
@@ -297,359 +591,519 @@
       "id": "about-kicker",
       "type": "text",
       "section": "about",
-      "x": 690,
-      "y": 1035,
-      "w": 250,
+      "x": 700,
+      "y": 1760,
+      "w": 260,
       "h": 34,
       "z": 10,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "15px",
-        "fontWeight": "900",
-        "letterSpacing": "3px",
+        "fontWeight": "1000",
+        "letterSpacing": "4px",
         "color": "#f4d77e",
         "textTransform": "uppercase"
       },
-      "content": "About Fiaz"
+      "content": "ABOUT FIAZ"
     },
     {
       "id": "about-title",
       "type": "text",
       "section": "about",
-      "x": 690,
-      "y": 1080,
-      "w": 660,
-      "h": 180,
+      "x": 700,
+      "y": 1810,
+      "w": 680,
+      "h": 170,
       "z": 11,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "70px",
+        "fontSize": "60px",
         "fontWeight": "1000",
-        "lineHeight": "0.92",
-        "letterSpacing": "-3px",
-        "textTransform": "uppercase",
-        "color": "#ffffff"
+        "lineHeight": ".95",
+        "letterSpacing": "-2px",
+        "color": "#ffffff",
+        "textTransform": "uppercase"
       },
-      "content": "No gimmicks. No fairy dust. Just work."
+      "content": "BUILT FROM THE SAME WAR I COACH PEOPLE THROUGH."
     },
     {
       "id": "about-copy",
       "type": "text",
       "section": "about",
-      "x": 690,
-      "y": 1285,
-      "w": 650,
-      "h": 120,
+      "x": 700,
+      "y": 2010,
+      "w": 645,
+      "h": 150,
       "z": 12,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "22px",
         "lineHeight": "1.55",
-        "color": "#d6d6d6"
+        "color": "#d8d8d8"
       },
-      "content": "I help people lose fat, build muscle and become stronger than they thought possible. My coaching is built around real life, not perfect conditions."
+      "content": "I know what it feels like to start from the bottom, to be heavy, tired, frustrated and sick of your own excuses. My job is not to sell you a fantasy. My job is to help you build discipline, strength and a body you respect."
+    },
+    {
+      "id": "about-point-box-0",
+      "type": "card",
+      "section": "about",
+      "x": 700,
+      "y": 2190,
+      "w": 640,
+      "h": 50,
+      "z": 13,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "rgba(255,255,255,.045)",
+        "border": "1px solid rgba(255,255,255,.12)",
+        "borderRadius": "16px"
+      }
+    },
+    {
+      "id": "about-point-0",
+      "type": "text",
+      "section": "about",
+      "x": 725,
+      "y": 2203,
+      "w": 585,
+      "h": 26,
+      "z": 20,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "17px",
+        "fontWeight": "700",
+        "color": "#f0f0f0"
+      },
+      "content": "\u2022  Training that fits your body, your goal and your current ability."
+    },
+    {
+      "id": "about-point-box-1",
+      "type": "card",
+      "section": "about",
+      "x": 700,
+      "y": 2254,
+      "w": 640,
+      "h": 50,
+      "z": 14,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "rgba(255,255,255,.045)",
+        "border": "1px solid rgba(255,255,255,.12)",
+        "borderRadius": "16px"
+      }
+    },
+    {
+      "id": "about-point-1",
+      "type": "text",
+      "section": "about",
+      "x": 725,
+      "y": 2267,
+      "w": 585,
+      "h": 26,
+      "z": 21,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "17px",
+        "fontWeight": "700",
+        "color": "#f0f0f0"
+      },
+      "content": "\u2022  Nutrition that gets results without turning your life into boiled chicken prison."
+    },
+    {
+      "id": "about-point-box-2",
+      "type": "card",
+      "section": "about",
+      "x": 700,
+      "y": 2318,
+      "w": 640,
+      "h": 50,
+      "z": 15,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "rgba(255,255,255,.045)",
+        "border": "1px solid rgba(255,255,255,.12)",
+        "borderRadius": "16px"
+      }
+    },
+    {
+      "id": "about-point-2",
+      "type": "text",
+      "section": "about",
+      "x": 725,
+      "y": 2331,
+      "w": 585,
+      "h": 26,
+      "z": 22,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "17px",
+        "fontWeight": "700",
+        "color": "#f0f0f0"
+      },
+      "content": "\u2022  Accountability when motivation disappears and excuses start getting loud."
+    },
+    {
+      "id": "services-kicker",
+      "type": "text",
+      "section": "services",
+      "x": 90,
+      "y": 2585,
+      "w": 360,
+      "h": 34,
+      "z": 10,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "15px",
+        "fontWeight": "1000",
+        "letterSpacing": "4px",
+        "color": "#f4d77e",
+        "textTransform": "uppercase"
+      },
+      "content": "CHOOSE YOUR LEVEL"
     },
     {
       "id": "services-title",
       "type": "text",
       "section": "services",
       "x": 90,
-      "y": 1845,
-      "w": 760,
-      "h": 100,
-      "z": 10,
+      "y": 2630,
+      "w": 900,
+      "h": 94,
+      "z": 11,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "72px",
+        "fontSize": "64px",
         "fontWeight": "1000",
-        "letterSpacing": "-3px",
         "lineHeight": "1",
+        "letterSpacing": "-3px",
         "color": "#ffffff",
         "textTransform": "uppercase"
       },
-      "content": "Choose your level."
+      "content": "COACHING THAT DOESN'T LET YOU HIDE."
     },
     {
       "id": "services-copy",
       "type": "text",
       "section": "services",
       "x": 90,
-      "y": 1960,
-      "w": 680,
+      "y": 2745,
+      "w": 760,
       "h": 70,
-      "z": 11,
+      "z": 12,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "21px",
-        "lineHeight": "1.5",
-        "color": "#d6d6d6"
+        "fontSize": "22px",
+        "fontWeight": "650",
+        "lineHeight": "1.45",
+        "color": "#e4e4e4"
       },
-      "content": "Start where you are. We build from there. No ego. No pretending. No nonsense."
+      "content": "Whether you need training, nutrition or the full kick-up-the-arse package, the mission is the same: build habits, build strength, build the body."
     },
     {
       "id": "service-card-0",
       "type": "card",
       "section": "services",
       "x": 90,
-      "y": 2070,
+      "y": 2890,
       "w": 370,
-      "h": 210,
+      "h": 300,
       "z": 20,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "#111111",
-        "border": "1px solid rgba(255,255,255,.12)",
-        "borderRadius": "28px",
-        "padding": "28px"
+        "background": "linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.24)",
+        "borderRadius": "30px",
+        "boxShadow": "0 30px 90px rgba(0,0,0,.48)",
+        "padding": "30px"
       }
     },
     {
-      "id": "service-small-0",
+      "id": "service-num-0",
       "type": "text",
       "section": "services",
-      "x": 118,
-      "y": 2098,
-      "w": 80,
-      "h": 25,
+      "x": 120,
+      "y": 2920,
+      "w": 70,
+      "h": 32,
       "z": 30,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "14px",
-        "fontWeight": "900",
+        "fontSize": "18px",
+        "fontWeight": "1000",
+        "letterSpacing": "4px",
         "color": "#f4d77e",
-        "letterSpacing": "2px"
+        "textTransform": "uppercase"
       },
-      "content": "01 / In Person"
+      "content": "01"
     },
     {
-      "id": "service-title-0",
+      "id": "service-heading-0",
       "type": "text",
       "section": "services",
-      "x": 118,
-      "y": 2135,
+      "x": 120,
+      "y": 2970,
       "w": 310,
-      "h": 48,
+      "h": 70,
       "z": 31,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "26px",
-        "fontWeight": "900",
-        "color": "#ffffff"
+        "fontSize": "30px",
+        "fontWeight": "1000",
+        "lineHeight": "1",
+        "color": "#ffffff",
+        "textTransform": "uppercase"
       },
-      "content": "1-to-1 Personal Training"
+      "content": "TRAINING ONLY"
     },
     {
-      "id": "service-text-0",
+      "id": "service-copy-0",
       "type": "text",
       "section": "services",
-      "x": 118,
-      "y": 2190,
+      "x": 120,
+      "y": 3060,
       "w": 310,
-      "h": 65,
+      "h": 100,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "16px",
-        "lineHeight": "1.45",
-        "color": "#d0d0d0"
+        "fontSize": "17px",
+        "lineHeight": "1.48",
+        "color": "#d6d6d6"
       },
-      "content": "Face-to-face coaching for fat loss, strength, technique, confidence and accountability."
+      "content": "For people who know they need structure, progressive overload and a plan that actually makes sense."
     },
     {
       "id": "service-card-1",
       "type": "card",
       "section": "services",
       "x": 510,
-      "y": 2070,
+      "y": 2890,
       "w": 370,
-      "h": 210,
+      "h": 300,
       "z": 21,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "#111111",
-        "border": "1px solid rgba(255,255,255,.12)",
-        "borderRadius": "28px",
-        "padding": "28px"
+        "background": "linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.24)",
+        "borderRadius": "30px",
+        "boxShadow": "0 30px 90px rgba(0,0,0,.48)",
+        "padding": "30px"
       }
     },
     {
-      "id": "service-small-1",
+      "id": "service-num-1",
       "type": "text",
       "section": "services",
-      "x": 538,
-      "y": 2098,
-      "w": 80,
-      "h": 25,
+      "x": 540,
+      "y": 2920,
+      "w": 70,
+      "h": 32,
       "z": 31,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "14px",
-        "fontWeight": "900",
+        "fontSize": "18px",
+        "fontWeight": "1000",
+        "letterSpacing": "4px",
         "color": "#f4d77e",
-        "letterSpacing": "2px"
+        "textTransform": "uppercase"
       },
-      "content": "02 / Online"
+      "content": "02"
     },
     {
-      "id": "service-title-1",
+      "id": "service-heading-1",
       "type": "text",
       "section": "services",
-      "x": 538,
-      "y": 2135,
+      "x": 540,
+      "y": 2970,
       "w": 310,
-      "h": 48,
+      "h": 70,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "26px",
-        "fontWeight": "900",
-        "color": "#ffffff"
+        "fontSize": "30px",
+        "fontWeight": "1000",
+        "lineHeight": "1",
+        "color": "#ffffff",
+        "textTransform": "uppercase"
       },
-      "content": "Online Coaching"
+      "content": "NUTRITION SUPPORT"
     },
     {
-      "id": "service-text-1",
+      "id": "service-copy-1",
       "type": "text",
       "section": "services",
-      "x": 538,
-      "y": 2190,
+      "x": 540,
+      "y": 3060,
       "w": 310,
-      "h": 65,
+      "h": 100,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "16px",
-        "lineHeight": "1.45",
-        "color": "#d0d0d0"
+        "fontSize": "17px",
+        "lineHeight": "1.48",
+        "color": "#d6d6d6"
       },
-      "content": "Custom training, nutrition targets, weekly check-ins and support wherever you train."
+      "content": "Meal-by-meal support so you stop guessing and start eating like someone who has a goal."
     },
     {
       "id": "service-card-2",
       "type": "card",
       "section": "services",
       "x": 930,
-      "y": 2070,
+      "y": 2890,
       "w": 370,
-      "h": 210,
+      "h": 300,
       "z": 22,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "#111111",
-        "border": "1px solid rgba(255,255,255,.12)",
-        "borderRadius": "28px",
-        "padding": "28px"
+        "background": "linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.24)",
+        "borderRadius": "30px",
+        "boxShadow": "0 30px 90px rgba(0,0,0,.48)",
+        "padding": "30px"
       }
     },
     {
-      "id": "service-small-2",
+      "id": "service-num-2",
       "type": "text",
       "section": "services",
-      "x": 958,
-      "y": 2098,
-      "w": 80,
-      "h": 25,
+      "x": 960,
+      "y": 2920,
+      "w": 70,
+      "h": 32,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "14px",
-        "fontWeight": "900",
+        "fontSize": "18px",
+        "fontWeight": "1000",
+        "letterSpacing": "4px",
         "color": "#f4d77e",
-        "letterSpacing": "2px"
+        "textTransform": "uppercase"
       },
-      "content": "03 / Full Support"
+      "content": "03"
     },
     {
-      "id": "service-title-2",
+      "id": "service-heading-2",
       "type": "text",
       "section": "services",
-      "x": 958,
-      "y": 2135,
+      "x": 960,
+      "y": 2970,
       "w": 310,
-      "h": 48,
+      "h": 70,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "26px",
-        "fontWeight": "900",
-        "color": "#ffffff"
+        "fontSize": "30px",
+        "fontWeight": "1000",
+        "lineHeight": "1",
+        "color": "#ffffff",
+        "textTransform": "uppercase"
       },
-      "content": "Transformation Coaching"
+      "content": "FULL COACHING"
     },
     {
-      "id": "service-text-2",
+      "id": "service-copy-2",
       "type": "text",
       "section": "services",
-      "x": 958,
-      "y": 2190,
+      "x": 960,
+      "y": 3060,
       "w": 310,
-      "h": 65,
+      "h": 100,
       "z": 34,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "16px",
-        "lineHeight": "1.45",
-        "color": "#d0d0d0"
+        "fontSize": "17px",
+        "lineHeight": "1.48",
+        "color": "#d6d6d6"
       },
-      "content": "For people who need proper structure, standards and direct coaching instead of another random plan."
+      "content": "Training, nutrition, mindset, WhatsApp support and the accountability you keep pretending you don't need."
+    },
+    {
+      "id": "results-kicker",
+      "type": "text",
+      "section": "results",
+      "x": 90,
+      "y": 3485,
+      "w": 320,
+      "h": 34,
+      "z": 10,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "15px",
+        "fontWeight": "1000",
+        "letterSpacing": "4px",
+        "color": "#f4d77e",
+        "textTransform": "uppercase"
+      },
+      "content": "PROOF OVER PROMISES"
     },
     {
       "id": "results-title",
       "type": "text",
       "section": "results",
       "x": 90,
-      "y": 2745,
-      "w": 760,
-      "h": 95,
-      "z": 10,
+      "y": 3530,
+      "w": 860,
+      "h": 92,
+      "z": 11,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "72px",
+        "fontSize": "64px",
         "fontWeight": "1000",
+        "lineHeight": "1",
         "letterSpacing": "-3px",
         "color": "#ffffff",
         "textTransform": "uppercase"
       },
-      "content": "Receipts, not promises."
+      "content": "RESULTS DON'T CARE ABOUT EXCUSES."
     },
     {
       "id": "result-image-0",
       "type": "image",
       "section": "results",
       "x": 90,
-      "y": 2880,
+      "y": 3685,
       "w": 370,
-      "h": 360,
+      "h": 350,
       "z": 20,
       "locked": false,
       "hidden": false,
       "styles": {
-        "borderRadius": "28px",
-        "border": "1px solid rgba(244,215,126,.35)"
+        "borderRadius": "30px",
+        "border": "1px solid rgba(244,215,126,.32)",
+        "boxShadow": "0 30px 90px rgba(0,0,0,.58)"
       },
       "src": "/images/uploads/client1.svg",
       "crop": {
         "x": 50,
         "y": 50,
-        "zoom": 100
+        "zoom": 105
       },
       "mode": "cover"
     },
@@ -657,20 +1111,22 @@
       "id": "result-label-0",
       "type": "text",
       "section": "results",
-      "x": 110,
-      "y": 3180,
-      "w": 330,
-      "h": 40,
+      "x": 112,
+      "y": 3972,
+      "w": 325,
+      "h": 42,
       "z": 30,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "18px",
-        "fontWeight": "900",
+        "fontSize": "17px",
+        "fontWeight": "1000",
         "color": "#ffffff",
-        "background": "rgba(0,0,0,.6)",
-        "padding": "8px 12px",
-        "borderRadius": "12px"
+        "background": "rgba(0,0,0,.72)",
+        "border": "1px solid rgba(244,215,126,.25)",
+        "borderRadius": "14px",
+        "padding": "10px 14px",
+        "textTransform": "uppercase"
       },
       "content": "Transformation Photo"
     },
@@ -679,21 +1135,22 @@
       "type": "image",
       "section": "results",
       "x": 510,
-      "y": 2880,
+      "y": 3685,
       "w": 370,
-      "h": 360,
+      "h": 350,
       "z": 21,
       "locked": false,
       "hidden": false,
       "styles": {
-        "borderRadius": "28px",
-        "border": "1px solid rgba(244,215,126,.35)"
+        "borderRadius": "30px",
+        "border": "1px solid rgba(244,215,126,.32)",
+        "boxShadow": "0 30px 90px rgba(0,0,0,.58)"
       },
       "src": "/images/uploads/client2.svg",
       "crop": {
         "x": 50,
         "y": 50,
-        "zoom": 100
+        "zoom": 105
       },
       "mode": "cover"
     },
@@ -701,20 +1158,22 @@
       "id": "result-label-1",
       "type": "text",
       "section": "results",
-      "x": 530,
-      "y": 3180,
-      "w": 330,
-      "h": 40,
+      "x": 532,
+      "y": 3972,
+      "w": 325,
+      "h": 42,
       "z": 31,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "18px",
-        "fontWeight": "900",
+        "fontSize": "17px",
+        "fontWeight": "1000",
         "color": "#ffffff",
-        "background": "rgba(0,0,0,.6)",
-        "padding": "8px 12px",
-        "borderRadius": "12px"
+        "background": "rgba(0,0,0,.72)",
+        "border": "1px solid rgba(244,215,126,.25)",
+        "borderRadius": "14px",
+        "padding": "10px 14px",
+        "textTransform": "uppercase"
       },
       "content": "Strength Milestone"
     },
@@ -723,21 +1182,22 @@
       "type": "image",
       "section": "results",
       "x": 930,
-      "y": 2880,
+      "y": 3685,
       "w": 370,
-      "h": 360,
+      "h": 350,
       "z": 22,
       "locked": false,
       "hidden": false,
       "styles": {
-        "borderRadius": "28px",
-        "border": "1px solid rgba(244,215,126,.35)"
+        "borderRadius": "30px",
+        "border": "1px solid rgba(244,215,126,.32)",
+        "boxShadow": "0 30px 90px rgba(0,0,0,.58)"
       },
       "src": "/images/uploads/client3.svg",
       "crop": {
         "x": 50,
         "y": 50,
-        "zoom": 100
+        "zoom": 105
       },
       "mode": "cover"
     },
@@ -745,58 +1205,82 @@
       "id": "result-label-2",
       "type": "text",
       "section": "results",
-      "x": 950,
-      "y": 3180,
-      "w": 330,
-      "h": 40,
+      "x": 952,
+      "y": 3972,
+      "w": 325,
+      "h": 42,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "18px",
-        "fontWeight": "900",
+        "fontSize": "17px",
+        "fontWeight": "1000",
         "color": "#ffffff",
-        "background": "rgba(0,0,0,.6)",
-        "padding": "8px 12px",
-        "borderRadius": "12px"
+        "background": "rgba(0,0,0,.72)",
+        "border": "1px solid rgba(244,215,126,.25)",
+        "borderRadius": "14px",
+        "padding": "10px 14px",
+        "textTransform": "uppercase"
       },
       "content": "Client Win"
+    },
+    {
+      "id": "pricing-kicker",
+      "type": "text",
+      "section": "pricing",
+      "x": 90,
+      "y": 4285,
+      "w": 280,
+      "h": 34,
+      "z": 10,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "15px",
+        "fontWeight": "1000",
+        "letterSpacing": "4px",
+        "color": "#f4d77e",
+        "textTransform": "uppercase"
+      },
+      "content": "PICK YOUR WAR"
     },
     {
       "id": "pricing-title",
       "type": "text",
       "section": "pricing",
       "x": 90,
-      "y": 3605,
-      "w": 760,
-      "h": 95,
-      "z": 10,
+      "y": 4330,
+      "w": 860,
+      "h": 92,
+      "z": 11,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "72px",
+        "fontSize": "66px",
         "fontWeight": "1000",
+        "lineHeight": "1",
         "letterSpacing": "-3px",
         "color": "#ffffff",
         "textTransform": "uppercase"
       },
-      "content": "Pick the support you need."
+      "content": "ONLINE COACHING PACKAGES."
     },
     {
       "id": "price-card-0",
       "type": "card",
       "section": "pricing",
       "x": 90,
-      "y": 3740,
+      "y": 4490,
       "w": 370,
-      "h": 430,
+      "h": 445,
       "z": 20,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "#111111",
+        "background": "linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))",
         "border": "1px solid rgba(244,215,126,.22)",
-        "borderRadius": "30px",
+        "borderRadius": "32px",
+        "boxShadow": "0 30px 100px rgba(0,0,0,.52)",
         "padding": "30px"
       }
     },
@@ -805,92 +1289,101 @@
       "type": "text",
       "section": "pricing",
       "x": 120,
-      "y": 3775,
+      "y": 4525,
       "w": 310,
-      "h": 40,
+      "h": 48,
       "z": 30,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "26px",
-        "fontWeight": "900",
-        "color": "#ffffff"
+        "fontSize": "25px",
+        "fontWeight": "1000",
+        "color": "#ffffff",
+        "textTransform": "uppercase"
       },
-      "content": "Training Only"
+      "content": "TRAINING ONLY"
     },
     {
       "id": "price-price-0",
       "type": "text",
       "section": "pricing",
       "x": 120,
-      "y": 3830,
+      "y": 4588,
       "w": 310,
       "h": 50,
       "z": 31,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "34px",
+        "background": "linear-gradient(180deg,#fff6c9 0%,#f4d77e 28%,#a97919 55%,#fff1b5 78%,#7b530b 100%)",
+        "WebkitBackgroundClip": "text",
+        "backgroundClip": "text",
+        "color": "transparent",
+        "textShadow": "0 2px 0 rgba(255,255,255,.12),0 8px 28px rgba(244,215,126,.2)",
+        "fontSize": "32px",
         "fontWeight": "1000",
-        "color": "#f4d77e"
+        "textTransform": "uppercase"
       },
-      "content": "From \u00a379/mo"
+      "content": "FROM \u00a379/MONTH"
     },
     {
       "id": "price-items-0",
       "type": "text",
       "section": "pricing",
       "x": 120,
-      "y": 3900,
-      "w": 310,
+      "y": 4660,
+      "w": 305,
       "h": 170,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "lineHeight": "1.65",
-        "color": "#d7d7d7",
+        "lineHeight": "1.68",
+        "color": "#d8d8d8",
         "whiteSpace": "pre-line"
       },
-      "content": "\u2022 Custom training plan\n\u2022 Weekly check-in\n\u2022 Exercise guidance\n\u2022 Basic messaging support"
+      "content": "\u2022 Custom plan\n\u2022 Progressive overload\n\u2022 Weekly check-in\n\u2022 App access"
     },
     {
       "id": "price-button-0",
       "type": "button",
       "section": "pricing",
       "x": 120,
-      "y": 4085,
-      "w": 220,
+      "y": 4850,
+      "w": 230,
       "h": 58,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "15px",
-        "fontWeight": "900",
-        "color": "#050505",
-        "background": "#f4d77e",
+        "fontSize": "14px",
+        "fontWeight": "1000",
+        "letterSpacing": "1.5px",
+        "color": "#090909",
+        "background": "linear-gradient(135deg,#fff2b5,#d6a331 42%,#805709 100%)",
         "borderRadius": "15px",
         "textTransform": "uppercase"
       },
-      "content": "Enquire"
+      "content": "START TRAINING",
+      "href": "#contact"
     },
     {
       "id": "price-card-1",
       "type": "card",
       "section": "pricing",
       "x": 510,
-      "y": 3740,
+      "y": 4490,
       "w": 370,
-      "h": 430,
+      "h": 445,
       "z": 21,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "#111111",
+        "background": "linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))",
         "border": "1px solid rgba(244,215,126,.22)",
-        "borderRadius": "30px",
+        "borderRadius": "32px",
+        "boxShadow": "0 30px 100px rgba(0,0,0,.52)",
         "padding": "30px"
       }
     },
@@ -899,92 +1392,101 @@
       "type": "text",
       "section": "pricing",
       "x": 540,
-      "y": 3775,
+      "y": 4525,
       "w": 310,
-      "h": 40,
+      "h": 48,
       "z": 31,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "26px",
-        "fontWeight": "900",
-        "color": "#ffffff"
+        "fontSize": "25px",
+        "fontWeight": "1000",
+        "color": "#ffffff",
+        "textTransform": "uppercase"
       },
-      "content": "Training + Nutrition"
+      "content": "TRAINING + NUTRITION"
     },
     {
       "id": "price-price-1",
       "type": "text",
       "section": "pricing",
       "x": 540,
-      "y": 3830,
+      "y": 4588,
       "w": 310,
       "h": 50,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "34px",
+        "background": "linear-gradient(180deg,#fff6c9 0%,#f4d77e 28%,#a97919 55%,#fff1b5 78%,#7b530b 100%)",
+        "WebkitBackgroundClip": "text",
+        "backgroundClip": "text",
+        "color": "transparent",
+        "textShadow": "0 2px 0 rgba(255,255,255,.12),0 8px 28px rgba(244,215,126,.2)",
+        "fontSize": "32px",
         "fontWeight": "1000",
-        "color": "#f4d77e"
+        "textTransform": "uppercase"
       },
-      "content": "From \u00a3129/mo"
+      "content": "FROM \u00a3129/MONTH"
     },
     {
       "id": "price-items-1",
       "type": "text",
       "section": "pricing",
       "x": 540,
-      "y": 3900,
-      "w": 310,
+      "y": 4660,
+      "w": 305,
       "h": 170,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "lineHeight": "1.65",
-        "color": "#d7d7d7",
+        "lineHeight": "1.68",
+        "color": "#d8d8d8",
         "whiteSpace": "pre-line"
       },
-      "content": "\u2022 Custom training plan\n\u2022 Calories and macros\n\u2022 Weekly check-in\n\u2022 Accountability support"
+      "content": "\u2022 Training plan\n\u2022 Calories & macros\n\u2022 Example meals\n\u2022 Weekly check-in"
     },
     {
       "id": "price-button-1",
       "type": "button",
       "section": "pricing",
       "x": 540,
-      "y": 4085,
-      "w": 220,
+      "y": 4850,
+      "w": 230,
       "h": 58,
       "z": 34,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "15px",
-        "fontWeight": "900",
-        "color": "#050505",
-        "background": "#f4d77e",
+        "fontSize": "14px",
+        "fontWeight": "1000",
+        "letterSpacing": "1.5px",
+        "color": "#090909",
+        "background": "linear-gradient(135deg,#fff2b5,#d6a331 42%,#805709 100%)",
         "borderRadius": "15px",
         "textTransform": "uppercase"
       },
-      "content": "Start Here"
+      "content": "BUILD THE PLAN",
+      "href": "#contact"
     },
     {
       "id": "price-card-2",
       "type": "card",
       "section": "pricing",
       "x": 930,
-      "y": 3740,
+      "y": 4490,
       "w": 370,
-      "h": 430,
+      "h": 445,
       "z": 22,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "#111111",
-        "border": "1px solid rgba(244,215,126,.22)",
-        "borderRadius": "30px",
+        "background": "linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.55)",
+        "borderRadius": "32px",
+        "boxShadow": "0 30px 100px rgba(0,0,0,.52)",
         "padding": "30px"
       }
     },
@@ -993,125 +1495,134 @@
       "type": "text",
       "section": "pricing",
       "x": 960,
-      "y": 3775,
+      "y": 4525,
       "w": 310,
-      "h": 40,
+      "h": 48,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "26px",
-        "fontWeight": "900",
-        "color": "#ffffff"
+        "fontSize": "25px",
+        "fontWeight": "1000",
+        "color": "#ffffff",
+        "textTransform": "uppercase"
       },
-      "content": "Full Support"
+      "content": "FULL SUPPORT"
     },
     {
       "id": "price-price-2",
       "type": "text",
       "section": "pricing",
       "x": 960,
-      "y": 3830,
+      "y": 4588,
       "w": 310,
       "h": 50,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "34px",
+        "background": "linear-gradient(180deg,#fff6c9 0%,#f4d77e 28%,#a97919 55%,#fff1b5 78%,#7b530b 100%)",
+        "WebkitBackgroundClip": "text",
+        "backgroundClip": "text",
+        "color": "transparent",
+        "textShadow": "0 2px 0 rgba(255,255,255,.12),0 8px 28px rgba(244,215,126,.2)",
+        "fontSize": "32px",
         "fontWeight": "1000",
-        "color": "#f4d77e"
+        "textTransform": "uppercase"
       },
-      "content": "Apply"
+      "content": "PREMIUM"
     },
     {
       "id": "price-items-2",
       "type": "text",
       "section": "pricing",
       "x": 960,
-      "y": 3900,
-      "w": 310,
+      "y": 4660,
+      "w": 305,
       "h": 170,
       "z": 34,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "lineHeight": "1.65",
-        "color": "#d7d7d7",
+        "lineHeight": "1.68",
+        "color": "#d8d8d8",
         "whiteSpace": "pre-line"
       },
-      "content": "\u2022 Training plan\n\u2022 Nutrition coaching\n\u2022 Habit building\n\u2022 Higher accountability"
+      "content": "\u2022 Training\n\u2022 Meal-by-meal support\n\u2022 Supplements\n\u2022 Mindset + WhatsApp"
     },
     {
       "id": "price-button-2",
       "type": "button",
       "section": "pricing",
       "x": 960,
-      "y": 4085,
-      "w": 220,
+      "y": 4850,
+      "w": 230,
       "h": 58,
       "z": 35,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "15px",
-        "fontWeight": "900",
-        "color": "#050505",
-        "background": "#f4d77e",
+        "fontSize": "14px",
+        "fontWeight": "1000",
+        "letterSpacing": "1.5px",
+        "color": "#090909",
+        "background": "linear-gradient(135deg,#fff2b5,#d6a331 42%,#805709 100%)",
         "borderRadius": "15px",
         "textTransform": "uppercase"
       },
-      "content": "Apply Now"
+      "content": "APPLY NOW",
+      "href": "#contact"
     },
     {
       "id": "contact-title",
       "type": "text",
       "section": "contact",
-      "x": 235,
-      "y": 4480,
-      "w": 980,
+      "x": 190,
+      "y": 5180,
+      "w": 1060,
       "h": 110,
       "z": 10,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "76px",
+        "fontSize": "74px",
         "fontWeight": "1000",
-        "letterSpacing": "-3px",
         "lineHeight": "1",
+        "letterSpacing": "-3px",
         "textAlign": "center",
         "color": "#ffffff",
         "textTransform": "uppercase"
       },
-      "content": "Stop starting over."
+      "content": "READY TO STOP LYING TO YOURSELF?"
     },
     {
       "id": "contact-copy",
       "type": "text",
       "section": "contact",
-      "x": 360,
-      "y": 4610,
-      "w": 720,
-      "h": 90,
+      "x": 310,
+      "y": 5310,
+      "w": 820,
+      "h": 70,
       "z": 11,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "22px",
+        "fontSize": "23px",
         "lineHeight": "1.5",
         "textAlign": "center",
-        "color": "#d6d6d6"
+        "color": "#d8d8d8",
+        "fontWeight": "650"
       },
-      "content": "Book a free consultation and let\u2019s build a plan that actually fits your life."
+      "content": "If you're ready to do the work properly, message me. If you're looking for shortcuts, go argue with someone else."
     },
     {
-      "id": "contact-btn",
+      "id": "contact-button",
       "type": "button",
       "section": "contact",
-      "x": 570,
-      "y": 4725,
-      "w": 300,
+      "x": 540,
+      "y": 5410,
+      "w": 360,
       "h": 68,
       "z": 12,
       "locked": false,
@@ -1119,13 +1630,15 @@
       "styles": {
         "fontSize": "15px",
         "fontWeight": "1000",
-        "color": "#ffffff",
-        "background": "linear-gradient(135deg,#6b430b,#d7a331,#6b430b)",
-        "borderRadius": "16px",
-        "letterSpacing": "2px"
+        "letterSpacing": "2px",
+        "color": "#090909",
+        "background": "linear-gradient(135deg,#fff2b5,#d6a331 42%,#805709 100%)",
+        "borderRadius": "18px",
+        "textTransform": "uppercase",
+        "boxShadow": "0 25px 70px rgba(244,215,126,.2)"
       },
-      "content": "Wagwan",
-      "href": "#contact"
+      "content": "BOOK FREE CONSULTATION",
+      "href": "#"
     }
   ]
 }

@@ -1,7 +1,6 @@
 function esc(s){return String(s ?? '').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
-function cssText(styles={}){
-  return Object.entries(styles).map(([k,v])=>`${k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}:${v}`).join(';')
-}
+function kebab(k){return k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}
+function cssText(styles={}){return Object.entries(styles).map(([k,v])=>`${kebab(k)}:${v}`).join(';')}
 function imageStyle(layer){
   const crop = layer.crop || {x:50,y:50,zoom:100};
   const size = layer.mode === 'contain' ? 'contain' : `${crop.zoom || 100}% auto`;
@@ -11,7 +10,7 @@ async function render(){
   const res = await fetch('/content/layers.json?cache=' + Date.now());
   const data = await res.json();
   const site = document.getElementById('site');
-  site.style.minHeight = (data.canvas?.desktop?.height || 5200) + 'px';
+  site.style.minHeight = (data.canvas?.desktop?.height || 5600) + 'px';
   site.style.background = data.canvas?.background || '#050505';
   site.innerHTML = '';
 
@@ -26,13 +25,14 @@ async function render(){
 
   (data.layers || []).forEach(layer=>{
     if(layer.hidden) return;
+    const sec = (data.sections || []).find(s=>s.id===layer.section);
     const parent = site.querySelector(`[data-layer-id="${layer.section}"]`) || site;
     const el = document.createElement(layer.type === 'button' ? 'a' : 'div');
     el.className = 'item-layer';
     el.dataset.layerItemId = layer.id;
     el.dataset.type = layer.type;
     if(layer.type === 'button') el.href = layer.href || '#';
-    let styles = `left:${layer.x}px;top:${layer.y - ((data.sections || []).find(s=>s.id===layer.section)?.y || 0)}px;width:${layer.w}px;height:${layer.h}px;z-index:${layer.z || 1};${cssText(layer.styles || {})}`;
+    let styles = `left:${layer.x}px;top:${layer.y - (sec?.y || 0)}px;width:${layer.w}px;height:${layer.h}px;z-index:${layer.z || 1};${cssText(layer.styles || {})}`;
     if(layer.type === 'image') styles += imageStyle(layer);
     el.style.cssText = styles;
     if(layer.type !== 'image' && layer.type !== 'card') el.textContent = layer.content || '';
