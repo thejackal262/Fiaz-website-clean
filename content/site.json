@@ -185,7 +185,8 @@
       "testimonial",
       "faq",
       "contact"
-    ]
+    ],
+    "hiddenSections": []
   },
   "layout": {
     "maxWidth": 1180,

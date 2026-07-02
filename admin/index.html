@@ -4,14 +4,14 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta name="robots" content="noindex"/>
-<title>Jackal Builder</title>
+<title>Jackal Builder Pro</title>
 <link rel="stylesheet" href="/admin/admin.css"/>
 </head>
 <body>
 <div id="login" class="login">
   <div class="login-card">
-    <h1>Jackal Builder</h1>
-    <p>Wix-style editing for your coaching website. Click, move, change, save.</p>
+    <h1>Jackal Builder Pro</h1>
+    <p>Your visual website builder. Edit, move, crop, preview, save.</p>
     <input id="password" type="password" placeholder="Admin password" autocomplete="current-password"/>
     <button id="loginBtn">Login</button>
     <small id="loginMsg"></small>
@@ -21,13 +21,15 @@
 <div id="builder" class="builder hidden">
   <header class="topbar">
     <div>
-      <h1>Jackal Builder</h1>
+      <h1>Jackal Builder Pro</h1>
       <p id="status">Ready.</p>
     </div>
     <div class="actions">
+      <button id="undoBtn" class="ghost">Undo</button>
+      <button id="redoBtn" class="ghost">Redo</button>
       <button id="refreshBtn" class="ghost">Refresh preview</button>
       <a class="ghost" href="/" target="_blank">View live site</a>
-      <button id="saveBtn">Save website</button>
+      <button id="saveBtn">Publish website</button>
     </div>
   </header>
 
@@ -36,20 +38,35 @@
       <nav class="mode-tabs">
         <button data-mode="visual" class="active">Visual</button>
         <button data-mode="sections">Sections</button>
+        <button data-mode="images">Images</button>
         <button data-mode="layout">Layout</button>
         <button data-mode="content">Content</button>
       </nav>
 
       <section id="panel-visual" class="panel active">
         <h2>Visual editing</h2>
-        <p>Click blue-highlighted text in the preview, edit it, then press save.</p>
+        <p>Click text or images directly in the preview.</p>
+        <div class="device-row">
+          <button class="ghost device active" data-device="desktop">Desktop</button>
+          <button class="ghost device" data-device="tablet">Tablet</button>
+          <button class="ghost device" data-device="mobile">Phone</button>
+        </div>
         <div id="quickFields"></div>
       </section>
 
       <section id="panel-sections" class="panel">
         <h2>Move sections</h2>
-        <p>Drag these sections to reorder the website.</p>
+        <p>Drag sections. Hide, duplicate or reset them.</p>
         <div id="sectionList" class="sortable"></div>
+        <button id="resetSectionsBtn" class="ghost full">Reset section order</button>
+      </section>
+
+      <section id="panel-images" class="panel">
+        <h2>Image control</h2>
+        <p>Click an image in the preview, or use these shortcuts.</p>
+        <button class="quick-btn" data-img-field="heroImage">Hero image 🖼</button>
+        <button class="quick-btn" data-img-field="aboutImage">About image 🖼</button>
+        <div id="resultImageShortcuts"></div>
       </section>
 
       <section id="panel-layout" class="panel">
@@ -66,55 +83,81 @@
     <section class="preview-area">
       <div class="preview-top">
         <span>Live preview</span>
-        <span class="hint">Click text directly on the site</span>
+        <span class="hint">autosaves draft locally • publish when ready</span>
       </div>
-      <iframe id="preview" src="/?preview=builder"></iframe>
+      <div id="previewShell" class="preview-shell desktop">
+        <iframe id="preview" src="/?preview=builder"></iframe>
+      </div>
     </section>
   </main>
 </div>
 
 <div id="modal" class="modal hidden">
-  <div class="modal-card">
-    <h2 id="modalTitle">Edit</h2>
+  <div class="modal-card text-modal-card">
+    <div class="modal-head">
+      <h2 id="modalTitle">Edit</h2>
+      <button id="cancelEditX" class="ghost">×</button>
+    </div>
     <textarea id="modalText"></textarea>
-    <div class="modal-actions">
-      <button id="applyEdit">Apply</button>
+    <div class="modal-actions sticky-actions">
+      <button id="applyEdit">Apply text</button>
       <button id="cancelEdit" class="ghost">Cancel</button>
     </div>
   </div>
 </div>
 
-
 <div id="imageModal" class="modal hidden">
   <div class="modal-card image-editor-card">
-    <h2 id="imageModalTitle">Edit image</h2>
-    <p class="image-help">Drag the image inside the box to reposition it. Use zoom to crop.</p>
-    <div class="image-stage" id="imageStage">
-      <div class="image-crop-box">
-        <img id="imageEditorImg" draggable="false" alt="">
+    <div class="modal-head">
+      <div>
+        <h2 id="imageModalTitle">Edit image</h2>
+        <p class="image-help">Drag the image. Mouse wheel zooms. Double-click resets.</p>
+      </div>
+      <button id="cancelImageX" class="ghost">×</button>
+    </div>
+
+    <div class="image-scroll-body">
+      <div class="image-stage" id="imageStage">
+        <div class="image-crop-box" id="imageCropBox">
+          <img id="imageEditorImg" draggable="false" alt="">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Zoom / crop</label>
+        <div class="range-row">
+          <input type="range" id="imageZoom" min="60" max="260" step="1">
+          <input type="number" id="imageZoomNum" min="60" max="260" step="1">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field"><label>Left / right</label><input type="number" id="imageX" min="0" max="100"></div>
+        <div class="field"><label>Up / down</label><input type="number" id="imageY" min="0" max="100"></div>
+      </div>
+
+      <div class="field">
+        <label>Replace image</label>
+        <input type="file" id="replaceImageFile" accept="image/*">
+      </div>
+
+      <div class="image-presets">
+        <button class="ghost" data-preset="center">Centre</button>
+        <button class="ghost" data-preset="top">Top</button>
+        <button class="ghost" data-preset="face">Face area</button>
+        <button class="ghost" data-preset="wide">Wide</button>
       </div>
     </div>
-    <div class="field">
-      <label>Zoom / crop</label>
-      <div class="range-row">
-        <input type="range" id="imageZoom" min="60" max="220" step="1">
-        <input type="number" id="imageZoomNum" min="60" max="220" step="1">
-      </div>
-    </div>
-    <div class="row">
-      <div class="field"><label>Left / right</label><input type="number" id="imageX" min="0" max="100"></div>
-      <div class="field"><label>Up / down</label><input type="number" id="imageY" min="0" max="100"></div>
-    </div>
-    <div class="field">
-      <label>Replace image</label>
-      <input type="file" id="replaceImageFile" accept="image/*">
-    </div>
-    <div class="modal-actions">
+
+    <div class="modal-actions sticky-actions">
       <button id="applyImageEdit">Apply image</button>
+      <button id="resetImageEdit" class="ghost">Reset</button>
       <button id="cancelImageEdit" class="ghost">Cancel</button>
     </div>
   </div>
 </div>
+
+<div id="toast" class="toast hidden"></div>
 
 <script src="/admin/admin.js"></script>
 </body>

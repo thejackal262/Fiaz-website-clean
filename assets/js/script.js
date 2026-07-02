@@ -49,9 +49,10 @@ function applySectionOrder(s){
   const main = document.getElementById('pageSections');
   if(!main) return;
   const order = (s._builder && Array.isArray(s._builder.sectionOrder)) ? s._builder.sectionOrder : ['about','services','results','pricing','testimonial','faq','contact'];
+  const hiddenSections = (s._builder && Array.isArray(s._builder.hiddenSections)) ? s._builder.hiddenSections : [];
   order.forEach(key => {
     const el = main.querySelector(`[data-section="${key}"]`);
-    if(el) main.appendChild(el);
+    if(el){ el.style.display = hiddenSections.includes(key) ? 'none' : ''; main.appendChild(el); }
   });
 }
 
