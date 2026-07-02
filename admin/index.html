@@ -4,14 +4,14 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta name="robots" content="noindex"/>
-<title>Jackal Builder Live</title>
+<title>Jackal Canvas Builder</title>
 <link rel="stylesheet" href="/admin/admin.css"/>
 </head>
 <body>
 <div id="login" class="login">
   <div class="login-card">
-    <h1>Jackal Builder Live</h1>
-    <p>Click the website. Move images. Resize text. Publish when ready.</p>
+    <h1>Jackal Canvas Builder</h1>
+    <p>Click anything. Drag it. Resize it. Publish when ready.</p>
     <input id="password" type="password" placeholder="Admin password" autocomplete="current-password"/>
     <button id="loginBtn">Login</button>
     <small id="loginMsg"></small>
@@ -20,44 +20,44 @@
 
 <div id="app" class="app hidden">
   <div class="topbar">
-    <div>
-      <strong>Jackal Builder Live</strong>
+    <div class="brandline">
+      <strong>Jackal Canvas Builder</strong>
       <span id="status">Ready.</span>
     </div>
     <div class="toolbar">
-      <button id="selectBtn" class="tool active">Select</button>
-      <button id="moveSectionsBtn" class="tool">Sections</button>
+      <button id="sectionsBtn" class="tool">Sections</button>
       <button id="undoBtn" class="tool">Undo</button>
       <button id="redoBtn" class="tool">Redo</button>
-      <button id="phoneBtn" class="tool">Phone</button>
       <button id="desktopBtn" class="tool active">Desktop</button>
+      <button id="phoneBtn" class="tool">Phone</button>
       <button id="publishBtn" class="publish">Publish</button>
     </div>
   </div>
 
-  <div id="sectionDrawer" class="section-drawer hidden">
-    <h2>Move sections</h2>
-    <p>Drag these. The page updates live.</p>
+  <div id="sectionsPanel" class="sections-panel hidden">
+    <h2>Sections</h2>
+    <p>Drag to reorder. Hide/show as needed.</p>
     <div id="sectionList"></div>
   </div>
 
   <div id="stage" class="stage desktop">
-    <iframe id="siteFrame" src="/?livebuilder=1"></iframe>
+    <iframe id="siteFrame" src="/?canvasbuilder=1"></iframe>
   </div>
 
-  <div id="floatingBar" class="floating-bar hidden">
+  <div id="canvasToolbar" class="canvas-toolbar hidden">
     <button id="editTextBtn">Edit text</button>
-    <button id="textBiggerBtn">Text +</button>
-    <button id="textSmallerBtn">Text -</button>
-    <button id="imageBiggerBtn">Image +</button>
-    <button id="imageSmallerBtn">Image -</button>
+    <button id="biggerTextBtn">Text +</button>
+    <button id="smallerTextBtn">Text -</button>
+    <button id="imageUpBtn">Image +</button>
+    <button id="imageDownBtn">Image -</button>
     <button id="replaceImageBtn">Replace image</button>
-    <button id="resetBtn">Reset</button>
+    <button id="duplicateBtn">Duplicate</button>
+    <button id="resetSelectedBtn">Reset</button>
     <button id="doneBtn">Done</button>
   </div>
 
-  <div id="helpBubble" class="help-bubble">
-    Click text to edit. Click images/backgrounds to move and resize them live.
+  <div id="hint" class="hint">
+    Click any text, image, card or section. Drag images to crop. Drag handles to resize boxes.
   </div>
 
   <input id="imageUpload" type="file" accept="image/*" hidden>

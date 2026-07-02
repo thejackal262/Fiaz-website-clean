@@ -7,6 +7,52 @@ function applyTextStyles(s){
     });
   });
 }
+function applyElementStyles(s){
+  const styles = s.elementStyles || {};
+  Object.entries(styles).forEach(([id, cfg]) => {
+    document.querySelectorAll(`[data-builder-id="${id}"]`).forEach(el => {
+      Object.entries(cfg || {}).forEach(([prop, value]) => {
+        if(value !== undefined && value !== null && value !== '') el.style[prop] = value;
+      });
+    });
+  });
+}
+function assignBuilderIds(){
+  const ids = {
+    home: '#home',
+    about: '#about',
+    aboutLayout: '#aboutLayout',
+    aboutPhoto: '.photo',
+    services: '#services',
+    servicesCards: '#servicesCards',
+    results: '#results',
+    resultsGrid: '#resultsGrid',
+    pricing: '#pricing',
+    packages: '#packages',
+    testimonial: '#testimonial',
+    faq: '#faq',
+    contact: '#contact'
+  };
+  Object.entries(ids).forEach(([id, selector]) => {
+    const el = document.querySelector(selector);
+    if(el) el.setAttribute('data-builder-id', id);
+  });
+  document.querySelectorAll('.card').forEach((el,i)=>el.setAttribute('data-builder-id',`service-card-${i}`));
+  document.querySelectorAll('.result').forEach((el,i)=>el.setAttribute('data-builder-id',`result-card-${i}`));
+  document.querySelectorAll('.price-card').forEach((el,i)=>el.setAttribute('data-builder-id',`price-card-${i}`));
+  document.querySelectorAll('.stat').forEach((el,i)=>el.setAttribute('data-builder-id',`stat-${i}`));
+  document.querySelectorAll('.list-item').forEach((el,i)=>el.setAttribute('data-builder-id',`list-item-${i}`));
+}
+
+
+function applyTextStyles(s){
+  const styles = s.textStyles || {};
+  Object.entries(styles).forEach(([field, cfg]) => {
+    document.querySelectorAll(`[data-builder-field="${field}"]`).forEach(el => {
+      if(cfg.scale) el.style.fontSize = `calc(1em * ${Number(cfg.scale) / 100})`;
+    });
+  });
+}
 
 const textIds = [
   'brandName','heroBadge','heroLine1','heroLine2','heroLine3','heroText',
@@ -147,5 +193,8 @@ async function loadSite(){
     const el = document.getElementById(id);
     if(el) el.href = s[id] || '#';
   });
+  assignBuilderIds();
+  applyTextStyles(s);
+  applyElementStyles(s);
 }
 loadSite();
