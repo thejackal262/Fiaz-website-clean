@@ -1,3 +1,13 @@
+
+function applyTextStyles(s){
+  const styles = s.textStyles || {};
+  Object.entries(styles).forEach(([field, cfg]) => {
+    document.querySelectorAll(`[data-builder-field="${field}"]`).forEach(el => {
+      if(cfg.scale) el.style.fontSize = `calc(1em * ${Number(cfg.scale) / 100})`;
+    });
+  });
+}
+
 const textIds = [
   'brandName','heroBadge','heroLine1','heroLine2','heroLine3','heroText',
   'aboutKicker','aboutTitle','aboutText','servicesKicker','servicesTitle','servicesText','bannerText',
@@ -84,6 +94,7 @@ async function loadSite(){
 
   applyLayout(s);
   applySectionOrder(s);
+  applyTextStyles(s);
 
   const logo = document.getElementById('logo');
   if(logo) logo.src = s.logo || '';

@@ -70,3 +70,17 @@
 .result{
   background-size:100% auto;
 }
+
+/* ===== Jackal Builder Live support ===== */
+.hero{
+  background:
+    linear-gradient(90deg,rgba(3,3,3,1) 0%,rgba(3,3,3,var(--hero-overlay-strength,.82)) 38%,rgba(3,3,3,.48) 68%,rgba(3,3,3,.22) 100%),
+    radial-gradient(circle at 72% 28%,rgba(244,215,126,.22),transparent 22%),
+    var(--hero) var(--hero-img-x,var(--hero-focus-x,72%)) var(--hero-img-y,var(--hero-focus-y,50%))/var(--hero-img-zoom,100%) auto no-repeat!important;
+}
+.photo{
+  background-image:var(--about)!important;
+  background-position:var(--about-img-x,50%) var(--about-img-y,50%)!important;
+  background-size:var(--about-img-zoom,100%) auto!important;
+  background-repeat:no-repeat!important;
+}

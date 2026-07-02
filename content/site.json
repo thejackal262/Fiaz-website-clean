@@ -241,5 +241,49 @@
         "zoom": 100
       }
     }
+  },
+  "textStyles": {
+    "heroLine1": {
+      "scale": 100
+    },
+    "heroLine2": {
+      "scale": 100
+    },
+    "heroLine3": {
+      "scale": 100
+    },
+    "heroText": {
+      "scale": 100
+    },
+    "aboutTitle": {
+      "scale": 100
+    },
+    "aboutText": {
+      "scale": 100
+    },
+    "servicesTitle": {
+      "scale": 100
+    },
+    "servicesText": {
+      "scale": 100
+    },
+    "resultsTitle": {
+      "scale": 100
+    },
+    "resultsText": {
+      "scale": 100
+    },
+    "pricingTitle": {
+      "scale": 100
+    },
+    "pricingText": {
+      "scale": 100
+    },
+    "finalTitle": {
+      "scale": 100
+    },
+    "finalText": {
+      "scale": 100
+    }
   }
 }
