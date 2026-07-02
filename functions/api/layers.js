@@ -18,7 +18,7 @@ export async function onRequestPost(context) {
     const getRes = await fetch(`https://api.github.com/repos/${ownerRepo}/contents/${path}?ref=${branch}`, {
       headers: {
         "Authorization": `Bearer ${token}`,
-        "User-Agent": "jackal-layer-builder",
+        "User-Agent": "jackal-black-builder",
         "Accept": "application/vnd.github+json"
       }
     });
@@ -33,12 +33,12 @@ export async function onRequestPost(context) {
       method: "PUT",
       headers: {
         "Authorization": `Bearer ${token}`,
-        "User-Agent": "jackal-layer-builder",
+        "User-Agent": "jackal-black-builder",
         "Accept": "application/vnd.github+json",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        message: "Update layer builder website",
+        message: "Update Jackal Black Edition website",
         content: btoa(unescape(encodeURIComponent(body))),
         branch,
         ...(sha ? { sha } : {})

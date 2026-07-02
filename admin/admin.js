@@ -7,23 +7,25 @@ let draftTimer = null;
 const $ = id => document.getElementById(id);
 
 function clone(x){return JSON.parse(JSON.stringify(x))}
-function pushHistory(){history.push(clone(data)); if(history.length>80) history.shift(); redoStack=[]}
+function pushHistory(){history.push(clone(data)); if(history.length>100) history.shift(); redoStack=[]}
 function status(msg){$('status').textContent=msg}
 function toast(msg){const t=$('toast');t.textContent=msg;t.classList.remove('hidden');setTimeout(()=>t.classList.add('hidden'),2400)}
 function api(path,opts={}){return fetch(path,{...opts,headers:{'Content-Type':'application/json','X-Admin-Password':password,...(opts.headers||{})}}).then(async r=>{if(!r.ok)throw new Error(await r.text());return r.json()})}
-function autosave(){clearTimeout(draftTimer);draftTimer=setTimeout(()=>{localStorage.setItem('jackal_layers_draft',JSON.stringify(data));status('Draft saved locally. Publish when ready.')},250)}
-function cssText(styles={}){return Object.entries(styles).map(([k,v])=>`${k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}:${v}`).join(';')}
+function autosave(){clearTimeout(draftTimer);draftTimer=setTimeout(()=>{localStorage.setItem('jackal_black_draft',JSON.stringify(data));status('Draft saved locally. Publish when ready.')},250)}
+function kebab(k){return k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}
+function cssText(styles={}){return Object.entries(styles).map(([k,v])=>`${kebab(k)}:${v}`).join(';')}
+function imageCss(l){const c=l.crop||{x:50,y:50,zoom:100};const size=l.mode==='contain'?'contain':`${c.zoom||100}% auto`;return `background-image:url('${l.src||''}');background-position:${c.x??50}% ${c.y??50}%;background-size:${size};`}
 
 async function login(){
   try{
     password = $('password').value.trim();
     const res = await fetch('/content/layers.json?cache='+Date.now());
     data = await res.json();
-    const draft=localStorage.getItem('jackal_layers_draft');
+    const draft=localStorage.getItem('jackal_black_draft');
     if(draft && confirm('Load local draft?')) data=JSON.parse(draft);
     localStorage.setItem('fiaz_admin_password',password);
     $('login').classList.add('hidden'); $('app').classList.remove('hidden');
-    render(); status('Loaded. Every item is now a layer.');
+    render(); status('Loaded. Black Edition ready.');
   }catch(e){$('loginMsg').textContent='Login failed or layers.json missing.'}
 }
 async function autoLogin(){
@@ -31,7 +33,7 @@ async function autoLogin(){
   try{
     const res=await fetch('/content/layers.json?cache='+Date.now());
     data=await res.json();
-    const draft=localStorage.getItem('jackal_layers_draft');
+    const draft=localStorage.getItem('jackal_black_draft');
     if(draft && confirm('Load local draft?')) data=JSON.parse(draft);
     $('login').classList.add('hidden'); $('app').classList.remove('hidden');
     render();
@@ -40,7 +42,7 @@ async function autoLogin(){
 
 function render(){
   const canvas=$('canvas');
-  canvas.style.minHeight=(data.canvas?.desktop?.height||5200)+'px';
+  canvas.style.minHeight=(data.canvas?.desktop?.height||6200)+'px';
   canvas.innerHTML='';
   (data.sections||[]).forEach(sec=>{
     if(sec.hidden) return;
@@ -59,16 +61,11 @@ function render(){
     el.dataset.id=l.id;
     if(l.type==='button') el.href=l.href||'#';
     let st=`left:${l.x}px;top:${l.y-(sec?.y||0)}px;width:${l.w}px;height:${l.h}px;z-index:${l.z||1};${cssText(l.styles||{})}`;
-    if(l.type==='image'){
-      const c=l.crop||{x:50,y:50,zoom:100};
-      const size=l.mode==='contain'?'contain':`${c.zoom||100}% auto`;
-      st+=`background-image:url('${l.src||''}');background-position:${c.x??50}% ${c.y??50}%;background-size:${size};`;
-    }
+    if(l.type==='image') st+=imageCss(l);
     el.style.cssText=st;
     if(l.type!=='image' && l.type!=='card') el.textContent=l.content||'';
     el.onclick=e=>{e.preventDefault();e.stopPropagation();selectLayer(l.id)};
     bindMove(el,l.id);
-    bindImageCrop(el,l.id);
     parent.appendChild(el);
   });
   renderLayersPanel();
@@ -85,6 +82,7 @@ function selectLayer(id){
   el.classList.add('selected');
   addHandles(el,id);
   showToolbox(l);
+  updateInspector(l);
 }
 function clearSelection(){
   document.querySelectorAll('.layer.selected').forEach(el=>el.classList.remove('selected'));
@@ -110,15 +108,18 @@ function addHandles(el,id){
 function bindMove(el,id){
   el.onmousedown=e=>{
     if(e.target.classList.contains('handle')) return;
-    e.preventDefault(); selectLayer(id); pushHistory();
-    const l=getLayer(id), sec=(data.sections||[]).find(s=>s.id===l.section);
+    e.preventDefault(); selectLayer(id);
+    const l=getLayer(id);
     if(l.locked){toast('Layer is locked');return;}
+    pushHistory();
+    const sec=(data.sections||[]).find(s=>s.id===l.section);
     const start={x:e.clientX,y:e.clientY,lx:l.x,ly:l.y};
     const move=ev=>{
       l.x=Math.round(start.lx+ev.clientX-start.x);
       l.y=Math.round(start.ly+ev.clientY-start.y);
       el.style.left=l.x+'px';
       el.style.top=(l.y-(sec?.y||0))+'px';
+      updateInspector(l);
       autosave(); status('Moved. Publish when ready.');
     };
     const up=()=>{document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',up)};
@@ -127,27 +128,23 @@ function bindMove(el,id){
   };
 }
 function startResize(e,id,handle){
-  e.preventDefault();e.stopPropagation();pushHistory();
-  const l=getLayer(id), el=getEl(id);
+  e.preventDefault();e.stopPropagation();
+  const l=getLayer(id); if(l.locked){toast('Layer is locked');return;}
+  pushHistory();
+  const el=getEl(id);
   const start={x:e.clientX,y:e.clientY,w:l.w,h:l.h};
   const move=ev=>{
     let w=start.w+ev.clientX-start.x, h=start.h+ev.clientY-start.y;
     if(handle==='r') h=start.h;
     if(handle==='b') w=start.w;
-    l.w=Math.max(30,Math.round(w)); l.h=Math.max(20,Math.round(h));
+    l.w=Math.max(20,Math.round(w)); l.h=Math.max(20,Math.round(h));
     el.style.width=l.w+'px'; el.style.height=l.h+'px';
+    updateInspector(l);
     autosave(); status('Resized. Publish when ready.');
   };
   const up=()=>{document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',up)};
   document.addEventListener('mousemove',move);
   document.addEventListener('mouseup',up);
-}
-function bindImageCrop(el,id){
-  el.ondblclick=e=>{
-    const l=getLayer(id); if(!l || l.type!=='image') return;
-    e.preventDefault(); pushHistory();
-    l.crop={x:50,y:50,zoom:100}; render(); selectLayer(id); autosave(); toast('Image crop reset');
-  };
 }
 
 function editText(){
@@ -170,7 +167,7 @@ function imageZoom(amount){
   const l=getLayer(selected); if(!l || l.type!=='image') return;
   pushHistory();
   l.crop=l.crop||{x:50,y:50,zoom:100};
-  l.crop.zoom=Math.max(20,Math.min(300,(l.crop.zoom||100)+amount));
+  l.crop.zoom=Math.max(20,Math.min(320,(l.crop.zoom||100)+amount));
   render(); selectLayer(l.id); autosave();
 }
 async function replaceImage(file){
@@ -186,17 +183,17 @@ function lock(){const l=getLayer(selected); if(!l)return; pushHistory(); l.locke
 function hide(){const l=getLayer(selected); if(!l)return; pushHistory(); l.hidden=true; $('toolbox').classList.add('hidden'); render(); autosave();}
 function duplicate(){
   const l=getLayer(selected); if(!l)return; pushHistory();
-  const n=clone(l); n.id=l.id+'-copy-'+Date.now(); n.x+=30; n.y+=30; n.z=(l.z||1)+1;
+  const n=clone(l); n.id=l.id+'-copy-'+Date.now(); n.x+=35; n.y+=35; n.z=(l.z||1)+1;
   data.layers.push(n); render(); selectLayer(n.id); autosave();
 }
 function del(){const l=getLayer(selected); if(!l)return; pushHistory(); data.layers=data.layers.filter(x=>x.id!==l.id); $('toolbox').classList.add('hidden'); render(); autosave();}
 function addLayer(type){
   pushHistory();
   const id=type+'-'+Date.now();
-  const base={id,type,section:'hero',x:120,y:120,w:260,h:80,z:100,locked:false,hidden:false,styles:{}};
-  if(type==='text'){base.content='New text';base.styles={fontSize:'42px',fontWeight:'900',color:'#ffffff'}}
-  if(type==='button'){base.content='Button';base.href='#';base.styles={background:'#f4d77e',color:'#050505',fontWeight:'900',borderRadius:'14px'}}
-  if(type==='card'){base.styles={background:'#111',border:'1px solid rgba(255,255,255,.15)',borderRadius:'24px'}}
+  const base={id,type,section:'hero',x:140,y:160,w:300,h:90,z:200,locked:false,hidden:false,styles:{}};
+  if(type==='text'){base.content='New premium text';base.styles={fontSize:'42px',fontWeight:'1000',color:'#ffffff',textTransform:'uppercase'}}
+  if(type==='button'){base.content='Button';base.href='#';base.styles={background:'linear-gradient(135deg,#fff5c5,#d8a331 42%,#815505)',color:'#050505',fontWeight:'1000',borderRadius:'16px'}}
+  if(type==='card'){base.styles={background:'linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))',border:'1px solid rgba(244,215,126,.25)',borderRadius:'28px'}}
   data.layers.push(base); render(); selectLayer(id); autosave();
 }
 function renderLayersPanel(){
@@ -206,14 +203,33 @@ function renderLayersPanel(){
     </div>`).join('');
   document.querySelectorAll('[data-row]').forEach(r=>r.onclick=()=>selectLayer(r.dataset.row));
 }
-
+function updateInspector(l){
+  if(!l) return;
+  $('inspectorName').textContent = l.id + ' / ' + l.type;
+  $('propX').value=l.x; $('propY').value=l.y; $('propW').value=l.w; $('propH').value=l.h; $('propZ').value=l.z||1;
+  $('propOpacity').value=l.styles?.opacity ?? '';
+  $('propColor').value=l.styles?.color ?? '';
+  $('propBg').value=l.styles?.background ?? '';
+  $('propRadius').value=l.styles?.borderRadius ?? '';
+}
+function applyInspector(){
+  const l=getLayer(selected); if(!l)return;
+  pushHistory();
+  l.x=Number($('propX').value||l.x); l.y=Number($('propY').value||l.y); l.w=Number($('propW').value||l.w); l.h=Number($('propH').value||l.h); l.z=Number($('propZ').value||l.z);
+  l.styles=l.styles||{};
+  if($('propOpacity').value!=='') l.styles.opacity=$('propOpacity').value;
+  if($('propColor').value!=='') l.styles.color=$('propColor').value;
+  if($('propBg').value!=='') l.styles.background=$('propBg').value;
+  if($('propRadius').value!=='') l.styles.borderRadius=$('propRadius').value;
+  render(); selectLayer(l.id); autosave();
+}
 function undo(){if(!history.length)return;redoStack.push(clone(data));data=history.pop();render();status('Undo')}
 function redo(){if(!redoStack.length)return;history.push(clone(data));data=redoStack.pop();render();status('Redo')}
 async function publish(){
   try{
     status('Publishing...');
     await api('/api/layers',{method:'POST',body:JSON.stringify(data,null,2)});
-    localStorage.removeItem('jackal_layers_draft');
+    localStorage.removeItem('jackal_black_draft');
     toast('Published. Give Cloudflare 30-60 seconds.');
     status('Published.');
   }catch(e){status('Publish failed: '+e.message)}
@@ -224,18 +240,8 @@ $('publishBtn').onclick=publish;
 $('editTextBtn').onclick=editText;
 $('applyTextBtn').onclick=applyText;
 $('cancelTextBtn').onclick=()=>$('textModal').classList.add('hidden');
-$('biggerBtn').onclick=()=>{
-  const l=getLayer(selected);
-  if(!l) return;
-  if(l.type === 'image') imageZoom(10);
-  else scaleText(6);
-};
-$('smallerBtn').onclick=()=>{
-  const l=getLayer(selected);
-  if(!l) return;
-  if(l.type === 'image') imageZoom(-10);
-  else scaleText(-6);
-};
+$('biggerBtn').onclick=()=>{const l=getLayer(selected); if(!l)return; l.type==='image'?imageZoom(10):scaleText(6)};
+$('smallerBtn').onclick=()=>{const l=getLayer(selected); if(!l)return; l.type==='image'?imageZoom(-10):scaleText(-6)};
 $('replaceBtn').onclick=()=>$('imageUpload').click();
 $('imageUpload').onchange=e=>replaceImage(e.target.files[0]);
 $('frontBtn').onclick=()=>z(1);
@@ -244,11 +250,13 @@ $('lockBtn').onclick=lock;
 $('hideBtn').onclick=hide;
 $('duplicateBtn').onclick=duplicate;
 $('deleteBtn').onclick=del;
-$('doneBtn').onclick=()=>{$('toolbox').classList.add('hidden');clearSelection()};
+$('doneBtn').onclick=()=>{$('toolbox').classList.add('hidden');document.querySelectorAll('.selected').forEach(e=>e.classList.remove('selected'));selected=null};
 $('addTextBtn').onclick=()=>addLayer('text');
 $('addButtonBtn').onclick=()=>addLayer('button');
 $('addBoxBtn').onclick=()=>addLayer('card');
 $('layersBtn').onclick=()=>$('layersPanel').classList.toggle('hidden');
+$('inspectorBtn').onclick=()=>$('inspector').classList.toggle('hidden');
+$('applyInspectorBtn').onclick=applyInspector;
 $('undoBtn').onclick=undo;
 $('redoBtn').onclick=redo;
 autoLogin();
