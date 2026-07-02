@@ -1,4 +1,3 @@
-function esc(s){return String(s ?? '').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
 function kebab(k){return k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}
 function cssText(styles={}){return Object.entries(styles).map(([k,v])=>`${kebab(k)}:${v}`).join(';')}
 function imageStyle(layer){
@@ -10,14 +9,15 @@ async function render(){
   const res = await fetch('/content/layers.json?cache=' + Date.now());
   const data = await res.json();
   const site = document.getElementById('site');
-  site.style.minHeight = (data.canvas?.desktop?.height || 5600) + 'px';
-  site.style.background = data.canvas?.background || '#050505';
+  site.style.minHeight = (data.canvas?.desktop?.height || 6500) + 'px';
+  site.style.background = data.canvas?.background || '#030303';
   site.innerHTML = '';
 
   (data.sections || []).forEach(sec=>{
     if(sec.hidden) return;
     const el = document.createElement('section');
     el.className = 'section-layer';
+    el.id = sec.id;
     el.dataset.layerId = sec.id;
     el.style.cssText = `top:${sec.y}px;height:${sec.h}px;z-index:${sec.z || 1};background:${sec.background || 'transparent'};`;
     site.appendChild(el);
