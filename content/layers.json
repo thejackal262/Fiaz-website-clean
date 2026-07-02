@@ -3,21 +3,20 @@
   "canvas": {
     "desktop": {
       "width": 1440,
-      "height": 6200
+      "height": 6500
     },
     "mobile": {
       "width": 390,
-      "height": 7800
+      "height": 7600
     },
-    "background": "#020202"
-  },
-  "theme": {
-    "name": "Jackal Black Edition",
-    "gold": "#f4d77e",
-    "black": "#020202",
-    "charcoal": "#0b0b0b",
-    "marble": "data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIj4KPGRlZnM+CjxmaWx0ZXIgaWQ9Im5vaXNlIj4KPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9Ii4wMTIgLjAxOCIgbnVtT2N0YXZlcz0iNSIgc2VlZD0iOCIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iLjIyIDAgMCAwIDAgIDAgLjIyIDAgMCAwICAwIDAgLjIyIDAgMCAgMCAwIDAgMSAwIi8+CjwvZmlsdGVyPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjMGIwYjBiIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzViM2IwOCIvPgo8c3RvcCBvZmZzZXQ9Ii4yOCIgc3RvcC1jb2xvcj0iI2Y3ZGM4NiIvPgo8c3RvcCBvZmZzZXQ9Ii41NSIgc3RvcC1jb2xvcj0iI2E2NmMxMiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmYxYjIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2cpIi8+CjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9Ii41NSIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgo8cGF0aCBkPSJNLTQwIDc4MCBDMjYwIDY1MCA0MDAgNzQwIDYyMCA1MjAgUzEwMjAgMzgwIDE2NjAgNjAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSI2IiBvcGFjaXR5PSIuNDIiLz4KPHBhdGggZD0iTS0zMCA4MDUgQzI3MCA2OTAgNDMwIDc3MCA2NTAgNTU1IFMxMDQwIDQyMCAxNjQwIDkwIiBzdHJva2U9IiNmZmYxYjIiIHN0cm9rZS13aWR0aD0iMS40IiBvcGFjaXR5PSIuNSIvPgo8cGF0aCBkPSJNNjAgMTIwIEMyODAgMjQwIDQ4MCAxNTAgNzEwIDI3MCBTMTA1MCA0NzUgMTU0MCAzNjAiIHN0cm9rZT0iIzc3NyIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuMjgiLz4KPHBhdGggZD0iTTAgNDIwIEMyNjAgMzMwIDM5MCA0MzAgNTYwIDM1NSBTODIwIDIxMCAxMDgwIDMwMCBTMTMyMCA0MTAgMTYwMCAyODAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSIzLjIiIG9wYWNpdHk9Ii4zMiIvPgo8cGF0aCBkPSJNMTM1IDk4MCBDMzEwIDgzMCA1MDAgODkwIDcyNSA3MjAgUzEwMTAgNjcwIDEyNDAgNTIwIFMxNDIwIDQyMCAxNjQwIDUwMCIgc3Ryb2tlPSIjY2ZhMTRhIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9Ii4zNSIvPgo8cGF0aCBkPSJNOTQwIC0yMCBDODcwIDIyMCA5NTAgMzgwIDg1MCA1NjAgUzcwMCA3OTAgNzIwIDEwNDAiIHN0cm9rZT0iI2Y2ZTNhMCIgc3Ryb2tlLXdpZHRoPSIxLjIiIG9wYWNpdHk9Ii4zOCIvPgo8cGF0aCBkPSJNMTIyMCAtMzAgQzExNTAgMTYwIDEyMDAgMzMwIDExMDAgNDgwIFMxMDMwIDc2MCAxMTgwIDEwMzAiIHN0cm9rZT0iIzczNzM3MyIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMjUiLz4KPC9nPgo8L3N2Zz4K",
-    "artdeco": "data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIj4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0iIzAzMDMwMyIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkIiB4MT0iMCIgeDI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM2YzQ3MGIiLz4KPHN0b3Agb2Zmc2V0PSIuMzUiIHN0b3AtY29sb3I9IiNmZmYxYjIiLz4KPHN0b3Agb2Zmc2V0PSIuNjUiIHN0b3AtY29sb3I9IiNiNzdiMTYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjRkNzdlIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPGcgc3Ryb2tlPSJ1cmwoI2dvbGQpIiBmaWxsPSJub25lIiBvcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMyI+CjxwYXRoIGQ9Ik0wIDEwMCBMMTIwIDAgTDI0MCAxMDAgTDM2MCAwIEw0ODAgMTAwIEw2MDAgMCBMNzIwIDEwMCBMODQwIDAgTDk2MCAxMDAgTDEwODAgMCBMMTIwMCAxMDAgTDEzMjAgMCBMMTQ0MCAxMDAgTDE1NjAgMCBMMTY4MCAxMDAiLz4KPHBhdGggZD0iTTAgMjMwIEwxMjAgMTAwIEwyNDAgMjMwIEwzNjAgMTAwIEw0ODAgMjMwIEw2MDAgMTAwIEw3MjAgMjMwIEw4NDAgMTAwIEw5NjAgMjMwIEwxMDgwIDEwMCBMMTIwMCAyMzAgTDEzMjAgMTAwIEwxNDQwIDIzMCBMMTU2MCAxMDAgTDE2ODAgMjMwIi8+CjxwYXRoIGQ9Ik0wIDM2MCBMMTIwIDIzMCBMMjQwIDM2MCBMMzYwIDIzMCBMNDgwIDM2MCBMNjAwIDIzMCBMNzIwIDM2MCBMODQwIDIzMCBMOTYwIDM2MCBMMTA4MCAyMzAgTDEyMDAgMzYwIEwxMzIwIDIzMCBMMTQ0MCAzNjAgTDE1NjAgMjMwIEwxNjgwIDM2MCIvPgo8cGF0aCBkPSJNMCA0OTAgTDEyMCAzNjAgTDI0MCA0OTAgTDM2MCAzNjAgTDQ4MCA0OTAgTDYwMCAzNjAgTDcyMCA0OTAgTDg0MCAzNjAgTDk2MCA0OTAgTDEwODAgMzYwIEwxMjAwIDQ5MCBMMTMyMCAzNjAgTDE0NDAgNDkwIEwxNTYwIDM2MCBMMTY4MCA0OTAiLz4KPHBhdGggZD0iTTAgNjIwIEwxMjAgNDkwIEwyNDAgNjIwIEwzNjAgNDkwIEw0ODAgNjIwIEw2MDAgNDkwIEw3MjAgNjIwIEw4NDAgNDkwIEw5NjAgNjIwIEwxMDgwIDQ5MCBMMTIwMCA2MjAgTDEzMjAgNDkwIEwxNDQwIDYyMCBMMTU2MCA0OTAgTDE2ODAgNjIwIi8+CjxwYXRoIGQ9Ik0wIDc1MCBMMTIwIDYyMCBMMjQwIDc1MCBMMzYwIDYyMCBMNDgwIDc1MCBMNjAwIDYyMCBMNzIwIDc1MCBMODQwIDYyMCBMOTYwIDc1MCBMMTA4MCA2MjAgTDEyMDAgNzUwIEwxMzIwIDYyMCBMMTQ0MCA3NTAgTDE1NjAgNjIwIEwxNjgwIDc1MCIvPgo8cGF0aCBkPSJNMCA4ODAgTDEyMCA3NTAgTDI0MCA4ODAgTDM2MCA3NTAgTDQ4MCA4ODAgTDYwMCA3NTAgTDcyMCA4ODAgTDg0MCA3NTAgTDk2MCA4ODAgTDEwODAgNzUwIEwxMjAwIDg4MCBMMTMyMCA3NTAgTDE0NDAgODgwIEwxNTYwIDc1MCBMMTY4MCA4ODAiLz4KPC9nPgo8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2ZhZGUpIi8+Cjwvc3ZnPgo="
+    "background": "#030303",
+    "theme": {
+      "name": "Jackal Black Edition",
+      "gold": "#f4d77e",
+      "black": "#030303",
+      "charcoal": "#0b0b0b",
+      "gunmetal": "#1b1b1b"
+    }
   },
   "sections": [
     {
@@ -26,196 +25,372 @@
       "x": 0,
       "y": 0,
       "w": 1440,
-      "h": 1020,
+      "h": 1040,
       "z": 1,
-      "background": "#020202"
+      "background": "radial-gradient(circle at 76% 26%,rgba(244,215,126,.26),transparent 26%),radial-gradient(circle at 8% 4%,rgba(255,255,255,.06),transparent 18%),#030303"
     },
     {
       "id": "manifesto",
       "name": "Manifesto",
       "x": 0,
-      "y": 1020,
+      "y": 1040,
       "w": 1440,
-      "h": 720,
+      "h": 760,
       "z": 1,
-      "background": "#030303"
+      "background": "linear-gradient(135deg,#030303,#080808 55%,#020202)"
     },
     {
       "id": "about",
       "name": "About",
       "x": 0,
-      "y": 1740,
+      "y": 1800,
       "w": 1440,
       "h": 900,
       "z": 1,
-      "background": "#020202"
+      "background": "radial-gradient(circle at 12% 35%,rgba(244,215,126,.11),transparent 24%),#030303"
     },
     {
       "id": "coaching",
       "name": "Coaching",
       "x": 0,
-      "y": 2640,
+      "y": 2700,
       "w": 1440,
       "h": 980,
       "z": 1,
-      "background": "#050505"
+      "background": "linear-gradient(180deg,#050505,#0b0b0b 52%,#040404)"
     },
     {
       "id": "results",
       "name": "Results",
       "x": 0,
-      "y": 3620,
+      "y": 3680,
       "w": 1440,
       "h": 880,
       "z": 1,
-      "background": "#020202"
+      "background": "#030303"
     },
     {
       "id": "packages",
       "name": "Packages",
       "x": 0,
-      "y": 4500,
+      "y": 4560,
       "w": 1440,
-      "h": 1040,
+      "h": 980,
       "z": 1,
-      "background": "#030303"
+      "background": "radial-gradient(circle at 50% 10%,rgba(244,215,126,.13),transparent 30%),#050505"
     },
     {
-      "id": "contact",
-      "name": "Contact",
+      "id": "final",
+      "name": "Final CTA",
       "x": 0,
       "y": 5540,
       "w": 1440,
-      "h": 660,
+      "h": 780,
       "z": 1,
-      "background": "#020202"
+      "background": "radial-gradient(circle at 50% 20%,rgba(244,215,126,.22),transparent 34%),linear-gradient(180deg,#030303,#000)"
     }
   ],
   "layers": [
     {
-      "id": "hero-marble-bg",
-      "type": "image",
+      "id": "hero-marble-base",
+      "type": "card",
       "section": "hero",
       "x": 0,
       "y": 0,
       "w": 1440,
-      "h": 1020,
+      "h": 1040,
       "z": 1,
       "locked": false,
       "hidden": false,
       "styles": {
-        "opacity": ".52",
-        "filter": "contrast(1.05)"
-      },
-      "src": "data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIj4KPGRlZnM+CjxmaWx0ZXIgaWQ9Im5vaXNlIj4KPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9Ii4wMTIgLjAxOCIgbnVtT2N0YXZlcz0iNSIgc2VlZD0iOCIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iLjIyIDAgMCAwIDAgIDAgLjIyIDAgMCAwICAwIDAgLjIyIDAgMCAgMCAwIDAgMSAwIi8+CjwvZmlsdGVyPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjMGIwYjBiIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzViM2IwOCIvPgo8c3RvcCBvZmZzZXQ9Ii4yOCIgc3RvcC1jb2xvcj0iI2Y3ZGM4NiIvPgo8c3RvcCBvZmZzZXQ9Ii41NSIgc3RvcC1jb2xvcj0iI2E2NmMxMiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmYxYjIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2cpIi8+CjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9Ii41NSIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgo8cGF0aCBkPSJNLTQwIDc4MCBDMjYwIDY1MCA0MDAgNzQwIDYyMCA1MjAgUzEwMjAgMzgwIDE2NjAgNjAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSI2IiBvcGFjaXR5PSIuNDIiLz4KPHBhdGggZD0iTS0zMCA4MDUgQzI3MCA2OTAgNDMwIDc3MCA2NTAgNTU1IFMxMDQwIDQyMCAxNjQwIDkwIiBzdHJva2U9IiNmZmYxYjIiIHN0cm9rZS13aWR0aD0iMS40IiBvcGFjaXR5PSIuNSIvPgo8cGF0aCBkPSJNNjAgMTIwIEMyODAgMjQwIDQ4MCAxNTAgNzEwIDI3MCBTMTA1MCA0NzUgMTU0MCAzNjAiIHN0cm9rZT0iIzc3NyIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuMjgiLz4KPHBhdGggZD0iTTAgNDIwIEMyNjAgMzMwIDM5MCA0MzAgNTYwIDM1NSBTODIwIDIxMCAxMDgwIDMwMCBTMTMyMCA0MTAgMTYwMCAyODAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSIzLjIiIG9wYWNpdHk9Ii4zMiIvPgo8cGF0aCBkPSJNMTM1IDk4MCBDMzEwIDgzMCA1MDAgODkwIDcyNSA3MjAgUzEwMTAgNjcwIDEyNDAgNTIwIFMxNDIwIDQyMCAxNjQwIDUwMCIgc3Ryb2tlPSIjY2ZhMTRhIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9Ii4zNSIvPgo8cGF0aCBkPSJNOTQwIC0yMCBDODcwIDIyMCA5NTAgMzgwIDg1MCA1NjAgUzcwMCA3OTAgNzIwIDEwNDAiIHN0cm9rZT0iI2Y2ZTNhMCIgc3Ryb2tlLXdpZHRoPSIxLjIiIG9wYWNpdHk9Ii4zOCIvPgo8cGF0aCBkPSJNMTIyMCAtMzAgQzExNTAgMTYwIDEyMDAgMzMwIDExMDAgNDgwIFMxMDMwIDc2MCAxMTgwIDEwMzAiIHN0cm9rZT0iIzczNzM3MyIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMjUiLz4KPC9nPgo8L3N2Zz4K",
-      "crop": {
-        "x": 50,
-        "y": 50,
-        "zoom": 100
-      },
-      "mode": "cover"
+        "background": "radial-gradient(circle at 20% 20%,rgba(255,255,255,.05),transparent 12%),radial-gradient(circle at 75% 35%,rgba(244,215,126,.08),transparent 16%),linear-gradient(125deg,rgba(255,255,255,.035) 0 1px,transparent 1px 100%),linear-gradient(35deg,rgba(244,215,126,.08) 0 1px,transparent 1px 100%)",
+        "backgroundSize": "100% 100%,100% 100%,260px 260px,360px 360px",
+        "opacity": ".34"
+      }
     },
     {
-      "id": "hero-photo",
-      "type": "image",
+      "id": "hero-edge-glow",
+      "type": "card",
       "section": "hero",
-      "x": 620,
-      "y": 60,
-      "w": 760,
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1040,
+      "z": 2,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(90deg,rgba(244,215,126,.16),transparent 12%,transparent 88%,rgba(244,215,126,.16))",
+        "opacity": ".35"
+      }
+    },
+    {
+      "id": "manifesto-marble-base",
+      "type": "card",
+      "section": "manifesto",
+      "x": 0,
+      "y": 1040,
+      "w": 1440,
+      "h": 760,
+      "z": 1,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "radial-gradient(circle at 20% 20%,rgba(255,255,255,.05),transparent 12%),radial-gradient(circle at 75% 35%,rgba(244,215,126,.08),transparent 16%),linear-gradient(125deg,rgba(255,255,255,.035) 0 1px,transparent 1px 100%),linear-gradient(35deg,rgba(244,215,126,.08) 0 1px,transparent 1px 100%)",
+        "backgroundSize": "100% 100%,100% 100%,260px 260px,360px 360px",
+        "opacity": ".34"
+      }
+    },
+    {
+      "id": "manifesto-edge-glow",
+      "type": "card",
+      "section": "manifesto",
+      "x": 0,
+      "y": 1040,
+      "w": 1440,
+      "h": 760,
+      "z": 2,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(90deg,rgba(244,215,126,.16),transparent 12%,transparent 88%,rgba(244,215,126,.16))",
+        "opacity": ".35"
+      }
+    },
+    {
+      "id": "about-marble-base",
+      "type": "card",
+      "section": "about",
+      "x": 0,
+      "y": 1800,
+      "w": 1440,
+      "h": 900,
+      "z": 1,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "radial-gradient(circle at 20% 20%,rgba(255,255,255,.05),transparent 12%),radial-gradient(circle at 75% 35%,rgba(244,215,126,.08),transparent 16%),linear-gradient(125deg,rgba(255,255,255,.035) 0 1px,transparent 1px 100%),linear-gradient(35deg,rgba(244,215,126,.08) 0 1px,transparent 1px 100%)",
+        "backgroundSize": "100% 100%,100% 100%,260px 260px,360px 360px",
+        "opacity": ".34"
+      }
+    },
+    {
+      "id": "about-edge-glow",
+      "type": "card",
+      "section": "about",
+      "x": 0,
+      "y": 1800,
+      "w": 1440,
       "h": 900,
       "z": 2,
       "locked": false,
       "hidden": false,
       "styles": {
+        "background": "linear-gradient(90deg,rgba(244,215,126,.16),transparent 12%,transparent 88%,rgba(244,215,126,.16))",
+        "opacity": ".35"
+      }
+    },
+    {
+      "id": "coaching-marble-base",
+      "type": "card",
+      "section": "coaching",
+      "x": 0,
+      "y": 2700,
+      "w": 1440,
+      "h": 980,
+      "z": 1,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "radial-gradient(circle at 20% 20%,rgba(255,255,255,.05),transparent 12%),radial-gradient(circle at 75% 35%,rgba(244,215,126,.08),transparent 16%),linear-gradient(125deg,rgba(255,255,255,.035) 0 1px,transparent 1px 100%),linear-gradient(35deg,rgba(244,215,126,.08) 0 1px,transparent 1px 100%)",
+        "backgroundSize": "100% 100%,100% 100%,260px 260px,360px 360px",
+        "opacity": ".34"
+      }
+    },
+    {
+      "id": "coaching-edge-glow",
+      "type": "card",
+      "section": "coaching",
+      "x": 0,
+      "y": 2700,
+      "w": 1440,
+      "h": 980,
+      "z": 2,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(90deg,rgba(244,215,126,.16),transparent 12%,transparent 88%,rgba(244,215,126,.16))",
+        "opacity": ".35"
+      }
+    },
+    {
+      "id": "results-marble-base",
+      "type": "card",
+      "section": "results",
+      "x": 0,
+      "y": 3680,
+      "w": 1440,
+      "h": 880,
+      "z": 1,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "radial-gradient(circle at 20% 20%,rgba(255,255,255,.05),transparent 12%),radial-gradient(circle at 75% 35%,rgba(244,215,126,.08),transparent 16%),linear-gradient(125deg,rgba(255,255,255,.035) 0 1px,transparent 1px 100%),linear-gradient(35deg,rgba(244,215,126,.08) 0 1px,transparent 1px 100%)",
+        "backgroundSize": "100% 100%,100% 100%,260px 260px,360px 360px",
+        "opacity": ".34"
+      }
+    },
+    {
+      "id": "results-edge-glow",
+      "type": "card",
+      "section": "results",
+      "x": 0,
+      "y": 3680,
+      "w": 1440,
+      "h": 880,
+      "z": 2,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(90deg,rgba(244,215,126,.16),transparent 12%,transparent 88%,rgba(244,215,126,.16))",
+        "opacity": ".35"
+      }
+    },
+    {
+      "id": "packages-marble-base",
+      "type": "card",
+      "section": "packages",
+      "x": 0,
+      "y": 4560,
+      "w": 1440,
+      "h": 980,
+      "z": 1,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "radial-gradient(circle at 20% 20%,rgba(255,255,255,.05),transparent 12%),radial-gradient(circle at 75% 35%,rgba(244,215,126,.08),transparent 16%),linear-gradient(125deg,rgba(255,255,255,.035) 0 1px,transparent 1px 100%),linear-gradient(35deg,rgba(244,215,126,.08) 0 1px,transparent 1px 100%)",
+        "backgroundSize": "100% 100%,100% 100%,260px 260px,360px 360px",
+        "opacity": ".34"
+      }
+    },
+    {
+      "id": "packages-edge-glow",
+      "type": "card",
+      "section": "packages",
+      "x": 0,
+      "y": 4560,
+      "w": 1440,
+      "h": 980,
+      "z": 2,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(90deg,rgba(244,215,126,.16),transparent 12%,transparent 88%,rgba(244,215,126,.16))",
+        "opacity": ".35"
+      }
+    },
+    {
+      "id": "final-marble-base",
+      "type": "card",
+      "section": "final",
+      "x": 0,
+      "y": 5540,
+      "w": 1440,
+      "h": 780,
+      "z": 1,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "radial-gradient(circle at 20% 20%,rgba(255,255,255,.05),transparent 12%),radial-gradient(circle at 75% 35%,rgba(244,215,126,.08),transparent 16%),linear-gradient(125deg,rgba(255,255,255,.035) 0 1px,transparent 1px 100%),linear-gradient(35deg,rgba(244,215,126,.08) 0 1px,transparent 1px 100%)",
+        "backgroundSize": "100% 100%,100% 100%,260px 260px,360px 360px",
+        "opacity": ".34"
+      }
+    },
+    {
+      "id": "final-edge-glow",
+      "type": "card",
+      "section": "final",
+      "x": 0,
+      "y": 5540,
+      "w": 1440,
+      "h": 780,
+      "z": 2,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(90deg,rgba(244,215,126,.16),transparent 12%,transparent 88%,rgba(244,215,126,.16))",
+        "opacity": ".35"
+      }
+    },
+    {
+      "id": "hero-bg-photo",
+      "type": "image",
+      "section": "hero",
+      "x": -20,
+      "y": 0,
+      "w": 1480,
+      "h": 1040,
+      "z": 5,
+      "locked": false,
+      "hidden": false,
+      "styles": {
         "opacity": ".42",
-        "filter": "contrast(1.18) saturate(1.02)",
-        "borderRadius": "0"
+        "filter": "contrast(1.18) saturate(1.02)"
       },
       "src": "/images/uploads/img_1760.jpeg",
       "crop": {
-        "x": 50,
+        "x": 54,
         "y": 42,
-        "zoom": 120
+        "zoom": 118
       },
       "mode": "cover"
     },
     {
-      "id": "hero-dark-glass",
+      "id": "hero-ink-overlay",
       "type": "card",
       "section": "hero",
       "x": 0,
       "y": 0,
       "w": 1440,
-      "h": 1020,
-      "z": 3,
+      "h": 1040,
+      "z": 6,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(90deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.8) 42%,rgba(0,0,0,.35) 70%,rgba(0,0,0,.86) 100%)"
+        "background": "linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.78) 38%,rgba(0,0,0,.28) 70%,rgba(0,0,0,.90))"
       }
     },
     {
-      "id": "hero-gold-orb",
+      "id": "hero-art-deco",
       "type": "card",
       "section": "hero",
       "x": 920,
-      "y": 85,
-      "w": 470,
-      "h": 470,
-      "z": 4,
+      "y": 65,
+      "w": 420,
+      "h": 650,
+      "z": 7,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "radial-gradient(circle,rgba(244,215,126,.22),transparent 67%)",
-        "borderRadius": "999px",
-        "filter": "blur(12px)"
-      }
-    },
-    {
-      "id": "hero-left-line",
-      "type": "card",
-      "section": "hero",
-      "x": 62,
-      "y": 128,
-      "w": 2,
-      "h": 760,
-      "z": 5,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "background": "linear-gradient(180deg,transparent,#f4d77e,transparent)",
-        "opacity": ".55"
-      }
-    },
-    {
-      "id": "hero-top-line",
-      "type": "card",
-      "section": "hero",
-      "x": 62,
-      "y": 128,
-      "w": 760,
-      "h": 1,
-      "z": 5,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "background": "linear-gradient(90deg,#f4d77e,transparent)",
-        "opacity": ".42"
+        "background": "repeating-linear-gradient(60deg,rgba(244,215,126,.25) 0 1px,transparent 1px 22px),repeating-linear-gradient(120deg,rgba(244,215,126,.18) 0 1px,transparent 1px 22px)",
+        "clipPath": "polygon(50% 0,100% 22%,100% 78%,50% 100%,0 78%,0 22%)",
+        "opacity": ".18",
+        "filter": "drop-shadow(0 0 40px rgba(244,215,126,.18))"
       }
     },
     {
       "id": "logo",
       "type": "image",
       "section": "hero",
-      "x": 70,
-      "y": 42,
-      "w": 120,
-      "h": 120,
-      "z": 50,
+      "x": 54,
+      "y": 34,
+      "w": 150,
+      "h": 150,
+      "z": 60,
       "locked": false,
       "hidden": false,
       "styles": {
-        "filter": "drop-shadow(0 18px 35px rgba(0,0,0,.75))"
+        "filter": "drop-shadow(0 16px 36px rgba(0,0,0,.9))"
       },
       "src": "/images/uploads/img_1760.jpeg",
       "crop": {
@@ -226,61 +401,61 @@
       "mode": "contain"
     },
     {
-      "id": "brand",
+      "id": "brand-name",
       "type": "text",
       "section": "hero",
-      "x": 210,
-      "y": 60,
+      "x": 220,
+      "y": 58,
       "w": 330,
       "h": 38,
-      "z": 51,
+      "z": 61,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "28px",
+        "fontSize": "22px",
         "fontWeight": "1000",
-        "letterSpacing": "1px",
+        "letterSpacing": "1.5px",
         "color": "#fff",
         "textTransform": "uppercase"
       },
-      "content": "FIAZ ALI"
+      "content": "FIAZ ALI COACHING"
     },
     {
-      "id": "brand-sub",
+      "id": "brand-tag",
       "type": "text",
       "section": "hero",
-      "x": 212,
-      "y": 96,
-      "w": 440,
-      "h": 28,
-      "z": 51,
+      "x": 220,
+      "y": 94,
+      "w": 380,
+      "h": 30,
+      "z": 62,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "12px",
-        "fontWeight": "900",
-        "letterSpacing": "3px",
+        "fontSize": "11px",
+        "fontWeight": "1000",
+        "letterSpacing": "2.8px",
         "color": "#f4d77e",
         "textTransform": "uppercase"
       },
-      "content": "PERSONAL TRAINER & ONLINE COACH"
+      "content": "PERSONAL TRAINER \u2022 ONLINE COACH"
     },
     {
       "id": "nav-about",
       "type": "text",
       "section": "hero",
-      "x": 780,
-      "y": 64,
-      "w": 120,
-      "h": 24,
-      "z": 52,
+      "x": 830,
+      "y": 66,
+      "w": 118,
+      "h": 28,
+      "z": 63,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "14px",
-        "fontWeight": "950",
+        "fontSize": "13px",
+        "fontWeight": "1000",
         "letterSpacing": "2px",
-        "color": "#ddd",
+        "color": "#e6e6e6",
         "textAlign": "center",
         "textTransform": "uppercase"
       },
@@ -290,18 +465,18 @@
       "id": "nav-coaching",
       "type": "text",
       "section": "hero",
-      "x": 895,
-      "y": 64,
-      "w": 120,
-      "h": 24,
-      "z": 52,
+      "x": 940,
+      "y": 66,
+      "w": 118,
+      "h": 28,
+      "z": 63,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "14px",
-        "fontWeight": "950",
+        "fontSize": "13px",
+        "fontWeight": "1000",
         "letterSpacing": "2px",
-        "color": "#ddd",
+        "color": "#e6e6e6",
         "textAlign": "center",
         "textTransform": "uppercase"
       },
@@ -311,18 +486,18 @@
       "id": "nav-results",
       "type": "text",
       "section": "hero",
-      "x": 1045,
-      "y": 64,
-      "w": 120,
-      "h": 24,
-      "z": 52,
+      "x": 1080,
+      "y": 66,
+      "w": 118,
+      "h": 28,
+      "z": 63,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "14px",
-        "fontWeight": "950",
+        "fontSize": "13px",
+        "fontWeight": "1000",
         "letterSpacing": "2px",
-        "color": "#ddd",
+        "color": "#e6e6e6",
         "textAlign": "center",
         "textTransform": "uppercase"
       },
@@ -332,18 +507,18 @@
       "id": "nav-packages",
       "type": "text",
       "section": "hero",
-      "x": 1180,
-      "y": 64,
-      "w": 120,
-      "h": 24,
-      "z": 52,
+      "x": 1210,
+      "y": 66,
+      "w": 118,
+      "h": 28,
+      "z": 63,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "14px",
-        "fontWeight": "950",
+        "fontSize": "13px",
+        "fontWeight": "1000",
         "letterSpacing": "2px",
-        "color": "#ddd",
+        "color": "#e6e6e6",
         "textAlign": "center",
         "textTransform": "uppercase"
       },
@@ -353,15 +528,15 @@
       "id": "hero-badge",
       "type": "text",
       "section": "hero",
-      "x": 105,
-      "y": 250,
-      "w": 720,
+      "x": 118,
+      "y": 248,
+      "w": 730,
       "h": 44,
-      "z": 55,
+      "z": 70,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "15px",
+        "fontSize": "14px",
         "fontWeight": "1000",
         "letterSpacing": "4px",
         "color": "#f4d77e",
@@ -369,78 +544,78 @@
         "textAlign": "center",
         "border": "1px solid rgba(244,215,126,.55)",
         "borderRadius": "999px",
-        "padding": "12px 24px",
-        "background": "rgba(0,0,0,.58)",
-        "boxShadow": "0 0 55px rgba(244,215,126,.14)"
+        "padding": "12px 20px",
+        "background": "rgba(0,0,0,.55)",
+        "boxShadow": "0 0 45px rgba(244,215,126,.14)"
       },
-      "content": "BLACK EDITION BODY TRANSFORMATION COACHING"
+      "content": "AFFORDABLE PERSONAL TRAINING \u2022 WORLDWIDE ONLINE COACHING"
     },
     {
-      "id": "hero-line-1",
+      "id": "hero-title-1",
       "type": "text",
       "section": "hero",
-      "x": 96,
-      "y": 335,
-      "w": 850,
-      "h": 110,
-      "z": 60,
+      "x": 112,
+      "y": 330,
+      "w": 860,
+      "h": 112,
+      "z": 72,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "106px",
+        "fontSize": "104px",
         "fontWeight": "1000",
-        "lineHeight": ".86",
-        "letterSpacing": "-6px",
-        "color": "#fff",
+        "lineHeight": ".88",
+        "letterSpacing": "-5px",
+        "color": "#ffffff",
         "textTransform": "uppercase",
-        "textShadow": "0 18px 60px rgba(0,0,0,.82)"
+        "textShadow": "0 16px 55px rgba(0,0,0,.78)"
       },
       "content": "BUILD A BODY"
     },
     {
-      "id": "hero-line-2",
+      "id": "hero-title-2",
       "type": "text",
       "section": "hero",
-      "x": 96,
-      "y": 440,
-      "w": 990,
-      "h": 118,
-      "z": 61,
+      "x": 112,
+      "y": 435,
+      "w": 1020,
+      "h": 112,
+      "z": 73,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "106px",
+        "fontSize": "104px",
         "fontWeight": "1000",
-        "lineHeight": ".86",
-        "letterSpacing": "-6px",
+        "lineHeight": ".88",
+        "letterSpacing": "-5px",
         "color": "transparent",
         "textTransform": "uppercase",
-        "textShadow": "0 2px 0 rgba(255,255,255,.15),0 16px 55px rgba(244,215,126,.28)",
-        "background": "linear-gradient(180deg,#fff8d8 0%,#f8d982 22%,#b98318 48%,#fff2b7 68%,#765009 100%)",
+        "textShadow": "0 2px 0 rgba(255,255,255,.14),0 10px 35px rgba(244,215,126,.24),0 22px 80px rgba(0,0,0,.8)",
+        "background": "linear-gradient(180deg,#fff9d8 0%,#f7df91 18%,#d5a83c 38%,#7b520b 56%,#fff0ae 74%,#a26f16 100%)",
         "WebkitBackgroundClip": "text",
         "backgroundClip": "text"
       },
       "content": "THAT REFUSES"
     },
     {
-      "id": "hero-line-3",
+      "id": "hero-title-3",
       "type": "text",
       "section": "hero",
-      "x": 96,
-      "y": 552,
+      "x": 112,
+      "y": 540,
       "w": 720,
-      "h": 110,
-      "z": 62,
+      "h": 112,
+      "z": 74,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "106px",
+        "fontSize": "104px",
         "fontWeight": "1000",
-        "lineHeight": ".86",
-        "letterSpacing": "-6px",
-        "color": "#fff",
+        "lineHeight": ".88",
+        "letterSpacing": "-5px",
+        "color": "#ffffff",
         "textTransform": "uppercase",
-        "textShadow": "0 18px 60px rgba(0,0,0,.82)"
+        "textShadow": "0 16px 55px rgba(0,0,0,.78)"
       },
       "content": "TO QUIT."
     },
@@ -448,279 +623,270 @@
       "id": "hero-copy",
       "type": "text",
       "section": "hero",
-      "x": 105,
-      "y": 700,
-      "w": 740,
+      "x": 118,
+      "y": 690,
+      "w": 760,
       "h": 88,
-      "z": 63,
+      "z": 75,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "22px",
-        "fontWeight": "650",
-        "lineHeight": "1.48",
-        "color": "#dfdfdf"
+        "fontSize": "24px",
+        "fontWeight": "750",
+        "lineHeight": "1.45",
+        "color": "#ffffff",
+        "textShadow": "0 10px 30px rgba(0,0,0,.85)"
       },
-      "content": "No fairy dust. No magic plan. Just standards, structure and work. Lose fat, build muscle and become the kind of person who stops folding when life gets uncomfortable."
+      "content": "No gimmicks. No fairy dust. No motivational bedtime stories. Just standards, structure and the kind of work that makes excuses shut up."
     },
     {
-      "id": "hero-btn-1",
+      "id": "hero-btn-primary",
       "type": "button",
       "section": "hero",
-      "x": 105,
-      "y": 835,
-      "w": 245,
+      "x": 118,
+      "y": 820,
+      "w": 250,
       "h": 70,
-      "z": 70,
+      "z": 80,
       "locked": false,
       "hidden": false,
       "styles": {
+        "background": "linear-gradient(115deg,#6d4708 0%,#f9e7a1 22%,#c99528 45%,#fff3bd 58%,#835908 78%,#e1b84e 100%)",
+        "color": "#070707",
+        "boxShadow": "0 18px 58px rgba(214,163,49,.28), inset 0 1px 0 rgba(255,255,255,.55), inset 0 -10px 28px rgba(70,42,0,.24)",
+        "border": "1px solid rgba(255,240,175,.72)",
         "fontSize": "15px",
         "fontWeight": "1000",
         "letterSpacing": "2px",
-        "color": "#080808",
-        "background": "linear-gradient(135deg,#fff5c5 0%,#d8a331 40%,#815505 100%)",
         "borderRadius": "18px",
-        "boxShadow": "0 26px 85px rgba(216,163,49,.26)",
         "textTransform": "uppercase"
       },
       "content": "START THE WORK",
-      "href": "#contact"
+      "href": "#final"
     },
     {
-      "id": "hero-btn-2",
+      "id": "hero-btn-secondary",
       "type": "button",
       "section": "hero",
-      "x": 375,
-      "y": 835,
+      "x": 395,
+      "y": 820,
       "w": 330,
       "h": 70,
-      "z": 71,
+      "z": 81,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "15px",
         "fontWeight": "1000",
         "letterSpacing": "2px",
-        "color": "#fff",
-        "background": "rgba(8,8,8,.72)",
-        "border": "1px solid rgba(244,215,126,.48)",
+        "color": "#ffffff",
+        "background": "rgba(10,10,10,.72)",
+        "border": "1px solid rgba(244,215,126,.45)",
         "borderRadius": "18px",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "boxShadow": "inset 0 1px 0 rgba(255,255,255,.08)"
       },
       "content": "VIEW COACHING OPTIONS",
       "href": "#coaching"
     },
     {
-      "id": "hero-stat",
-      "type": "text",
-      "section": "hero",
-      "x": 775,
-      "y": 850,
-      "w": 500,
-      "h": 40,
-      "z": 72,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "fontSize": "15px",
-        "fontWeight": "900",
-        "letterSpacing": "2px",
-        "color": "#f4d77e",
-        "textTransform": "uppercase"
-      },
-      "content": "17+ YEARS COACHING \u2022 WORLDWIDE ONLINE SUPPORT"
-    },
-    {
-      "id": "manifesto-artdeco",
-      "type": "image",
-      "section": "manifesto",
-      "x": 0,
-      "y": 1020,
-      "w": 1440,
-      "h": 720,
-      "z": 1,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "opacity": ".16"
-      },
-      "src": "data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIj4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0iIzAzMDMwMyIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkIiB4MT0iMCIgeDI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM2YzQ3MGIiLz4KPHN0b3Agb2Zmc2V0PSIuMzUiIHN0b3AtY29sb3I9IiNmZmYxYjIiLz4KPHN0b3Agb2Zmc2V0PSIuNjUiIHN0b3AtY29sb3I9IiNiNzdiMTYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjRkNzdlIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPGcgc3Ryb2tlPSJ1cmwoI2dvbGQpIiBmaWxsPSJub25lIiBvcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMyI+CjxwYXRoIGQ9Ik0wIDEwMCBMMTIwIDAgTDI0MCAxMDAgTDM2MCAwIEw0ODAgMTAwIEw2MDAgMCBMNzIwIDEwMCBMODQwIDAgTDk2MCAxMDAgTDEwODAgMCBMMTIwMCAxMDAgTDEzMjAgMCBMMTQ0MCAxMDAgTDE1NjAgMCBMMTY4MCAxMDAiLz4KPHBhdGggZD0iTTAgMjMwIEwxMjAgMTAwIEwyNDAgMjMwIEwzNjAgMTAwIEw0ODAgMjMwIEw2MDAgMTAwIEw3MjAgMjMwIEw4NDAgMTAwIEw5NjAgMjMwIEwxMDgwIDEwMCBMMTIwMCAyMzAgTDEzMjAgMTAwIEwxNDQwIDIzMCBMMTU2MCAxMDAgTDE2ODAgMjMwIi8+CjxwYXRoIGQ9Ik0wIDM2MCBMMTIwIDIzMCBMMjQwIDM2MCBMMzYwIDIzMCBMNDgwIDM2MCBMNjAwIDIzMCBMNzIwIDM2MCBMODQwIDIzMCBMOTYwIDM2MCBMMTA4MCAyMzAgTDEyMDAgMzYwIEwxMzIwIDIzMCBMMTQ0MCAzNjAgTDE1NjAgMjMwIEwxNjgwIDM2MCIvPgo8cGF0aCBkPSJNMCA0OTAgTDEyMCAzNjAgTDI0MCA0OTAgTDM2MCAzNjAgTDQ4MCA0OTAgTDYwMCAzNjAgTDcyMCA0OTAgTDg0MCAzNjAgTDk2MCA0OTAgTDEwODAgMzYwIEwxMjAwIDQ5MCBMMTMyMCAzNjAgTDE0NDAgNDkwIEwxNTYwIDM2MCBMMTY4MCA0OTAiLz4KPHBhdGggZD0iTTAgNjIwIEwxMjAgNDkwIEwyNDAgNjIwIEwzNjAgNDkwIEw0ODAgNjIwIEw2MDAgNDkwIEw3MjAgNjIwIEw4NDAgNDkwIEw5NjAgNjIwIEwxMDgwIDQ5MCBMMTIwMCA2MjAgTDEzMjAgNDkwIEwxNDQwIDYyMCBMMTU2MCA0OTAgTDE2ODAgNjIwIi8+CjxwYXRoIGQ9Ik0wIDc1MCBMMTIwIDYyMCBMMjQwIDc1MCBMMzYwIDYyMCBMNDgwIDc1MCBMNjAwIDYyMCBMNzIwIDc1MCBMODQwIDYyMCBMOTYwIDc1MCBMMTA4MCA2MjAgTDEyMDAgNzUwIEwxMzIwIDYyMCBMMTQ0MCA3NTAgTDE1NjAgNjIwIEwxNjgwIDc1MCIvPgo8cGF0aCBkPSJNMCA4ODAgTDEyMCA3NTAgTDI0MCA4ODAgTDM2MCA3NTAgTDQ4MCA4ODAgTDYwMCA3NTAgTDcyMCA4ODAgTDg0MCA3NTAgTDk2MCA4ODAgTDEwODAgNzUwIEwxMjAwIDg4MCBMMTMyMCA3NTAgTDE0NDAgODgwIEwxNTYwIDc1MCBMMTY4MCA4ODAiLz4KPC9nPgo8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2ZhZGUpIi8+Cjwvc3ZnPgo=",
-      "crop": {
-        "x": 50,
-        "y": 50,
-        "zoom": 100
-      },
-      "mode": "cover"
-    },
-    {
-      "id": "manifesto-glass",
+      "id": "hero-proof-strip",
       "type": "card",
-      "section": "manifesto",
-      "x": 100,
-      "y": 1110,
-      "w": 1240,
-      "h": 530,
-      "z": 3,
+      "section": "hero",
+      "x": 118,
+      "y": 940,
+      "w": 850,
+      "h": 48,
+      "z": 82,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025))",
-        "border": "1px solid rgba(244,215,126,.28)",
-        "borderRadius": "40px",
-        "boxShadow": "0 40px 120px rgba(0,0,0,.65)",
+        "background": "rgba(255,255,255,.035)",
+        "border": "1px solid rgba(244,215,126,.20)",
+        "borderRadius": "999px",
         "backdropFilter": "blur(8px)"
       }
     },
     {
-      "id": "manifesto-kicker",
+      "id": "hero-proof-text",
       "type": "text",
-      "section": "manifesto",
-      "x": 570,
-      "y": 1180,
-      "w": 300,
-      "h": 32,
-      "z": 5,
+      "section": "hero",
+      "x": 150,
+      "y": 955,
+      "w": 790,
+      "h": 25,
+      "z": 83,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "15px",
+        "fontSize": "12px",
         "fontWeight": "1000",
-        "letterSpacing": "4px",
+        "letterSpacing": "2px",
         "color": "#f4d77e",
         "textTransform": "uppercase",
         "textAlign": "center"
       },
-      "content": "THE STANDARD"
+      "content": "17+ YEARS COACHING \u2022 FAT LOSS \u2022 MUSCLE BUILDING \u2022 NO-BS ACCOUNTABILITY"
+    },
+    {
+      "id": "manifesto-frame",
+      "type": "card",
+      "section": "manifesto",
+      "x": 80,
+      "y": 1120,
+      "w": 1280,
+      "h": 540,
+      "z": 10,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018))",
+        "border": "1px solid rgba(244,215,126,.26)",
+        "borderRadius": "42px",
+        "boxShadow": "0 40px 130px rgba(0,0,0,.58)"
+      }
+    },
+    {
+      "id": "manifesto-art",
+      "type": "card",
+      "section": "manifesto",
+      "x": 860,
+      "y": 1120,
+      "w": 500,
+      "h": 540,
+      "z": 11,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "repeating-linear-gradient(45deg,rgba(244,215,126,.18) 0 1px,transparent 1px 28px),repeating-linear-gradient(135deg,rgba(244,215,126,.12) 0 1px,transparent 1px 28px)",
+        "opacity": ".30",
+        "borderRadius": "42px"
+      }
     },
     {
       "id": "manifesto-title",
       "type": "text",
       "section": "manifesto",
-      "x": 195,
-      "y": 1235,
-      "w": 1050,
-      "h": 165,
-      "z": 6,
+      "x": 140,
+      "y": 1190,
+      "w": 880,
+      "h": 150,
+      "z": 20,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "70px",
+        "fontSize": "58px",
         "fontWeight": "1000",
-        "lineHeight": ".95",
-        "letterSpacing": "-3px",
+        "lineHeight": "1",
+        "letterSpacing": "-2px",
         "textTransform": "uppercase",
-        "textAlign": "center",
-        "color": "#fff"
+        "color": "#ffffff"
       },
-      "content": "YOU DON'T NEED MORE MOTIVATION."
+      "content": "THE BODY YOU WANT IS HIDING BEHIND THE EXCUSES YOU KEEP PROTECTING."
     },
     {
       "id": "manifesto-gold",
       "type": "text",
       "section": "manifesto",
-      "x": 250,
-      "y": 1415,
-      "w": 940,
-      "h": 82,
-      "z": 7,
+      "x": 140,
+      "y": 1365,
+      "w": 760,
+      "h": 76,
+      "z": 21,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,#fff8d8 0%,#f8d982 22%,#b98318 48%,#fff2b7 68%,#765009 100%)",
+        "background": "linear-gradient(180deg,#fff9d8 0%,#f7df91 18%,#d5a83c 38%,#7b520b 56%,#fff0ae 74%,#a26f16 100%)",
         "WebkitBackgroundClip": "text",
         "backgroundClip": "text",
         "color": "transparent",
-        "textShadow": "0 2px 0 rgba(255,255,255,.15),0 16px 55px rgba(244,215,126,.28)",
-        "fontSize": "70px",
+        "textShadow": "0 2px 0 rgba(255,255,255,.14),0 10px 35px rgba(244,215,126,.24),0 22px 80px rgba(0,0,0,.8)",
+        "fontSize": "58px",
         "fontWeight": "1000",
-        "letterSpacing": "-3px",
+        "letterSpacing": "-2px",
         "lineHeight": "1",
-        "textAlign": "center",
         "textTransform": "uppercase"
       },
-      "content": "YOU NEED HIGHER STANDARDS."
+      "content": "TIME TO STOP PROTECTING THEM."
     },
     {
       "id": "manifesto-copy",
       "type": "text",
       "section": "manifesto",
-      "x": 250,
-      "y": 1535,
-      "w": 940,
-      "h": 70,
-      "z": 8,
+      "x": 140,
+      "y": 1470,
+      "w": 720,
+      "h": 98,
+      "z": 22,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "23px",
-        "lineHeight": "1.5",
-        "color": "#e1e1e1",
-        "textAlign": "center",
-        "fontWeight": "650"
+        "fontWeight": "650",
+        "lineHeight": "1.55",
+        "color": "#dddddd"
       },
-      "content": "This is coaching for people who are done negotiating with their excuses. The work is simple. The standards are not."
+      "content": "You don't need another perfect plan saved in your notes app. You need standards. You need structure. You need to do the work when nobody is clapping."
     },
     {
-      "id": "about-marble",
-      "type": "image",
-      "section": "about",
-      "x": 0,
-      "y": 1740,
-      "w": 1440,
-      "h": 900,
-      "z": 1,
+      "id": "manifesto-signature",
+      "type": "text",
+      "section": "manifesto",
+      "x": 1040,
+      "y": 1545,
+      "w": 230,
+      "h": 38,
+      "z": 23,
       "locked": false,
       "hidden": false,
       "styles": {
-        "opacity": ".23"
+        "fontSize": "18px",
+        "fontWeight": "1000",
+        "letterSpacing": "4px",
+        "color": "#f4d77e",
+        "textTransform": "uppercase",
+        "textAlign": "right"
       },
-      "src": "data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIj4KPGRlZnM+CjxmaWx0ZXIgaWQ9Im5vaXNlIj4KPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9Ii4wMTIgLjAxOCIgbnVtT2N0YXZlcz0iNSIgc2VlZD0iOCIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iLjIyIDAgMCAwIDAgIDAgLjIyIDAgMCAwICAwIDAgLjIyIDAgMCAgMCAwIDAgMSAwIi8+CjwvZmlsdGVyPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjMGIwYjBiIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzViM2IwOCIvPgo8c3RvcCBvZmZzZXQ9Ii4yOCIgc3RvcC1jb2xvcj0iI2Y3ZGM4NiIvPgo8c3RvcCBvZmZzZXQ9Ii41NSIgc3RvcC1jb2xvcj0iI2E2NmMxMiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmYxYjIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2cpIi8+CjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9Ii41NSIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgo8cGF0aCBkPSJNLTQwIDc4MCBDMjYwIDY1MCA0MDAgNzQwIDYyMCA1MjAgUzEwMjAgMzgwIDE2NjAgNjAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSI2IiBvcGFjaXR5PSIuNDIiLz4KPHBhdGggZD0iTS0zMCA4MDUgQzI3MCA2OTAgNDMwIDc3MCA2NTAgNTU1IFMxMDQwIDQyMCAxNjQwIDkwIiBzdHJva2U9IiNmZmYxYjIiIHN0cm9rZS13aWR0aD0iMS40IiBvcGFjaXR5PSIuNSIvPgo8cGF0aCBkPSJNNjAgMTIwIEMyODAgMjQwIDQ4MCAxNTAgNzEwIDI3MCBTMTA1MCA0NzUgMTU0MCAzNjAiIHN0cm9rZT0iIzc3NyIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuMjgiLz4KPHBhdGggZD0iTTAgNDIwIEMyNjAgMzMwIDM5MCA0MzAgNTYwIDM1NSBTODIwIDIxMCAxMDgwIDMwMCBTMTMyMCA0MTAgMTYwMCAyODAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSIzLjIiIG9wYWNpdHk9Ii4zMiIvPgo8cGF0aCBkPSJNMTM1IDk4MCBDMzEwIDgzMCA1MDAgODkwIDcyNSA3MjAgUzEwMTAgNjcwIDEyNDAgNTIwIFMxNDIwIDQyMCAxNjQwIDUwMCIgc3Ryb2tlPSIjY2ZhMTRhIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9Ii4zNSIvPgo8cGF0aCBkPSJNOTQwIC0yMCBDODcwIDIyMCA5NTAgMzgwIDg1MCA1NjAgUzcwMCA3OTAgNzIwIDEwNDAiIHN0cm9rZT0iI2Y2ZTNhMCIgc3Ryb2tlLXdpZHRoPSIxLjIiIG9wYWNpdHk9Ii4zOCIvPgo8cGF0aCBkPSJNMTIyMCAtMzAgQzExNTAgMTYwIDEyMDAgMzMwIDExMDAgNDgwIFMxMDMwIDc2MCAxMTgwIDEwMzAiIHN0cm9rZT0iIzczNzM3MyIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMjUiLz4KPC9nPgo8L3N2Zz4K",
-      "crop": {
-        "x": 58,
-        "y": 42,
-        "zoom": 120
-      },
-      "mode": "cover"
+      "content": "\u2014 FIAZ ALI"
     },
     {
-      "id": "about-frame",
+      "id": "about-image-frame",
       "type": "card",
       "section": "about",
-      "x": 88,
-      "y": 1850,
-      "w": 535,
-      "h": 640,
-      "z": 5,
+      "x": 82,
+      "y": 1910,
+      "w": 555,
+      "h": 630,
+      "z": 10,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(135deg,rgba(244,215,126,.18),rgba(255,255,255,.025))",
-        "border": "1px solid rgba(244,215,126,.34)",
-        "borderRadius": "38px",
-        "boxShadow": "0 35px 130px rgba(0,0,0,.75)"
+        "background": "linear-gradient(145deg,rgba(244,215,126,.18),rgba(255,255,255,.03))",
+        "border": "1px solid rgba(244,215,126,.35)",
+        "borderRadius": "40px",
+        "boxShadow": "0 38px 140px rgba(0,0,0,.7)"
       }
     },
     {
-      "id": "about-photo",
+      "id": "about-image",
       "type": "image",
       "section": "about",
-      "x": 118,
-      "y": 1880,
-      "w": 475,
-      "h": 580,
-      "z": 6,
+      "x": 110,
+      "y": 1938,
+      "w": 500,
+      "h": 575,
+      "z": 11,
       "locked": false,
       "hidden": false,
       "styles": {
         "borderRadius": "30px",
-        "filter": "contrast(1.12) saturate(1.04)"
+        "filter": "contrast(1.10) saturate(1.03)"
       },
       "src": "/images/uploads/16b891ee-7b46-462f-8d6c-194e223519d7.png",
       "crop": {
         "x": 50,
-        "y": 40,
-        "zoom": 115
+        "y": 42,
+        "zoom": 112
       },
       "mode": "cover"
     },
@@ -728,15 +894,15 @@
       "id": "about-kicker",
       "type": "text",
       "section": "about",
-      "x": 700,
-      "y": 1865,
-      "w": 260,
-      "h": 34,
-      "z": 10,
+      "x": 710,
+      "y": 1930,
+      "w": 250,
+      "h": 32,
+      "z": 15,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "15px",
+        "fontSize": "14px",
         "fontWeight": "1000",
         "letterSpacing": "4px",
         "color": "#f4d77e",
@@ -748,181 +914,160 @@
       "id": "about-title",
       "type": "text",
       "section": "about",
-      "x": 700,
-      "y": 1915,
+      "x": 710,
+      "y": 1980,
       "w": 660,
-      "h": 175,
-      "z": 11,
+      "h": 150,
+      "z": 16,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "60px",
+        "fontSize": "56px",
         "fontWeight": "1000",
-        "lineHeight": ".95",
-        "letterSpacing": "-2.5px",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "lineHeight": "1",
+        "letterSpacing": "-2px",
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
-      "content": "I DON'T COACH FROM A SCRIPT. I COACH FROM THE WAR."
+      "content": "BUILT FROM THE SAME WAR I COACH PEOPLE THROUGH."
     },
     {
       "id": "about-copy",
       "type": "text",
       "section": "about",
-      "x": 700,
-      "y": 2120,
-      "w": 645,
+      "x": 710,
+      "y": 2160,
+      "w": 640,
       "h": 135,
-      "z": 12,
+      "z": 17,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "22px",
-        "lineHeight": "1.55",
-        "color": "#dedede"
+        "fontWeight": "650",
+        "lineHeight": "1.5",
+        "color": "#e3e3e3"
       },
-      "content": "I've lived the battle with weight, discipline, food, confidence and starting again. So when I coach you, I'm not selling you motivational fairy dust. I'm giving you structure, standards and the uncomfortable truth you need to hear."
+      "content": "I know what it feels like to be heavy, tired, frustrated and sick of your own excuses. I don't coach from a pedestal. I coach from experience, standards and the expectation that you're capable of more."
     },
     {
-      "id": "about-point-card-0",
+      "id": "about-pill-0",
       "type": "card",
       "section": "about",
-      "x": 700,
-      "y": 2295,
-      "w": 650,
-      "h": 52,
-      "z": 14,
+      "x": 710,
+      "y": 2340,
+      "w": 610,
+      "h": 48,
+      "z": 18,
       "locked": false,
       "hidden": false,
       "styles": {
         "background": "rgba(255,255,255,.045)",
         "border": "1px solid rgba(244,215,126,.18)",
-        "borderRadius": "17px"
+        "borderRadius": "16px"
       }
     },
     {
-      "id": "about-point-text-0",
+      "id": "about-pill-text-0",
       "type": "text",
       "section": "about",
-      "x": 725,
-      "y": 2309,
-      "w": 600,
-      "h": 25,
+      "x": 735,
+      "y": 2353,
+      "w": 560,
+      "h": 24,
+      "z": 25,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "17px",
+        "fontWeight": "850",
+        "color": "#f2f2f2"
+      },
+      "content": "\u2022  Strength that carries into real life."
+    },
+    {
+      "id": "about-pill-1",
+      "type": "card",
+      "section": "about",
+      "x": 710,
+      "y": 2402,
+      "w": 610,
+      "h": 48,
+      "z": 19,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "rgba(255,255,255,.045)",
+        "border": "1px solid rgba(244,215,126,.18)",
+        "borderRadius": "16px"
+      }
+    },
+    {
+      "id": "about-pill-text-1",
+      "type": "text",
+      "section": "about",
+      "x": 735,
+      "y": 2415,
+      "w": 560,
+      "h": 24,
+      "z": 26,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "fontSize": "17px",
+        "fontWeight": "850",
+        "color": "#f2f2f2"
+      },
+      "content": "\u2022  Nutrition that gets results without boiled-chicken prison."
+    },
+    {
+      "id": "about-pill-2",
+      "type": "card",
+      "section": "about",
+      "x": 710,
+      "y": 2464,
+      "w": 610,
+      "h": 48,
       "z": 20,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "17px",
-        "fontWeight": "750",
-        "color": "#f2f2f2"
-      },
-      "content": "\u2726  Training that respects your body but refuses to baby your excuses."
-    },
-    {
-      "id": "about-point-card-1",
-      "type": "card",
-      "section": "about",
-      "x": 700,
-      "y": 2359,
-      "w": 650,
-      "h": 52,
-      "z": 15,
-      "locked": false,
-      "hidden": false,
-      "styles": {
         "background": "rgba(255,255,255,.045)",
         "border": "1px solid rgba(244,215,126,.18)",
-        "borderRadius": "17px"
+        "borderRadius": "16px"
       }
     },
     {
-      "id": "about-point-text-1",
+      "id": "about-pill-text-2",
       "type": "text",
       "section": "about",
-      "x": 725,
-      "y": 2373,
-      "w": 600,
-      "h": 25,
-      "z": 21,
+      "x": 735,
+      "y": 2477,
+      "w": 560,
+      "h": 24,
+      "z": 27,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "fontWeight": "750",
+        "fontWeight": "850",
         "color": "#f2f2f2"
       },
-      "content": "\u2726  Nutrition that works in real life, not fantasy-land meal prep prison."
-    },
-    {
-      "id": "about-point-card-2",
-      "type": "card",
-      "section": "about",
-      "x": 700,
-      "y": 2423,
-      "w": 650,
-      "h": 52,
-      "z": 16,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "background": "rgba(255,255,255,.045)",
-        "border": "1px solid rgba(244,215,126,.18)",
-        "borderRadius": "17px"
-      }
-    },
-    {
-      "id": "about-point-text-2",
-      "type": "text",
-      "section": "about",
-      "x": 725,
-      "y": 2437,
-      "w": 600,
-      "h": 25,
-      "z": 22,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "fontSize": "17px",
-        "fontWeight": "750",
-        "color": "#f2f2f2"
-      },
-      "content": "\u2726  Accountability, standards and honest coaching when your motivation disappears."
-    },
-    {
-      "id": "coaching-deco",
-      "type": "image",
-      "section": "coaching",
-      "x": 0,
-      "y": 2640,
-      "w": 1440,
-      "h": 980,
-      "z": 1,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "opacity": ".1"
-      },
-      "src": "data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIj4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0iIzAzMDMwMyIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkIiB4MT0iMCIgeDI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM2YzQ3MGIiLz4KPHN0b3Agb2Zmc2V0PSIuMzUiIHN0b3AtY29sb3I9IiNmZmYxYjIiLz4KPHN0b3Agb2Zmc2V0PSIuNjUiIHN0b3AtY29sb3I9IiNiNzdiMTYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjRkNzdlIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPGcgc3Ryb2tlPSJ1cmwoI2dvbGQpIiBmaWxsPSJub25lIiBvcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMyI+CjxwYXRoIGQ9Ik0wIDEwMCBMMTIwIDAgTDI0MCAxMDAgTDM2MCAwIEw0ODAgMTAwIEw2MDAgMCBMNzIwIDEwMCBMODQwIDAgTDk2MCAxMDAgTDEwODAgMCBMMTIwMCAxMDAgTDEzMjAgMCBMMTQ0MCAxMDAgTDE1NjAgMCBMMTY4MCAxMDAiLz4KPHBhdGggZD0iTTAgMjMwIEwxMjAgMTAwIEwyNDAgMjMwIEwzNjAgMTAwIEw0ODAgMjMwIEw2MDAgMTAwIEw3MjAgMjMwIEw4NDAgMTAwIEw5NjAgMjMwIEwxMDgwIDEwMCBMMTIwMCAyMzAgTDEzMjAgMTAwIEwxNDQwIDIzMCBMMTU2MCAxMDAgTDE2ODAgMjMwIi8+CjxwYXRoIGQ9Ik0wIDM2MCBMMTIwIDIzMCBMMjQwIDM2MCBMMzYwIDIzMCBMNDgwIDM2MCBMNjAwIDIzMCBMNzIwIDM2MCBMODQwIDIzMCBMOTYwIDM2MCBMMTA4MCAyMzAgTDEyMDAgMzYwIEwxMzIwIDIzMCBMMTQ0MCAzNjAgTDE1NjAgMjMwIEwxNjgwIDM2MCIvPgo8cGF0aCBkPSJNMCA0OTAgTDEyMCAzNjAgTDI0MCA0OTAgTDM2MCAzNjAgTDQ4MCA0OTAgTDYwMCAzNjAgTDcyMCA0OTAgTDg0MCAzNjAgTDk2MCA0OTAgTDEwODAgMzYwIEwxMjAwIDQ5MCBMMTMyMCAzNjAgTDE0NDAgNDkwIEwxNTYwIDM2MCBMMTY4MCA0OTAiLz4KPHBhdGggZD0iTTAgNjIwIEwxMjAgNDkwIEwyNDAgNjIwIEwzNjAgNDkwIEw0ODAgNjIwIEw2MDAgNDkwIEw3MjAgNjIwIEw4NDAgNDkwIEw5NjAgNjIwIEwxMDgwIDQ5MCBMMTIwMCA2MjAgTDEzMjAgNDkwIEwxNDQwIDYyMCBMMTU2MCA0OTAgTDE2ODAgNjIwIi8+CjxwYXRoIGQ9Ik0wIDc1MCBMMTIwIDYyMCBMMjQwIDc1MCBMMzYwIDYyMCBMNDgwIDc1MCBMNjAwIDYyMCBMNzIwIDc1MCBMODQwIDYyMCBMOTYwIDc1MCBMMTA4MCA2MjAgTDEyMDAgNzUwIEwxMzIwIDYyMCBMMTQ0MCA3NTAgTDE1NjAgNjIwIEwxNjgwIDc1MCIvPgo8cGF0aCBkPSJNMCA4ODAgTDEyMCA3NTAgTDI0MCA4ODAgTDM2MCA3NTAgTDQ4MCA4ODAgTDYwMCA3NTAgTDcyMCA4ODAgTDg0MCA3NTAgTDk2MCA4ODAgTDEwODAgNzUwIEwxMjAwIDg4MCBMMTMyMCA3NTAgTDE0NDAgODgwIEwxNTYwIDc1MCBMMTY4MCA4ODAiLz4KPC9nPgo8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2ZhZGUpIi8+Cjwvc3ZnPgo=",
-      "crop": {
-        "x": 50,
-        "y": 50,
-        "zoom": 110
-      },
-      "mode": "cover"
+      "content": "\u2022  Accountability when motivation disappears."
     },
     {
       "id": "coaching-kicker",
       "type": "text",
       "section": "coaching",
       "x": 90,
-      "y": 2765,
-      "w": 360,
-      "h": 34,
+      "y": 2810,
+      "w": 340,
+      "h": 32,
       "z": 10,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "15px",
+        "fontSize": "14px",
         "fontWeight": "1000",
         "letterSpacing": "4px",
         "color": "#f4d77e",
@@ -935,9 +1080,9 @@
       "type": "text",
       "section": "coaching",
       "x": 90,
-      "y": 2810,
-      "w": 920,
-      "h": 110,
+      "y": 2860,
+      "w": 980,
+      "h": 92,
       "z": 11,
       "locked": false,
       "hidden": false,
@@ -946,8 +1091,8 @@
         "fontWeight": "1000",
         "lineHeight": "1",
         "letterSpacing": "-3px",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
       "content": "COACHING THAT DOESN'T LET YOU HIDE."
     },
@@ -956,37 +1101,38 @@
       "type": "text",
       "section": "coaching",
       "x": 90,
-      "y": 2940,
+      "y": 2980,
       "w": 780,
-      "h": 72,
+      "h": 76,
       "z": 12,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "22px",
         "fontWeight": "650",
-        "lineHeight": "1.48",
-        "color": "#dfdfdf"
+        "lineHeight": "1.5",
+        "color": "#e3e3e3"
       },
-      "content": "Pick the level of support you need. Training, nutrition, mindset and accountability, built around your actual life, not some pretend influencer routine."
+      "content": "Training, nutrition and accountability built around your actual life. Not fantasy. Not influencer nonsense. Real work, done properly."
     },
     {
       "id": "coach-card-0",
       "type": "card",
       "section": "coaching",
       "x": 90,
-      "y": 3095,
+      "y": 3140,
       "w": 370,
-      "h": 325,
+      "h": 330,
       "z": 20,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))",
-        "border": "1px solid rgba(244,215,126,.24)",
-        "borderRadius": "32px",
-        "boxShadow": "0 35px 100px rgba(0,0,0,.6)",
-        "padding": "30px"
+        "background": "linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.28)",
+        "borderRadius": "34px",
+        "boxShadow": "0 34px 110px rgba(0,0,0,.54)",
+        "padding": "30px",
+        "backdropFilter": "blur(10px)"
       }
     },
     {
@@ -994,7 +1140,7 @@
       "type": "text",
       "section": "coaching",
       "x": 120,
-      "y": 3130,
+      "y": 3175,
       "w": 80,
       "h": 30,
       "z": 30,
@@ -1014,72 +1160,58 @@
       "type": "text",
       "section": "coaching",
       "x": 120,
-      "y": 3180,
-      "w": 310,
-      "h": 65,
+      "y": 3225,
+      "w": 305,
+      "h": 62,
       "z": 31,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "29px",
+        "fontSize": "28px",
         "fontWeight": "1000",
         "lineHeight": "1",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
       "content": "TRAINING ONLY"
     },
     {
-      "id": "coach-copy-0",
+      "id": "coach-text-0",
       "type": "text",
       "section": "coaching",
       "x": 120,
-      "y": 3260,
-      "w": 310,
-      "h": 120,
+      "y": 3310,
+      "w": 305,
+      "h": 108,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "lineHeight": "1.5",
-        "color": "#dcdcdc"
+        "fontWeight": "650",
+        "lineHeight": "1.48",
+        "color": "#d6d6d6"
       },
-      "content": "A proper training structure that evolves as you get stronger. No random workouts. No gym wandering."
-    },
-    {
-      "id": "coach-line-0",
-      "type": "card",
-      "section": "coaching",
-      "x": 120,
-      "y": 3392,
-      "w": 160,
-      "h": 2,
-      "z": 33,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "background": "linear-gradient(90deg,#f4d77e,transparent)",
-        "opacity": ".6"
-      }
+      "content": "A serious plan, progressive overload and structure that tells you exactly what to do when you walk into the gym."
     },
     {
       "id": "coach-card-1",
       "type": "card",
       "section": "coaching",
       "x": 510,
-      "y": 3095,
+      "y": 3140,
       "w": 370,
-      "h": 325,
+      "h": 330,
       "z": 21,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))",
-        "border": "1px solid rgba(244,215,126,.24)",
-        "borderRadius": "32px",
-        "boxShadow": "0 35px 100px rgba(0,0,0,.6)",
-        "padding": "30px"
+        "background": "linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.28)",
+        "borderRadius": "34px",
+        "boxShadow": "0 34px 110px rgba(0,0,0,.54)",
+        "padding": "30px",
+        "backdropFilter": "blur(10px)"
       }
     },
     {
@@ -1087,7 +1219,7 @@
       "type": "text",
       "section": "coaching",
       "x": 540,
-      "y": 3130,
+      "y": 3175,
       "w": 80,
       "h": 30,
       "z": 31,
@@ -1107,72 +1239,58 @@
       "type": "text",
       "section": "coaching",
       "x": 540,
-      "y": 3180,
-      "w": 310,
-      "h": 65,
+      "y": 3225,
+      "w": 305,
+      "h": 62,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "29px",
+        "fontSize": "28px",
         "fontWeight": "1000",
         "lineHeight": "1",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
       "content": "NUTRITION SUPPORT"
     },
     {
-      "id": "coach-copy-1",
+      "id": "coach-text-1",
       "type": "text",
       "section": "coaching",
       "x": 540,
-      "y": 3260,
-      "w": 310,
-      "h": 120,
+      "y": 3310,
+      "w": 305,
+      "h": 108,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "lineHeight": "1.5",
-        "color": "#dcdcdc"
+        "fontWeight": "650",
+        "lineHeight": "1.48",
+        "color": "#d6d6d6"
       },
-      "content": "Meal-by-meal help, macros, habits and supplement guidance without the diet cult nonsense."
-    },
-    {
-      "id": "coach-line-1",
-      "type": "card",
-      "section": "coaching",
-      "x": 540,
-      "y": 3392,
-      "w": 160,
-      "h": 2,
-      "z": 34,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "background": "linear-gradient(90deg,#f4d77e,transparent)",
-        "opacity": ".6"
-      }
+      "content": "Meal-by-meal help so you stop guessing and start eating like someone who actually has a target."
     },
     {
       "id": "coach-card-2",
       "type": "card",
       "section": "coaching",
       "x": 930,
-      "y": 3095,
+      "y": 3140,
       "w": 370,
-      "h": 325,
+      "h": 330,
       "z": 22,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))",
-        "border": "1px solid rgba(244,215,126,.24)",
-        "borderRadius": "32px",
-        "boxShadow": "0 35px 100px rgba(0,0,0,.6)",
-        "padding": "30px"
+        "background": "linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.28)",
+        "borderRadius": "34px",
+        "boxShadow": "0 34px 110px rgba(0,0,0,.54)",
+        "padding": "30px",
+        "backdropFilter": "blur(10px)"
       }
     },
     {
@@ -1180,7 +1298,7 @@
       "type": "text",
       "section": "coaching",
       "x": 960,
-      "y": 3130,
+      "y": 3175,
       "w": 80,
       "h": 30,
       "z": 32,
@@ -1200,90 +1318,53 @@
       "type": "text",
       "section": "coaching",
       "x": 960,
-      "y": 3180,
-      "w": 310,
-      "h": 65,
+      "y": 3225,
+      "w": 305,
+      "h": 62,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "29px",
+        "fontSize": "28px",
         "fontWeight": "1000",
         "lineHeight": "1",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
       "content": "FULL SUPPORT"
     },
     {
-      "id": "coach-copy-2",
+      "id": "coach-text-2",
       "type": "text",
       "section": "coaching",
       "x": 960,
-      "y": 3260,
-      "w": 310,
-      "h": 120,
+      "y": 3310,
+      "w": 305,
+      "h": 108,
       "z": 34,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "lineHeight": "1.5",
-        "color": "#dcdcdc"
+        "fontWeight": "650",
+        "lineHeight": "1.48",
+        "color": "#d6d6d6"
       },
-      "content": "Training, food, mindset and WhatsApp accountability. For people who know they need the full kick up the arse."
-    },
-    {
-      "id": "coach-line-2",
-      "type": "card",
-      "section": "coaching",
-      "x": 960,
-      "y": 3392,
-      "w": 160,
-      "h": 2,
-      "z": 35,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "background": "linear-gradient(90deg,#f4d77e,transparent)",
-        "opacity": ".6"
-      }
-    },
-    {
-      "id": "results-marble",
-      "type": "image",
-      "section": "results",
-      "x": 0,
-      "y": 3620,
-      "w": 1440,
-      "h": 880,
-      "z": 1,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "opacity": ".18"
-      },
-      "src": "data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIj4KPGRlZnM+CjxmaWx0ZXIgaWQ9Im5vaXNlIj4KPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9Ii4wMTIgLjAxOCIgbnVtT2N0YXZlcz0iNSIgc2VlZD0iOCIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iLjIyIDAgMCAwIDAgIDAgLjIyIDAgMCAwICAwIDAgLjIyIDAgMCAgMCAwIDAgMSAwIi8+CjwvZmlsdGVyPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjMGIwYjBiIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzViM2IwOCIvPgo8c3RvcCBvZmZzZXQ9Ii4yOCIgc3RvcC1jb2xvcj0iI2Y3ZGM4NiIvPgo8c3RvcCBvZmZzZXQ9Ii41NSIgc3RvcC1jb2xvcj0iI2E2NmMxMiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmYxYjIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2cpIi8+CjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9Ii41NSIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgo8cGF0aCBkPSJNLTQwIDc4MCBDMjYwIDY1MCA0MDAgNzQwIDYyMCA1MjAgUzEwMjAgMzgwIDE2NjAgNjAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSI2IiBvcGFjaXR5PSIuNDIiLz4KPHBhdGggZD0iTS0zMCA4MDUgQzI3MCA2OTAgNDMwIDc3MCA2NTAgNTU1IFMxMDQwIDQyMCAxNjQwIDkwIiBzdHJva2U9IiNmZmYxYjIiIHN0cm9rZS13aWR0aD0iMS40IiBvcGFjaXR5PSIuNSIvPgo8cGF0aCBkPSJNNjAgMTIwIEMyODAgMjQwIDQ4MCAxNTAgNzEwIDI3MCBTMTA1MCA0NzUgMTU0MCAzNjAiIHN0cm9rZT0iIzc3NyIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuMjgiLz4KPHBhdGggZD0iTTAgNDIwIEMyNjAgMzMwIDM5MCA0MzAgNTYwIDM1NSBTODIwIDIxMCAxMDgwIDMwMCBTMTMyMCA0MTAgMTYwMCAyODAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSIzLjIiIG9wYWNpdHk9Ii4zMiIvPgo8cGF0aCBkPSJNMTM1IDk4MCBDMzEwIDgzMCA1MDAgODkwIDcyNSA3MjAgUzEwMTAgNjcwIDEyNDAgNTIwIFMxNDIwIDQyMCAxNjQwIDUwMCIgc3Ryb2tlPSIjY2ZhMTRhIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9Ii4zNSIvPgo8cGF0aCBkPSJNOTQwIC0yMCBDODcwIDIyMCA5NTAgMzgwIDg1MCA1NjAgUzcwMCA3OTAgNzIwIDEwNDAiIHN0cm9rZT0iI2Y2ZTNhMCIgc3Ryb2tlLXdpZHRoPSIxLjIiIG9wYWNpdHk9Ii4zOCIvPgo8cGF0aCBkPSJNMTIyMCAtMzAgQzExNTAgMTYwIDEyMDAgMzMwIDExMDAgNDgwIFMxMDMwIDc2MCAxMTgwIDEwMzAiIHN0cm9rZT0iIzczNzM3MyIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMjUiLz4KPC9nPgo8L3N2Zz4K",
-      "crop": {
-        "x": 50,
-        "y": 55,
-        "zoom": 115
-      },
-      "mode": "cover"
+      "content": "Training, nutrition, supplements, mindset, WhatsApp support and the accountability you keep pretending you don't need."
     },
     {
       "id": "results-kicker",
       "type": "text",
       "section": "results",
       "x": 90,
-      "y": 3738,
-      "w": 360,
-      "h": 34,
+      "y": 3790,
+      "w": 330,
+      "h": 32,
       "z": 10,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "15px",
+        "fontSize": "14px",
         "fontWeight": "1000",
         "letterSpacing": "4px",
         "color": "#f4d77e",
@@ -1296,9 +1377,9 @@
       "type": "text",
       "section": "results",
       "x": 90,
-      "y": 3785,
-      "w": 900,
-      "h": 110,
+      "y": 3840,
+      "w": 960,
+      "h": 92,
       "z": 11,
       "locked": false,
       "hidden": false,
@@ -1307,8 +1388,8 @@
         "fontWeight": "1000",
         "lineHeight": "1",
         "letterSpacing": "-3px",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
       "content": "RESULTS DON'T CARE ABOUT EXCUSES."
     },
@@ -1316,33 +1397,34 @@
       "id": "result-frame-0",
       "type": "card",
       "section": "results",
-      "x": 78,
-      "y": 3968,
-      "w": 394,
-      "h": 394,
-      "z": 18,
+      "x": 82,
+      "y": 3992,
+      "w": 386,
+      "h": 386,
+      "z": 15,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(135deg,rgba(244,215,126,.22),rgba(255,255,255,.02))",
+        "background": "linear-gradient(135deg,rgba(244,215,126,.18),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.28)",
         "borderRadius": "34px",
-        "border": "1px solid rgba(244,215,126,.28)"
+        "boxShadow": "0 34px 110px rgba(0,0,0,.62)"
       }
     },
     {
       "id": "result-image-0",
       "type": "image",
       "section": "results",
-      "x": 90,
-      "y": 3980,
-      "w": 370,
-      "h": 370,
+      "x": 100,
+      "y": 4010,
+      "w": 350,
+      "h": 350,
       "z": 20,
       "locked": false,
       "hidden": false,
       "styles": {
-        "borderRadius": "28px",
-        "filter": "contrast(1.08)"
+        "borderRadius": "26px",
+        "filter": "contrast(1.08) saturate(1.02)"
       },
       "src": "/images/uploads/client1.svg",
       "crop": {
@@ -1356,22 +1438,24 @@
       "id": "result-label-0",
       "type": "text",
       "section": "results",
-      "x": 112,
-      "y": 4298,
-      "w": 325,
-      "h": 44,
+      "x": 120,
+      "y": 4305,
+      "w": 310,
+      "h": 42,
       "z": 30,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "17px",
+        "fontSize": "16px",
         "fontWeight": "1000",
-        "color": "#fff",
-        "background": "rgba(0,0,0,.74)",
+        "letterSpacing": "1.5px",
+        "textTransform": "uppercase",
+        "color": "#ffffff",
+        "background": "rgba(0,0,0,.72)",
         "border": "1px solid rgba(244,215,126,.25)",
         "borderRadius": "14px",
-        "padding": "11px 14px",
-        "textTransform": "uppercase"
+        "padding": "10px 14px",
+        "textAlign": "center"
       },
       "content": "Transformation Photo"
     },
@@ -1379,33 +1463,34 @@
       "id": "result-frame-1",
       "type": "card",
       "section": "results",
-      "x": 498,
-      "y": 3968,
-      "w": 394,
-      "h": 394,
-      "z": 19,
+      "x": 502,
+      "y": 3992,
+      "w": 386,
+      "h": 386,
+      "z": 16,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(135deg,rgba(244,215,126,.22),rgba(255,255,255,.02))",
+        "background": "linear-gradient(135deg,rgba(244,215,126,.18),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.28)",
         "borderRadius": "34px",
-        "border": "1px solid rgba(244,215,126,.28)"
+        "boxShadow": "0 34px 110px rgba(0,0,0,.62)"
       }
     },
     {
       "id": "result-image-1",
       "type": "image",
       "section": "results",
-      "x": 510,
-      "y": 3980,
-      "w": 370,
-      "h": 370,
+      "x": 520,
+      "y": 4010,
+      "w": 350,
+      "h": 350,
       "z": 21,
       "locked": false,
       "hidden": false,
       "styles": {
-        "borderRadius": "28px",
-        "filter": "contrast(1.08)"
+        "borderRadius": "26px",
+        "filter": "contrast(1.08) saturate(1.02)"
       },
       "src": "/images/uploads/client2.svg",
       "crop": {
@@ -1419,22 +1504,24 @@
       "id": "result-label-1",
       "type": "text",
       "section": "results",
-      "x": 532,
-      "y": 4298,
-      "w": 325,
-      "h": 44,
+      "x": 540,
+      "y": 4305,
+      "w": 310,
+      "h": 42,
       "z": 31,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "17px",
+        "fontSize": "16px",
         "fontWeight": "1000",
-        "color": "#fff",
-        "background": "rgba(0,0,0,.74)",
+        "letterSpacing": "1.5px",
+        "textTransform": "uppercase",
+        "color": "#ffffff",
+        "background": "rgba(0,0,0,.72)",
         "border": "1px solid rgba(244,215,126,.25)",
         "borderRadius": "14px",
-        "padding": "11px 14px",
-        "textTransform": "uppercase"
+        "padding": "10px 14px",
+        "textAlign": "center"
       },
       "content": "Strength Milestone"
     },
@@ -1442,33 +1529,34 @@
       "id": "result-frame-2",
       "type": "card",
       "section": "results",
-      "x": 918,
-      "y": 3968,
-      "w": 394,
-      "h": 394,
-      "z": 20,
+      "x": 922,
+      "y": 3992,
+      "w": 386,
+      "h": 386,
+      "z": 17,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(135deg,rgba(244,215,126,.22),rgba(255,255,255,.02))",
+        "background": "linear-gradient(135deg,rgba(244,215,126,.18),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.28)",
         "borderRadius": "34px",
-        "border": "1px solid rgba(244,215,126,.28)"
+        "boxShadow": "0 34px 110px rgba(0,0,0,.62)"
       }
     },
     {
       "id": "result-image-2",
       "type": "image",
       "section": "results",
-      "x": 930,
-      "y": 3980,
-      "w": 370,
-      "h": 370,
+      "x": 940,
+      "y": 4010,
+      "w": 350,
+      "h": 350,
       "z": 22,
       "locked": false,
       "hidden": false,
       "styles": {
-        "borderRadius": "28px",
-        "filter": "contrast(1.08)"
+        "borderRadius": "26px",
+        "filter": "contrast(1.08) saturate(1.02)"
       },
       "src": "/images/uploads/client3.svg",
       "crop": {
@@ -1482,60 +1570,40 @@
       "id": "result-label-2",
       "type": "text",
       "section": "results",
-      "x": 952,
-      "y": 4298,
-      "w": 325,
-      "h": 44,
+      "x": 960,
+      "y": 4305,
+      "w": 310,
+      "h": 42,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "17px",
+        "fontSize": "16px",
         "fontWeight": "1000",
-        "color": "#fff",
-        "background": "rgba(0,0,0,.74)",
+        "letterSpacing": "1.5px",
+        "textTransform": "uppercase",
+        "color": "#ffffff",
+        "background": "rgba(0,0,0,.72)",
         "border": "1px solid rgba(244,215,126,.25)",
         "borderRadius": "14px",
-        "padding": "11px 14px",
-        "textTransform": "uppercase"
+        "padding": "10px 14px",
+        "textAlign": "center"
       },
       "content": "Client Win"
-    },
-    {
-      "id": "packages-deco",
-      "type": "image",
-      "section": "packages",
-      "x": 0,
-      "y": 4500,
-      "w": 1440,
-      "h": 1040,
-      "z": 1,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "opacity": ".12"
-      },
-      "src": "data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIj4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0iIzAzMDMwMyIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkIiB4MT0iMCIgeDI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM2YzQ3MGIiLz4KPHN0b3Agb2Zmc2V0PSIuMzUiIHN0b3AtY29sb3I9IiNmZmYxYjIiLz4KPHN0b3Agb2Zmc2V0PSIuNjUiIHN0b3AtY29sb3I9IiNiNzdiMTYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjRkNzdlIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPGcgc3Ryb2tlPSJ1cmwoI2dvbGQpIiBmaWxsPSJub25lIiBvcGFjaXR5PSIuNTUiIHN0cm9rZS13aWR0aD0iMyI+CjxwYXRoIGQ9Ik0wIDEwMCBMMTIwIDAgTDI0MCAxMDAgTDM2MCAwIEw0ODAgMTAwIEw2MDAgMCBMNzIwIDEwMCBMODQwIDAgTDk2MCAxMDAgTDEwODAgMCBMMTIwMCAxMDAgTDEzMjAgMCBMMTQ0MCAxMDAgTDE1NjAgMCBMMTY4MCAxMDAiLz4KPHBhdGggZD0iTTAgMjMwIEwxMjAgMTAwIEwyNDAgMjMwIEwzNjAgMTAwIEw0ODAgMjMwIEw2MDAgMTAwIEw3MjAgMjMwIEw4NDAgMTAwIEw5NjAgMjMwIEwxMDgwIDEwMCBMMTIwMCAyMzAgTDEzMjAgMTAwIEwxNDQwIDIzMCBMMTU2MCAxMDAgTDE2ODAgMjMwIi8+CjxwYXRoIGQ9Ik0wIDM2MCBMMTIwIDIzMCBMMjQwIDM2MCBMMzYwIDIzMCBMNDgwIDM2MCBMNjAwIDIzMCBMNzIwIDM2MCBMODQwIDIzMCBMOTYwIDM2MCBMMTA4MCAyMzAgTDEyMDAgMzYwIEwxMzIwIDIzMCBMMTQ0MCAzNjAgTDE1NjAgMjMwIEwxNjgwIDM2MCIvPgo8cGF0aCBkPSJNMCA0OTAgTDEyMCAzNjAgTDI0MCA0OTAgTDM2MCAzNjAgTDQ4MCA0OTAgTDYwMCAzNjAgTDcyMCA0OTAgTDg0MCAzNjAgTDk2MCA0OTAgTDEwODAgMzYwIEwxMjAwIDQ5MCBMMTMyMCAzNjAgTDE0NDAgNDkwIEwxNTYwIDM2MCBMMTY4MCA0OTAiLz4KPHBhdGggZD0iTTAgNjIwIEwxMjAgNDkwIEwyNDAgNjIwIEwzNjAgNDkwIEw0ODAgNjIwIEw2MDAgNDkwIEw3MjAgNjIwIEw4NDAgNDkwIEw5NjAgNjIwIEwxMDgwIDQ5MCBMMTIwMCA2MjAgTDEzMjAgNDkwIEwxNDQwIDYyMCBMMTU2MCA0OTAgTDE2ODAgNjIwIi8+CjxwYXRoIGQ9Ik0wIDc1MCBMMTIwIDYyMCBMMjQwIDc1MCBMMzYwIDYyMCBMNDgwIDc1MCBMNjAwIDYyMCBMNzIwIDc1MCBMODQwIDYyMCBMOTYwIDc1MCBMMTA4MCA2MjAgTDEyMDAgNzUwIEwxMzIwIDYyMCBMMTQ0MCA3NTAgTDE1NjAgNjIwIEwxNjgwIDc1MCIvPgo8cGF0aCBkPSJNMCA4ODAgTDEyMCA3NTAgTDI0MCA4ODAgTDM2MCA3NTAgTDQ4MCA4ODAgTDYwMCA3NTAgTDcyMCA4ODAgTDg0MCA3NTAgTDk2MCA4ODAgTDEwODAgNzUwIEwxMjAwIDg4MCBMMTMyMCA3NTAgTDE0NDAgODgwIEwxNTYwIDc1MCBMMTY4MCA4ODAiLz4KPC9nPgo8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2ZhZGUpIi8+Cjwvc3ZnPgo=",
-      "crop": {
-        "x": 50,
-        "y": 50,
-        "zoom": 100
-      },
-      "mode": "cover"
     },
     {
       "id": "packages-kicker",
       "type": "text",
       "section": "packages",
       "x": 90,
-      "y": 4625,
-      "w": 300,
-      "h": 34,
+      "y": 4670,
+      "w": 320,
+      "h": 32,
       "z": 10,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "15px",
+        "fontSize": "14px",
         "fontWeight": "1000",
         "letterSpacing": "4px",
         "color": "#f4d77e",
@@ -1548,38 +1616,38 @@
       "type": "text",
       "section": "packages",
       "x": 90,
-      "y": 4670,
-      "w": 900,
-      "h": 105,
+      "y": 4720,
+      "w": 920,
+      "h": 92,
       "z": 11,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "68px",
+        "fontSize": "66px",
         "fontWeight": "1000",
         "lineHeight": "1",
         "letterSpacing": "-3px",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
-      "content": "THE WORK HAS LEVELS."
+      "content": "ONLINE COACHING PACKAGES."
     },
     {
       "id": "package-card-0",
       "type": "card",
       "section": "packages",
       "x": 90,
-      "y": 4855,
+      "y": 4880,
       "w": 370,
-      "h": 475,
+      "h": 470,
       "z": 20,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.025))",
-        "border": "1px solid rgba(244,215,126,.22)",
+        "background": "linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.24)",
         "borderRadius": "34px",
-        "boxShadow": "0 35px 120px rgba(0,0,0,.62)",
+        "boxShadow": "0 35px 120px rgba(0,0,0,.58)",
         "padding": "30px"
       }
     },
@@ -1588,7 +1656,7 @@
       "type": "text",
       "section": "packages",
       "x": 120,
-      "y": 4895,
+      "y": 4920,
       "w": 310,
       "h": 48,
       "z": 30,
@@ -1597,8 +1665,8 @@
       "styles": {
         "fontSize": "25px",
         "fontWeight": "1000",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
       "content": "TRAINING ONLY"
     },
@@ -1607,18 +1675,18 @@
       "type": "text",
       "section": "packages",
       "x": 120,
-      "y": 4960,
+      "y": 4985,
       "w": 310,
-      "h": 55,
+      "h": 52,
       "z": 31,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,#fff8d8 0%,#f8d982 22%,#b98318 48%,#fff2b7 68%,#765009 100%)",
+        "background": "linear-gradient(180deg,#fff9d8 0%,#f7df91 18%,#d5a83c 38%,#7b520b 56%,#fff0ae 74%,#a26f16 100%)",
         "WebkitBackgroundClip": "text",
         "backgroundClip": "text",
         "color": "transparent",
-        "textShadow": "0 2px 0 rgba(255,255,255,.15),0 16px 55px rgba(244,215,126,.28)",
+        "textShadow": "0 2px 0 rgba(255,255,255,.14),0 10px 35px rgba(244,215,126,.24),0 22px 80px rgba(0,0,0,.8)",
         "fontSize": "32px",
         "fontWeight": "1000",
         "textTransform": "uppercase"
@@ -1630,59 +1698,62 @@
       "type": "text",
       "section": "packages",
       "x": 120,
-      "y": 5038,
-      "w": 305,
+      "y": 5060,
+      "w": 310,
       "h": 180,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "lineHeight": "1.7",
-        "color": "#dedede",
+        "fontWeight": "650",
+        "lineHeight": "1.65",
+        "color": "#d8d8d8",
         "whiteSpace": "pre-line"
       },
-      "content": "\u2022 Custom plan\n\u2022 Progressive overload\n\u2022 Weekly check-ins\n\u2022 App access"
+      "content": "\u2022 Custom training plan\n\u2022 Progressive overload\n\u2022 Weekly check-in\n\u2022 App access"
     },
     {
       "id": "package-button-0",
       "type": "button",
       "section": "packages",
       "x": 120,
-      "y": 5240,
+      "y": 5265,
       "w": 235,
       "h": 60,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
+        "background": "linear-gradient(115deg,#6d4708 0%,#f9e7a1 22%,#c99528 45%,#fff3bd 58%,#835908 78%,#e1b84e 100%)",
+        "color": "#070707",
+        "boxShadow": "0 18px 58px rgba(214,163,49,.28), inset 0 1px 0 rgba(255,255,255,.55), inset 0 -10px 28px rgba(70,42,0,.24)",
+        "border": "1px solid rgba(255,240,175,.72)",
         "fontSize": "14px",
         "fontWeight": "1000",
         "letterSpacing": "1.5px",
-        "color": "#080808",
-        "background": "linear-gradient(135deg,#fff5c5 0%,#d8a331 40%,#815505 100%)",
         "borderRadius": "16px",
         "textTransform": "uppercase"
       },
       "content": "START TRAINING",
-      "href": "#contact"
+      "href": "#final"
     },
     {
       "id": "package-card-1",
       "type": "card",
       "section": "packages",
       "x": 510,
-      "y": 4855,
+      "y": 4880,
       "w": 370,
-      "h": 475,
+      "h": 470,
       "z": 21,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.025))",
-        "border": "1px solid rgba(244,215,126,.22)",
+        "background": "linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.24)",
         "borderRadius": "34px",
-        "boxShadow": "0 35px 120px rgba(0,0,0,.62)",
+        "boxShadow": "0 35px 120px rgba(0,0,0,.58)",
         "padding": "30px"
       }
     },
@@ -1691,7 +1762,7 @@
       "type": "text",
       "section": "packages",
       "x": 540,
-      "y": 4895,
+      "y": 4920,
       "w": 310,
       "h": 48,
       "z": 31,
@@ -1700,8 +1771,8 @@
       "styles": {
         "fontSize": "25px",
         "fontWeight": "1000",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
       "content": "TRAINING + NUTRITION"
     },
@@ -1710,18 +1781,18 @@
       "type": "text",
       "section": "packages",
       "x": 540,
-      "y": 4960,
+      "y": 4985,
       "w": 310,
-      "h": 55,
+      "h": 52,
       "z": 32,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,#fff8d8 0%,#f8d982 22%,#b98318 48%,#fff2b7 68%,#765009 100%)",
+        "background": "linear-gradient(180deg,#fff9d8 0%,#f7df91 18%,#d5a83c 38%,#7b520b 56%,#fff0ae 74%,#a26f16 100%)",
         "WebkitBackgroundClip": "text",
         "backgroundClip": "text",
         "color": "transparent",
-        "textShadow": "0 2px 0 rgba(255,255,255,.15),0 16px 55px rgba(244,215,126,.28)",
+        "textShadow": "0 2px 0 rgba(255,255,255,.14),0 10px 35px rgba(244,215,126,.24),0 22px 80px rgba(0,0,0,.8)",
         "fontSize": "32px",
         "fontWeight": "1000",
         "textTransform": "uppercase"
@@ -1733,59 +1804,62 @@
       "type": "text",
       "section": "packages",
       "x": 540,
-      "y": 5038,
-      "w": 305,
+      "y": 5060,
+      "w": 310,
       "h": 180,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "lineHeight": "1.7",
-        "color": "#dedede",
+        "fontWeight": "650",
+        "lineHeight": "1.65",
+        "color": "#d8d8d8",
         "whiteSpace": "pre-line"
       },
-      "content": "\u2022 Training plan\n\u2022 Calories & macros\n\u2022 Example meals\n\u2022 Weekly check-ins"
+      "content": "\u2022 Training plan\n\u2022 Calories & macros\n\u2022 Example meals\n\u2022 Weekly check-in"
     },
     {
       "id": "package-button-1",
       "type": "button",
       "section": "packages",
       "x": 540,
-      "y": 5240,
+      "y": 5265,
       "w": 235,
       "h": 60,
       "z": 34,
       "locked": false,
       "hidden": false,
       "styles": {
+        "background": "linear-gradient(115deg,#6d4708 0%,#f9e7a1 22%,#c99528 45%,#fff3bd 58%,#835908 78%,#e1b84e 100%)",
+        "color": "#070707",
+        "boxShadow": "0 18px 58px rgba(214,163,49,.28), inset 0 1px 0 rgba(255,255,255,.55), inset 0 -10px 28px rgba(70,42,0,.24)",
+        "border": "1px solid rgba(255,240,175,.72)",
         "fontSize": "14px",
         "fontWeight": "1000",
         "letterSpacing": "1.5px",
-        "color": "#080808",
-        "background": "linear-gradient(135deg,#fff5c5 0%,#d8a331 40%,#815505 100%)",
         "borderRadius": "16px",
         "textTransform": "uppercase"
       },
       "content": "BUILD THE PLAN",
-      "href": "#contact"
+      "href": "#final"
     },
     {
       "id": "package-card-2",
       "type": "card",
       "section": "packages",
       "x": 930,
-      "y": 4855,
+      "y": 4880,
       "w": 370,
-      "h": 475,
+      "h": 470,
       "z": 22,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.025))",
-        "border": "1px solid rgba(244,215,126,.38)",
+        "background": "linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025))",
+        "border": "1px solid rgba(244,215,126,.45)",
         "borderRadius": "34px",
-        "boxShadow": "0 35px 120px rgba(0,0,0,.62)",
+        "boxShadow": "0 35px 120px rgba(0,0,0,.58)",
         "padding": "30px"
       }
     },
@@ -1794,7 +1868,7 @@
       "type": "text",
       "section": "packages",
       "x": 960,
-      "y": 4895,
+      "y": 4920,
       "w": 310,
       "h": 48,
       "z": 32,
@@ -1803,8 +1877,8 @@
       "styles": {
         "fontSize": "25px",
         "fontWeight": "1000",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
       "content": "FULL SUPPORT"
     },
@@ -1813,18 +1887,18 @@
       "type": "text",
       "section": "packages",
       "x": 960,
-      "y": 4960,
+      "y": 4985,
       "w": 310,
-      "h": 55,
+      "h": 52,
       "z": 33,
       "locked": false,
       "hidden": false,
       "styles": {
-        "background": "linear-gradient(180deg,#fff8d8 0%,#f8d982 22%,#b98318 48%,#fff2b7 68%,#765009 100%)",
+        "background": "linear-gradient(180deg,#fff9d8 0%,#f7df91 18%,#d5a83c 38%,#7b520b 56%,#fff0ae 74%,#a26f16 100%)",
         "WebkitBackgroundClip": "text",
         "backgroundClip": "text",
         "color": "transparent",
-        "textShadow": "0 2px 0 rgba(255,255,255,.15),0 16px 55px rgba(244,215,126,.28)",
+        "textShadow": "0 2px 0 rgba(255,255,255,.14),0 10px 35px rgba(244,215,126,.24),0 22px 80px rgba(0,0,0,.8)",
         "fontSize": "32px",
         "fontWeight": "1000",
         "textTransform": "uppercase"
@@ -1836,16 +1910,17 @@
       "type": "text",
       "section": "packages",
       "x": 960,
-      "y": 5038,
-      "w": 305,
+      "y": 5060,
+      "w": 310,
       "h": 180,
       "z": 34,
       "locked": false,
       "hidden": false,
       "styles": {
         "fontSize": "17px",
-        "lineHeight": "1.7",
-        "color": "#dedede",
+        "fontWeight": "650",
+        "lineHeight": "1.65",
+        "color": "#d8d8d8",
         "whiteSpace": "pre-line"
       },
       "content": "\u2022 Training\n\u2022 Meal-by-meal support\n\u2022 Supplements\n\u2022 Mindset + WhatsApp"
@@ -1855,126 +1930,130 @@
       "type": "button",
       "section": "packages",
       "x": 960,
-      "y": 5240,
+      "y": 5265,
       "w": 235,
       "h": 60,
       "z": 35,
       "locked": false,
       "hidden": false,
       "styles": {
+        "background": "linear-gradient(115deg,#6d4708 0%,#f9e7a1 22%,#c99528 45%,#fff3bd 58%,#835908 78%,#e1b84e 100%)",
+        "color": "#070707",
+        "boxShadow": "0 18px 58px rgba(214,163,49,.28), inset 0 1px 0 rgba(255,255,255,.55), inset 0 -10px 28px rgba(70,42,0,.24)",
+        "border": "1px solid rgba(255,240,175,.72)",
         "fontSize": "14px",
         "fontWeight": "1000",
         "letterSpacing": "1.5px",
-        "color": "#080808",
-        "background": "linear-gradient(135deg,#fff5c5 0%,#d8a331 40%,#815505 100%)",
         "borderRadius": "16px",
         "textTransform": "uppercase"
       },
       "content": "APPLY NOW",
-      "href": "#contact"
+      "href": "#final"
     },
     {
-      "id": "contact-marble",
-      "type": "image",
-      "section": "contact",
+      "id": "final-art",
+      "type": "card",
+      "section": "final",
       "x": 0,
       "y": 5540,
       "w": 1440,
-      "h": 660,
-      "z": 1,
+      "h": 780,
+      "z": 4,
       "locked": false,
       "hidden": false,
       "styles": {
-        "opacity": ".34"
-      },
-      "src": "data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIj4KPGRlZnM+CjxmaWx0ZXIgaWQ9Im5vaXNlIj4KPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9Ii4wMTIgLjAxOCIgbnVtT2N0YXZlcz0iNSIgc2VlZD0iOCIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iLjIyIDAgMCAwIDAgIDAgLjIyIDAgMCAwICAwIDAgLjIyIDAgMCAgMCAwIDAgMSAwIi8+CjwvZmlsdGVyPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjMGIwYjBiIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAyMDIwMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwIiB4Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzViM2IwOCIvPgo8c3RvcCBvZmZzZXQ9Ii4yOCIgc3RvcC1jb2xvcj0iI2Y3ZGM4NiIvPgo8c3RvcCBvZmZzZXQ9Ii41NSIgc3RvcC1jb2xvcj0iI2E2NmMxMiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmYxYjIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2cpIi8+CjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9Ii41NSIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgo8cGF0aCBkPSJNLTQwIDc4MCBDMjYwIDY1MCA0MDAgNzQwIDYyMCA1MjAgUzEwMjAgMzgwIDE2NjAgNjAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSI2IiBvcGFjaXR5PSIuNDIiLz4KPHBhdGggZD0iTS0zMCA4MDUgQzI3MCA2OTAgNDMwIDc3MCA2NTAgNTU1IFMxMDQwIDQyMCAxNjQwIDkwIiBzdHJva2U9IiNmZmYxYjIiIHN0cm9rZS13aWR0aD0iMS40IiBvcGFjaXR5PSIuNSIvPgo8cGF0aCBkPSJNNjAgMTIwIEMyODAgMjQwIDQ4MCAxNTAgNzEwIDI3MCBTMTA1MCA0NzUgMTU0MCAzNjAiIHN0cm9rZT0iIzc3NyIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuMjgiLz4KPHBhdGggZD0iTTAgNDIwIEMyNjAgMzMwIDM5MCA0MzAgNTYwIDM1NSBTODIwIDIxMCAxMDgwIDMwMCBTMTMyMCA0MTAgMTYwMCAyODAiIHN0cm9rZT0iI2Q3YTMzMSIgc3Ryb2tlLXdpZHRoPSIzLjIiIG9wYWNpdHk9Ii4zMiIvPgo8cGF0aCBkPSJNMTM1IDk4MCBDMzEwIDgzMCA1MDAgODkwIDcyNSA3MjAgUzEwMTAgNjcwIDEyNDAgNTIwIFMxNDIwIDQyMCAxNjQwIDUwMCIgc3Ryb2tlPSIjY2ZhMTRhIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9Ii4zNSIvPgo8cGF0aCBkPSJNOTQwIC0yMCBDODcwIDIyMCA5NTAgMzgwIDg1MCA1NjAgUzcwMCA3OTAgNzIwIDEwNDAiIHN0cm9rZT0iI2Y2ZTNhMCIgc3Ryb2tlLXdpZHRoPSIxLjIiIG9wYWNpdHk9Ii4zOCIvPgo8cGF0aCBkPSJNMTIyMCAtMzAgQzExNTAgMTYwIDEyMDAgMzMwIDExMDAgNDgwIFMxMDMwIDc2MCAxMTgwIDEwMzAiIHN0cm9rZT0iIzczNzM3MyIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMjUiLz4KPC9nPgo8L3N2Zz4K",
-      "crop": {
-        "x": 45,
-        "y": 50,
-        "zoom": 100
-      },
-      "mode": "cover"
-    },
-    {
-      "id": "contact-glass",
-      "type": "card",
-      "section": "contact",
-      "x": 120,
-      "y": 5645,
-      "w": 1200,
-      "h": 390,
-      "z": 3,
-      "locked": false,
-      "hidden": false,
-      "styles": {
-        "background": "linear-gradient(180deg,rgba(0,0,0,.78),rgba(0,0,0,.54))",
-        "border": "1px solid rgba(244,215,126,.34)",
-        "borderRadius": "42px",
-        "boxShadow": "0 40px 140px rgba(0,0,0,.75)"
+        "background": "repeating-linear-gradient(60deg,rgba(244,215,126,.20) 0 1px,transparent 1px 34px),repeating-linear-gradient(120deg,rgba(244,215,126,.14) 0 1px,transparent 1px 34px)",
+        "opacity": ".16"
       }
     },
     {
-      "id": "contact-title",
+      "id": "final-title",
       "type": "text",
-      "section": "contact",
-      "x": 190,
-      "y": 5715,
-      "w": 1060,
-      "h": 110,
+      "section": "final",
+      "x": 155,
+      "y": 5710,
+      "w": 1130,
+      "h": 108,
       "z": 10,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "74px",
+        "fontSize": "78px",
         "fontWeight": "1000",
         "lineHeight": "1",
         "letterSpacing": "-3px",
         "textAlign": "center",
-        "color": "#fff",
-        "textTransform": "uppercase"
+        "textTransform": "uppercase",
+        "color": "#ffffff"
       },
       "content": "READY TO STOP LYING TO YOURSELF?"
     },
     {
-      "id": "contact-copy",
+      "id": "final-gold",
       "type": "text",
-      "section": "contact",
-      "x": 310,
-      "y": 5850,
-      "w": 820,
+      "section": "final",
+      "x": 330,
+      "y": 5825,
+      "w": 780,
       "h": 70,
       "z": 11,
       "locked": false,
       "hidden": false,
       "styles": {
-        "fontSize": "23px",
-        "lineHeight": "1.5",
+        "background": "linear-gradient(180deg,#fff9d8 0%,#f7df91 18%,#d5a83c 38%,#7b520b 56%,#fff0ae 74%,#a26f16 100%)",
+        "WebkitBackgroundClip": "text",
+        "backgroundClip": "text",
+        "color": "transparent",
+        "textShadow": "0 2px 0 rgba(255,255,255,.14),0 10px 35px rgba(244,215,126,.24),0 22px 80px rgba(0,0,0,.8)",
+        "fontSize": "66px",
+        "fontWeight": "1000",
         "textAlign": "center",
-        "color": "#dedede",
-        "fontWeight": "650"
+        "textTransform": "uppercase",
+        "lineHeight": "1"
       },
-      "content": "If you're ready to do the work properly, message me. If you're looking for shortcuts, go argue with someone else."
+      "content": "GOOD. LET'S WORK."
     },
     {
-      "id": "contact-button",
-      "type": "button",
-      "section": "contact",
-      "x": 540,
-      "y": 5955,
-      "w": 360,
-      "h": 70,
+      "id": "final-copy",
+      "type": "text",
+      "section": "final",
+      "x": 310,
+      "y": 5925,
+      "w": 820,
+      "h": 78,
       "z": 12,
       "locked": false,
       "hidden": false,
       "styles": {
+        "fontSize": "23px",
+        "fontWeight": "700",
+        "lineHeight": "1.5",
+        "textAlign": "center",
+        "color": "#d8d8d8"
+      },
+      "content": "If you're ready to do the work properly, message me. If you're looking for shortcuts, go argue with someone else."
+    },
+    {
+      "id": "final-button",
+      "type": "button",
+      "section": "final",
+      "x": 520,
+      "y": 6040,
+      "w": 400,
+      "h": 72,
+      "z": 13,
+      "locked": false,
+      "hidden": false,
+      "styles": {
+        "background": "linear-gradient(115deg,#6d4708 0%,#f9e7a1 22%,#c99528 45%,#fff3bd 58%,#835908 78%,#e1b84e 100%)",
+        "color": "#070707",
+        "boxShadow": "0 18px 58px rgba(214,163,49,.28), inset 0 1px 0 rgba(255,255,255,.55), inset 0 -10px 28px rgba(70,42,0,.24)",
+        "border": "1px solid rgba(255,240,175,.72)",
         "fontSize": "15px",
         "fontWeight": "1000",
         "letterSpacing": "2px",
-        "color": "#080808",
-        "background": "linear-gradient(135deg,#fff5c5 0%,#d8a331 40%,#815505 100%)",
         "borderRadius": "18px",
-        "textTransform": "uppercase",
-        "boxShadow": "0 25px 80px rgba(244,215,126,.24)"
+        "textTransform": "uppercase"
       },
       "content": "BOOK FREE CONSULTATION",
       "href": "#"

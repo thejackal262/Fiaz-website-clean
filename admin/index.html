@@ -4,14 +4,14 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta name="robots" content="noindex"/>
-<title>Jackal Black Builder</title>
+<title>Jackal Layer Builder</title>
 <link rel="stylesheet" href="/admin/admin.css"/>
 </head>
 <body>
 <div id="login" class="login">
   <div class="login-card">
-    <h1>Jackal Black Builder</h1>
-    <p>Premium layer editor. Move, resize, restyle and publish.</p>
+    <h1>Jackal Layer Builder</h1>
+    <p>Every item is a layer. Move it. Resize it. Delete it. Publish.</p>
     <input id="password" type="password" placeholder="Admin password"/>
     <button id="loginBtn">Login</button>
     <small id="loginMsg"></small>
@@ -20,13 +20,12 @@
 
 <div id="app" class="app hidden">
   <div class="topbar">
-    <div><strong>Jackal Black Builder</strong><span id="status">Ready.</span></div>
+    <div><strong>Jackal Layer Builder</strong><span id="status">Ready.</span></div>
     <div class="toolbar">
       <button id="addTextBtn">Add text</button>
       <button id="addButtonBtn">Add button</button>
       <button id="addBoxBtn">Add box</button>
       <button id="layersBtn">Layers</button>
-      <button id="inspectorBtn">Inspector</button>
       <button id="undoBtn">Undo</button>
       <button id="redoBtn">Redo</button>
       <button id="publishBtn" class="publish">Publish</button>
@@ -36,23 +35,6 @@
   <div id="layersPanel" class="layers-panel hidden">
     <h2>Layers</h2>
     <div id="layersList"></div>
-  </div>
-
-  <div id="inspector" class="inspector hidden">
-    <h2>Inspector</h2>
-    <p id="inspectorName">Select a layer</p>
-    <div class="grid2">
-      <label>X<input id="propX" type="number"></label>
-      <label>Y<input id="propY" type="number"></label>
-      <label>W<input id="propW" type="number"></label>
-      <label>H<input id="propH" type="number"></label>
-      <label>Z<input id="propZ" type="number"></label>
-      <label>Opacity<input id="propOpacity" type="number" min="0" max="1" step=".05"></label>
-    </div>
-    <label>Text colour<input id="propColor" type="text" placeholder="#ffffff"></label>
-    <label>Background<input id="propBg" type="text" placeholder="gradient or #111"></label>
-    <label>Border radius<input id="propRadius" type="text" placeholder="20px"></label>
-    <button id="applyInspectorBtn" class="full">Apply inspector</button>
   </div>
 
   <main class="workspace">
